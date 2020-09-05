@@ -31,7 +31,7 @@
 .project {
   color: white;
   font: "Times New Roman", Roman;
-  background-color: black;
+  background-color: cyan;
 }
 
 @keyframes App-logo-spin {
@@ -41,4 +41,8 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.navigation-sub {
+  background-color: white;
 }
