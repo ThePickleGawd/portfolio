@@ -9,9 +9,9 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 
 //TEST
-import testImage1 from ".././Images/testImage1.JPG";
-import testImage2 from ".././Images/testImage2.JPG";
-import testImage3 from ".././Images/testImage3.JPG";
+const testImage1 = "../Images/testImage1.JPG";
+const testImage2 = "../Images/testImage2.JPG";
+const testImage3 = "../Images/testImage3.JPG";
 
 const styles = {
   ...theme.spreadIt,
@@ -28,25 +28,33 @@ export class Projects extends Component {
     this.state = {
       projects: [
         {
-          title: "test project",
+          title: "TEST PROJECT",
           category: "test category",
+          description:
+            "This is my first test project and it's really cool to have a description and a test project and a;sdklfjsl;fjk;lskdjf",
           data: [],
           link: "/8ghskl",
-          image: { testImage1 },
+          image: testImage1,
         },
         {
-          title: "another one",
+          title: "Another One",
           category: "another category",
+          description:
+            "This is my first test project and it's really cool to have a description and a test project",
+
           data: [],
           link: "/jfs2a3",
-          image: { testImage2 },
+          image: testImage2,
         },
         {
           title: "last one",
           category: "final category",
+          description:
+            "This is my first test project and it's really cool to have a description and a test project",
+
           data: [],
           link: "/random3",
-          image: { testImage3 },
+          image: testImage3,
         },
       ],
     };
@@ -67,6 +75,7 @@ export class Projects extends Component {
               <ProjectThumbnail
                 title={project.title}
                 category={project.category}
+                description={project.description}
                 link={project.link}
                 image={project.image}
               />
