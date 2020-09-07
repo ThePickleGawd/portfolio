@@ -8,15 +8,14 @@ import { withStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
-import Fade from "@material-ui/core/Fade";
 
 const styles = {
   ...theme.spreadIt,
   root: {},
   welcome: {
     position: "absolute",
-    left: "20%",
-    top: "30%",
+    left: "15%",
+    top: "20%",
   },
 };
 
@@ -26,9 +25,7 @@ export class Home extends Component {
     return (
       <div className={classes.root}>
         <div className={classes.welcome}>
-          <Fade in={true} timeout={5000}>
-            <Welcome />
-          </Fade>
+          <Welcome />
         </div>
       </div>
     );

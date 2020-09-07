@@ -7,7 +7,7 @@ import theme from "../Util/theme";
 import { withStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
-import Grow from "@material-ui/core/Grow";
+import Collapse from "@material-ui/core/Collapse";
 
 const styles = {
   ...theme.spreadIt,
@@ -46,7 +46,7 @@ export class Navbar extends Component {
         onMouseEnter={this.handleHover}
         onMouseLeave={this.handleLeave}
       >
-        <Grow in={this.state.showNavbar}>
+        <Collapse in={this.state.showNavbar} collapsedHeight={"8px"}>
           <div className={classes.navBar}>
             <Grid container justify="center" spacing={0}>
               <Grid item xs={0}>
@@ -71,7 +71,7 @@ export class Navbar extends Component {
               </Grid>
             </Grid>
           </div>
-        </Grow>
+        </Collapse>
       </div>
     );
   }
