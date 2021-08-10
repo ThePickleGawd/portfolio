@@ -1,4 +1,5 @@
 // React
+import React from "react";
 import router, { useRouter } from "next/router";
 
 // Material UI
@@ -7,16 +8,16 @@ import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 
 export const Navbar = (props) => {
-  const handleClickAbout = (event) => {
-    router.push("/#about");
+  const handleClick = (to) => {
+    router.push(to);
   };
 
-  const handleClickWork = (event) => {
-    router.push("/#work");
-  };
-  const handleClickContact = (event) => {
-    router.push("/#contact");
-  };
+  const locations = [
+    { to: "/#", name: "Home" },
+    { to: "/#about", name: "About" },
+    { to: "/#work", name: "Work" },
+    { to: "/#contact", name: "Contact" },
+  ];
 
   return (
     <div>
@@ -24,15 +25,17 @@ export const Navbar = (props) => {
         variant="dense"
         style={{ display: "flex", justifyContent: "flex-end" }}
       >
-        <Button disableRipple onClick={handleClickAbout}>
-          <Typography>About</Typography>
-        </Button>
-        <Button disableRipple onClick={handleClickWork}>
-          <Typography>Work</Typography>
-        </Button>
-        <Button disableRipple onClick={handleClickContact}>
-          <Typography>Contact</Typography>
-        </Button>
+        {locations.map((loc) => {
+          return (
+            <Button
+              disableRipple
+              onClick={() => handleClick(loc.to)}
+              key={loc.name}
+            >
+              <Typography>{loc.name}</Typography>
+            </Button>
+          );
+        })}
       </Toolbar>
     </div>
   );

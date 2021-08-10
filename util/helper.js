@@ -1,6 +1,8 @@
+// React
 import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 
-export function useOnScreen(ref) {
+export const useOnScreen = (ref) => {
   const [isIntersecting, setIntersecting] = useState(false);
 
   const observer = new IntersectionObserver(([entry]) =>
@@ -16,4 +18,37 @@ export function useOnScreen(ref) {
   }, []);
 
   return isIntersecting;
-}
+};
+
+// window is not initiallized on pre-render? call inside useEffect
+export const useHashCheck = (parallaxRef) => {
+  const router = useRouter();
+
+  const locations = {
+    about: 1,
+    work: 2,
+    contact: 3,
+  };
+
+  useEffect(() => {
+    const initialHashCheck = () => {
+      if (!window.location.hash) return;
+
+      const hash = window.location.hash.replace("#", "");
+      if (locations[hash]) parallaxRef.current.scrollTo(locations[hash]);
+      else parallaxRef.current.scrollTo(0);
+    };
+    initialHashCheck();
+
+    const handleHashChangeComplete = (url, { shallow }) => {
+      const hash = url.replace("/#", "");
+      if (locations[hash]) parallaxRef.current.scrollTo(locations[hash]);
+      else parallaxRef.current.scrollTo(0);
+    };
+
+    router.events.on("hashChangeComplete", handleHashChangeComplete);
+    return () => {
+      router.events.off("hashRouteChangeComplete", handleHashChangeComplete);
+    };
+  }, []);
+};

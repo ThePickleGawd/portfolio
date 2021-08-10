@@ -15,38 +15,12 @@ import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 // Portfolio
 import About from "../components/About";
 import profilePic from "../public/me.jpg";
-
-const locations = {
-  about: 1,
-  work: 2,
-  contact: 3,
-};
+import { useHashCheck } from "../util/helper";
 
 export const Home = () => {
   const parallaxRef = useRef();
 
-  useEffect(() => {
-    const initialHashCheck = () => {
-      if (!window.location.hash) return;
-
-      const hash = window.location.hash.replace("#", "");
-      if (!locations[hash]) return;
-
-      parallaxRef.current.scrollTo(locations[hash]);
-    };
-    initialHashCheck();
-
-    const handleHashChangeComplete = (url, { shallow }) => {
-      const hash = url.replace("/#", "");
-      if (!locations[hash]) return;
-      parallaxRef.current.scrollTo(locations[hash]);
-    };
-
-    router.events.on("hashChangeComplete", handleHashChangeComplete);
-    return () => {
-      router.events.off("hashRouteChangeComplete", handleHashChangeComplete);
-    };
-  }, []);
+  const hashCheck = useHashCheck(parallaxRef);
 
   return (
     <Parallax pages={3} style={{ top: "0", left: "0" }} ref={parallaxRef}>
