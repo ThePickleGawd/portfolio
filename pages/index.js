@@ -1,5 +1,5 @@
 // React
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import router, { useRouter } from "next/router";
 import Image from "next/image";
 
@@ -8,14 +8,18 @@ import Typography from "@material-ui/core/Typography";
 import Avatar from "@material-ui/core/Avatar";
 import Badge from "@material-ui/core/Badge";
 import Card from "@material-ui/core/Card";
+import Fade from "@material-ui/core/Fade";
 
 // Springy
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 
-// Portfolio
+// Components
 import About from "../components/About";
+import { useOnScreen, useHashCheck } from "../util/helper";
+
+// Pictures
 import profilePic from "../public/me.jpg";
-import { useHashCheck } from "../util/helper";
+import unityLogo from "../public/unity.png";
 
 export const Home = () => {
   const parallaxRef = useRef();
@@ -29,11 +33,19 @@ export const Home = () => {
         speed={2.5}
         style={{
           display: "flex",
+          flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
         }}
       >
-        <Typography variant="h3">{"Hi, I'm Dylan"}</Typography>
+        <Fade in={true} timeout={3000}>
+          <Typography variant="h3">{"Hi, I'm Dylan"}</Typography>
+        </Fade>
+        <Fade in={true} timeout={10000}>
+          <Typography variant="h4">
+            {"React developer, Unity game developer"}
+          </Typography>
+        </Fade>
       </ParallaxLayer>
       <ParallaxLayer
         sticky={{ start: 1, end: 2 }}
@@ -50,10 +62,8 @@ export const Home = () => {
           <Image src={profilePic} alt="Dylan Lu" width={400} height={400} />
         </Avatar>
       </ParallaxLayer>
-
       <ParallaxLayer
-        offset={1.1}
-        speed={1}
+        sticky={{ start: 1, end: 1.75 }}
         style={{
           display: "flex",
           justifyContent: "flex-start",
@@ -61,6 +71,19 @@ export const Home = () => {
         }}
       >
         <About />
+      </ParallaxLayer>
+      <ParallaxLayer
+        offset={0.9}
+        speed={1.3}
+        style={{
+          display: "flex",
+          justifyContent: "flex-end",
+          alignContent: "center",
+        }}
+      >
+        <div style={{ opacity: 0.3, marginRight: "15%" }}>
+          <Image src={unityLogo} alt="Unity Logo" />
+        </div>
       </ParallaxLayer>
     </Parallax>
   );

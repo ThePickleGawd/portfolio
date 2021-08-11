@@ -2,7 +2,7 @@ import Head from "next/head";
 
 const TITLE = "Dylan Lu | Portfolio";
 const DESCRIPTION =
-  "A portfolio website built by Dylan Lu, a high school student and programmer at Gunn High School. This is a place to see my current and previous projects and to see contact information";
+  "Dylan Lu - Web Developer and Game Developer. Contact me for help on React, Unity, or virtualy any other type of project. Or, view some of my previous work";
 
 export const HeadInfo = () => {
   return (
@@ -17,6 +17,7 @@ export const HeadInfo = () => {
         name="viewport"
         content="minimum-scale=1, initial-scale=1, width=device-width"
       />
+      <meta charSet="utf-8" />
       <link rel="icon" href="favicon.ico" />
     </Head>
   );
