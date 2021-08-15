@@ -3,7 +3,7 @@ import { useRef, useEffect, useState } from "react";
 import router, { useRouter } from "next/router";
 import Image from "next/image";
 
-// Material UI
+// UI Design
 import Typography from "@material-ui/core/Typography";
 import Avatar from "@material-ui/core/Avatar";
 import Badge from "@material-ui/core/Badge";
@@ -15,20 +15,21 @@ import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 
 // Components
 import About from "../components/About";
+import ParallaxBackground from "../components/ParallaxBackground";
 import { useOnScreen, useHashCheck } from "../util/helper";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 // Pictures
 import profilePic from "../public/me.jpg";
-import unityLogo from "../public/unity.png";
-import reactLogo from "../public/react.png";
-import nextLogo from "../public/next.png";
-import cppLogo from "../public/cpp.png";
-import stars from "../public/stars.png";
 
 export const Home = () => {
   const parallaxRef = useRef();
 
+  // don't remove this, it checks hashes even though var is unused
   const hashCheck = useHashCheck(parallaxRef);
+  const smallScreen = useMediaQuery("(max-width:1000px)");
+
+  if (smallScreen) return <div>Sorry, small screen not supported yet...</div>;
 
   return (
     <Parallax pages={5} style={{ top: "0", left: "0" }} ref={parallaxRef}>
@@ -76,71 +77,7 @@ export const Home = () => {
       >
         <About />
       </ParallaxLayer>
-      <ParallaxLayer
-        offset={0}
-        speed={0}
-        factor={5}
-        style={{
-          backgroundImage:
-            "url(https://awv3node-homepage.surge.sh/build/assets/stars.svg)",
-          backgroundSize: "cover",
-        }}
-      />
-      <ParallaxLayer
-        offset={0.9}
-        speed={1.3}
-        style={{
-          display: "flex",
-          justifyContent: "flex-end",
-          alignContent: "center",
-        }}
-      >
-        <div style={{ opacity: 0.3, marginRight: "15%" }}>
-          <Image src={unityLogo} alt="Unity Logo" />
-        </div>
-      </ParallaxLayer>
-      <ParallaxLayer
-        offset={1}
-        speed={0.3}
-        style={{
-          display: "flex",
-          justifyContent: "flex-start",
-        }}
-      >
-        <div
-          style={{ opacity: 0.3, marginLeft: "25%", width: 250, height: 250 }}
-        >
-          <Image src={cppLogo} alt="CPP Logo" />
-        </div>
-      </ParallaxLayer>
-      <ParallaxLayer
-        offset={1.6}
-        speed={1.3}
-        style={{
-          display: "flex",
-          justifyContent: "flex-start",
-          alignContent: "center",
-        }}
-      >
-        <div
-          style={{ opacity: 0.3, marginLeft: "5%", width: 250, height: 250 }}
-        >
-          <Image src={reactLogo} alt="React Logo" />
-        </div>
-      </ParallaxLayer>
-      <ParallaxLayer
-        offset={1.7}
-        speed={0.6}
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignContent: "center",
-        }}
-      >
-        <div style={{ opacity: 0.3 }}>
-          <Image src={nextLogo} alt="Next.js Logo" />
-        </div>
-      </ParallaxLayer>
+      <ParallaxBackground />
     </Parallax>
   );
 };
