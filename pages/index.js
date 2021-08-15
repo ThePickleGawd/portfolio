@@ -15,6 +15,7 @@ import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 
 // Components
 import About from "../components/About";
+import Work from "../components/Work";
 import ParallaxBackground from "../components/ParallaxBackground";
 import { useOnScreen, useHashCheck } from "../util/helper";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
@@ -53,7 +54,7 @@ export const Home = () => {
         </Fade>
       </ParallaxLayer>
       <ParallaxLayer
-        sticky={{ start: 1, end: 2 }}
+        sticky={{ start: 1, end: 3 }}
         style={{
           display: "flex",
           alignItems: "center",
@@ -76,6 +77,16 @@ export const Home = () => {
         }}
       >
         <About />
+      </ParallaxLayer>
+      <ParallaxLayer
+        sticky={{ start: 2.5, end: 3 }}
+        style={{
+          display: "flex",
+          justifyContent: "flex-start",
+          alignItems: "center",
+        }}
+      >
+        <Work />
       </ParallaxLayer>
       <ParallaxBackground />
     </Parallax>

@@ -7,7 +7,9 @@ import unityLogo from "../public/unity.png";
 import reactLogo from "../public/react.png";
 import nextLogo from "../public/next.png";
 import cppLogo from "../public/cpp.png";
-import test from "../public/stars.svg";
+import pythonLogo from "../public/python.png";
+const stars =
+  "https://raw.githubusercontent.com/ThePickleGawd/portfolio/main/public/stars.svg";
 
 const ParallaxBackground = () => {
   return (
@@ -17,8 +19,7 @@ const ParallaxBackground = () => {
         speed={0}
         factor={5}
         style={{
-          backgroundImage:
-            "url(https://awv3node-homepage.surge.sh/build/assets/stars.svg)",
+          backgroundImage: `url(${stars})`,
           backgroundSize: "cover",
         }}
       />
@@ -75,6 +76,21 @@ const ParallaxBackground = () => {
       >
         <div style={{ opacity: 0.3 }}>
           <Image src={nextLogo} alt="Next.js Logo" priority />
+        </div>
+      </ParallaxLayer>
+      <ParallaxLayer
+        offset={2}
+        speed={0.2}
+        style={{
+          display: "flex",
+          justifyContent: "flex-start",
+          alignContent: "center",
+        }}
+      >
+        <div
+          style={{ opacity: 0.3, width: 250, height: 250, marginLeft: "17%" }}
+        >
+          <Image src={pythonLogo} alt="Python Logo" priority />
         </div>
       </ParallaxLayer>
     </>

@@ -32,6 +32,28 @@ const theme = createTheme({
       '"Segoe UI Symbol"',
     ].join(","),
   },
+  overrides: {
+    MuiCssBaseline: {
+      "@global": {
+        "::-webkit-scrollbar": {
+          width: "10px",
+        },
+
+        "::-webkit-scrollbar-track-piece": {
+          backgroundColor: "#00000",
+        },
+
+        "::-webkit-scrollbar-thumb": {
+          backgroundColor: "#FFF",
+          border: ".1px solid #B7B7B7",
+        },
+
+        "::-webkit-scrollbar-thumb:hover": {
+          backgroundColor: "#909090",
+        },
+      },
+    },
+  },
 });
 
 export default theme;
