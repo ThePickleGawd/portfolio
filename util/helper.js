@@ -27,7 +27,7 @@ export const useHashCheck = (parallaxRef) => {
   const locations = {
     about: 1,
     work: 2.5,
-    contact: 3,
+    contact: 4,
   };
 
   useEffect(() => {

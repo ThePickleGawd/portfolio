@@ -21,7 +21,9 @@ const ProjectViewer = () => {
       }}
     >
       <Typography variant="h3">{"Project Name"}</Typography>
-      <Image src={test} alt="test" />
+      <div style={{ marginTop: 25 }}>
+        <Image src={test} alt="test" objectFit="contain" />
+      </div>
     </Card>
   );
 };
@@ -46,6 +48,7 @@ export const Work = (props) => {
           </Typography>
         </Fade>
       </div>
+      <br />
       <ProjectViewer />
     </div>
   );

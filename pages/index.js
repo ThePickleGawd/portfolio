@@ -16,6 +16,7 @@ import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 // Components
 import About from "../components/About";
 import Work from "../components/Work";
+import Contact from "../components/Contact";
 import ParallaxBackground from "../components/ParallaxBackground";
 import { useOnScreen, useHashCheck } from "../util/helper";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
@@ -52,6 +53,9 @@ export const Home = () => {
             {"React developer, Unity game developer"}
           </Typography>
         </Fade>
+        <Fade in={true} timeout={10000}>
+          <Typography variant="h5">{"(site still in-progress)"}</Typography>
+        </Fade>
       </ParallaxLayer>
       <ParallaxLayer
         sticky={{ start: 1, end: 3 }}
@@ -87,6 +91,17 @@ export const Home = () => {
         }}
       >
         <Work />
+      </ParallaxLayer>
+      <ParallaxLayer
+        offset={4}
+        speed={2.5}
+        style={{
+          display: "flex",
+          justifyContent: "flex-start",
+          alignItems: "center",
+        }}
+      >
+        <Contact />
       </ParallaxLayer>
       <ParallaxBackground />
     </Parallax>

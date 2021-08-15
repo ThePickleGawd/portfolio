@@ -7,16 +7,30 @@ import Card from "@material-ui/core/Card";
 import Typography from "@material-ui/core/Typography";
 import Fade from "@material-ui/core/Fade";
 
-const AboutMe = [
+// React Spring
+import { useTrail, animated } from "@react-spring/web";
+
+const items = [
   "- I enjoy ___",
   "- I am really good at _____",
   "- I placed ____ in _____",
   "- Im just the best",
 ];
 
+const config = { mass: 5, tension: 2000, friction: 200 };
+
 export const About = (props) => {
   const ref = useRef();
   const visible = useOnScreen(ref);
+
+  const trail = useTrail(items.length, {
+    config,
+    opacity: visible ? 1 : 0,
+    x: visible ? 0 : 20,
+    height: visible ? 80 : 0,
+    from: { opacity: 0, x: 20, height: 0 },
+    delay: 500,
+  });
 
   return (
     <div
@@ -35,13 +49,20 @@ export const About = (props) => {
         </Fade>
       </div>
       <div style={{ display: "flex", flexDirection: "column", marginTop: 10 }}>
-        {React.Children.toArray(
-          AboutMe.map((str, index) => {
-            // Works because of React.Children.toArray...
-            // eslint-disable-next-line
-            return <Typography variant="h4">{str}</Typography>;
-          })
-        )}
+        {trail.map(({ x, height, ...rest }, index) => (
+          <animated.div
+            key={items[index]}
+            className="trails-text"
+            style={{
+              ...rest,
+              transform: x.to((x) => `translate3d(0,${x}px,0)`),
+            }}
+          >
+            <animated.div style={{ height }}>
+              <Typography variant="h4">{items[index]}</Typography>
+            </animated.div>
+          </animated.div>
+        ))}
       </div>
     </div>
   );
