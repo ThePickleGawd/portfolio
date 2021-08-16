@@ -21,6 +21,7 @@ const ParallaxBackground = () => {
         style={{
           backgroundImage: `url(${stars})`,
           backgroundSize: "cover",
+          zIndex: -1,
         }}
       />
       <ParallaxLayer

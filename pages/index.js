@@ -73,7 +73,7 @@ export const Home = () => {
         </Avatar>
       </ParallaxLayer>
       <ParallaxLayer
-        sticky={{ start: 1, end: 1.75 }}
+        sticky={{ start: 1, end: 1.5 }}
         style={{
           display: "flex",
           justifyContent: "flex-start",
@@ -97,8 +97,8 @@ export const Home = () => {
         speed={2.5}
         style={{
           display: "flex",
-          justifyContent: "flex-start",
-          alignItems: "center",
+          justifyContent: "center",
+          alignItems: "flex-start",
         }}
       >
         <Contact />
