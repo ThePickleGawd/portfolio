@@ -1,5 +1,5 @@
 // React
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import Image from "next/image";
 import { useOnScreen } from "../util/helper";
 
@@ -12,15 +12,13 @@ import NavigateNextIcon from "@material-ui/icons/NavigateNext";
 import NavigateBeforeIcon from "@material-ui/icons/NavigateBefore";
 import IconButton from "@material-ui/core/IconButton";
 
-import test from "../public/react.png";
+import { projects } from "../info/projects";
 
 const ProjectViewer = () => {
+  const [project, setProject] = useState(0);
+
   return (
-    <Card>
-      <Typography variant="h3" align="center">
-        {"Project Name"}
-      </Typography>
-      <br />
+    <div>
       <div
         style={{
           display: "flex",
@@ -40,7 +38,7 @@ const ProjectViewer = () => {
             <NavigateBeforeIcon />
           </IconButton>
         </div>
-        <Image src={test} alt="test" />
+        <Image src={projects[0]} alt="test" />
         <div
           style={{
             display: "flex",
@@ -54,7 +52,7 @@ const ProjectViewer = () => {
           </IconButton>
         </div>
       </div>
-    </Card>
+    </div>
   );
 };
 
@@ -65,7 +63,7 @@ export const Work = (props) => {
   return (
     <div
       style={{
-        width: "35%",
+        width: "50%",
         height: "70%",
       }}
       ref={ref}

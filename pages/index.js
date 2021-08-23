@@ -22,7 +22,7 @@ import { useOnScreen, useHashCheck } from "../util/helper";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 // Pictures
-import profilePic from "../public/me.jpg";
+import profilePic from "../public/icons/me.jpg";
 
 export const Home = () => {
   const parallaxRef = useRef();
