@@ -58,7 +58,7 @@ export const Home = () => {
         </Fade>
       </ParallaxLayer>
       <ParallaxLayer
-        sticky={{ start: 1, end: 3 }}
+        sticky={{ start: 1, end: 1.5 }}
         style={{
           display: "flex",
           alignItems: "center",
@@ -86,7 +86,7 @@ export const Home = () => {
         sticky={{ start: 2.5, end: 3 }}
         style={{
           display: "flex",
-          justifyContent: "flex-start",
+          justifyContent: "center",
           alignItems: "center",
         }}
       >

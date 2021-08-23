@@ -16,24 +16,43 @@ import test from "../public/react.png";
 
 const ProjectViewer = () => {
   return (
-    <Card
-      style={{
-        justifyContent: "center",
-        alignContent: "center",
-        display: "flex",
-      }}
-    >
-      <Typography variant="h3">{"Project Name"}</Typography>
-      <div style={{ alignContent: "center" }}>
-        <IconButton>
-          <NavigateBeforeIcon />
-        </IconButton>
-        <div style={{ marginTop: 25 }}>
-          <Image src={test} alt="test" objectFit="contain" />
+    <Card>
+      <Typography variant="h3" align="center">
+        {"Project Name"}
+      </Typography>
+      <br />
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignContent: "center",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            paddingRight: 10,
+          }}
+        >
+          <IconButton>
+            <NavigateBeforeIcon />
+          </IconButton>
         </div>
-        <IconButton>
-          <NavigateNextIcon />
-        </IconButton>
+        <Image src={test} alt="test" />
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            paddingLeft: 10,
+          }}
+        >
+          <IconButton>
+            <NavigateNextIcon />
+          </IconButton>
+        </div>
       </div>
     </Card>
   );
@@ -46,7 +65,6 @@ export const Work = (props) => {
   return (
     <div
       style={{
-        marginLeft: "10%",
         width: "35%",
         height: "70%",
       }}
