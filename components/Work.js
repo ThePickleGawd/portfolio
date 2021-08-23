@@ -8,6 +8,9 @@ import Card from "@material-ui/core/Card";
 import Typography from "@material-ui/core/Typography";
 import Fade from "@material-ui/core/Fade";
 import Button from "@material-ui/core/Button";
+import NavigateNextIcon from "@material-ui/icons/NavigateNext";
+import NavigateBeforeIcon from "@material-ui/icons/NavigateBefore";
+import IconButton from "@material-ui/core/IconButton";
 
 import test from "../public/react.png";
 
@@ -18,12 +21,19 @@ const ProjectViewer = () => {
         justifyContent: "center",
         alignContent: "center",
         display: "flex",
-        flexWrap: "wrap",
       }}
     >
       <Typography variant="h3">{"Project Name"}</Typography>
-      <div style={{ marginTop: 25 }}>
-        <Image src={test} alt="test" objectFit="contain" />
+      <div style={{ alignContent: "center" }}>
+        <IconButton>
+          <NavigateBeforeIcon />
+        </IconButton>
+        <div style={{ marginTop: 25 }}>
+          <Image src={test} alt="test" objectFit="contain" />
+        </div>
+        <IconButton>
+          <NavigateNextIcon />
+        </IconButton>
       </div>
     </Card>
   );
