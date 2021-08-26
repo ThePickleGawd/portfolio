@@ -16,6 +16,17 @@ import { projects } from "../info/projects";
 
 const ProjectViewer = () => {
   const [project, setProject] = useState(0);
+  const projectKeys = Object.keys(projects);
+
+  const handleNextProject = () => {
+    if (project + 1 >= projectKeys.length) setProject(0);
+    else setProject((p) => p + 1);
+  };
+
+  const handlePreviousProject = () => {
+    if (project - 1 < 0) setProject(projectKeys.length - 1);
+    else setProject((p) => p - 1);
+  };
 
   return (
     <div>
@@ -34,11 +45,32 @@ const ProjectViewer = () => {
             paddingRight: 10,
           }}
         >
-          <IconButton>
+          <IconButton onClick={handlePreviousProject}>
             <NavigateBeforeIcon />
           </IconButton>
         </div>
-        <Image src={projects[0]} alt="test" />
+        <Button style={{ position: "relative", width: 500, height: 500 }}>
+          {projects[projectKeys[project]].image && (
+            <Image
+              src={projects[projectKeys[project]].image}
+              alt="test"
+              layout="fill"
+              objectFit="contain"
+            />
+          )}
+          {projects[projectKeys[project]].previewTitle && (
+            <div
+              style={{
+                position: "absolute",
+                backgroundColor: "rgba(200,200,200,0.6)",
+              }}
+            >
+              <Typography variant="h2" style={{ opacity: 1 }}>
+                {projects[projectKeys[project]].previewTitle}
+              </Typography>
+            </div>
+          )}
+        </Button>
         <div
           style={{
             display: "flex",
@@ -47,7 +79,7 @@ const ProjectViewer = () => {
             paddingLeft: 10,
           }}
         >
-          <IconButton>
+          <IconButton onClick={handleNextProject}>
             <NavigateNextIcon />
           </IconButton>
         </div>

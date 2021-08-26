@@ -34,7 +34,11 @@ export const Home = () => {
   if (smallScreen) return <div>Sorry, small screen not supported yet...</div>;
 
   return (
-    <Parallax pages={5} style={{ top: "0", left: "0" }} ref={parallaxRef}>
+    <Parallax
+      pages={5}
+      style={{ top: "0", left: "0", zIndex: -1 }}
+      ref={parallaxRef}
+    >
       <ParallaxLayer
         offset={0}
         speed={2.5}
