@@ -1,6 +1,7 @@
 // React
 import React, { useRef, useState } from "react";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import { useOnScreen } from "../util/helper";
 
 // Material UI
@@ -16,7 +17,12 @@ import { projects } from "../info/projects";
 
 const ProjectViewer = () => {
   const [project, setProject] = useState(0);
+  const router = useRouter();
+
+  // Projects is an object, which we access keys through this variable
+  // Do this cuz we wanna access it like an array
   const projectKeys = Object.keys(projects);
+  const currentProject = () => projects[projectKeys[project]];
 
   const handleNextProject = () => {
     if (project + 1 >= projectKeys.length) setProject(0);
@@ -26,6 +32,10 @@ const ProjectViewer = () => {
   const handlePreviousProject = () => {
     if (project - 1 < 0) setProject(projectKeys.length - 1);
     else setProject((p) => p - 1);
+  };
+
+  const handleProjectClicked = () => {
+    router.push(`/projects/${projectKeys[project]}`);
   };
 
   return (
@@ -49,16 +59,20 @@ const ProjectViewer = () => {
             <NavigateBeforeIcon />
           </IconButton>
         </div>
-        <Button style={{ position: "relative", width: 500, height: 500 }}>
-          {projects[projectKeys[project]].image && (
+        <Button
+          style={{ position: "relative", width: 500, height: 500 }}
+          onClick={handleProjectClicked}
+          disableRipple
+        >
+          {currentProject().image != undefined && (
             <Image
-              src={projects[projectKeys[project]].image}
+              src={currentProject().image}
               alt="test"
               layout="fill"
               objectFit="contain"
             />
           )}
-          {projects[projectKeys[project]].previewTitle && (
+          {currentProject().previewTitle != undefined && (
             <div
               style={{
                 position: "absolute",
@@ -66,7 +80,7 @@ const ProjectViewer = () => {
               }}
             >
               <Typography variant="h2" style={{ opacity: 1 }}>
-                {projects[projectKeys[project]].previewTitle}
+                {currentProject().previewTitle}
               </Typography>
             </div>
           )}
