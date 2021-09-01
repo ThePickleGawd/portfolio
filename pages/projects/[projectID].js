@@ -27,14 +27,23 @@ const Project = () => {
       <div
         style={{
           display: "flex",
-          justifyContent: "center",
+          justifyContent: "space-around",
           alignContent: "center",
+          height: "100%",
         }}
       >
-        <Image src={projects[projectID].image} alt="Project Image" />
-        <Typography variant="body1" align="center">
-          TTESTSTESTSETSETSETESTSETESTSETESTESTESTSTES
-        </Typography>
+        <Image src={projects[projectID].image} alt="Project Image" priority />
+        <div
+          style={{
+            display: "flex",
+            alignContent: "center",
+            justifyContent: "center",
+          }}
+        >
+          <Typography variant="h5">
+            TTESTSTESTSETSETSETESTSETESTSETESTESTESTSTES
+          </Typography>
+        </div>
       </div>
     </div>
   );

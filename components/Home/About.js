@@ -1,6 +1,6 @@
 // React
 import React, { useRef } from "react";
-import { useOnScreen } from "../util/helper";
+import { useOnScreen } from "../../util/helper";
 
 // Material UI
 import Card from "@material-ui/core/Card";

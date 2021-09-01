@@ -21,7 +21,7 @@ export const useOnScreen = (ref) => {
 };
 
 // window is not initiallized on pre-render? call inside useEffect
-export const useHashCheck = (parallaxRef) => {
+export const HashCheckProvider = ({ parallaxRef }) => {
   const router = useRouter();
 
   const locations = {
@@ -51,4 +51,6 @@ export const useHashCheck = (parallaxRef) => {
       router.events.off("hashRouteChangeComplete", handleHashChangeComplete);
     };
   }, []);
+
+  return null;
 };
