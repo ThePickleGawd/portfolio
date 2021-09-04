@@ -13,38 +13,50 @@ import Container from "@material-ui/core/Container";
 import Button from "@material-ui/core/Button";
 
 // Image
-import Test from "../public/projectImages/test.png";
-import { tmp_projects } from "../info/projects";
+import rollie from "../public/rollie.jpeg";
 
 // MP3
 
 const tmp_raps = [
   {
-    name: "Rollies for the Homies",
+    title: "Rollies for the Homies",
+    description: "Hi",
+    img: null,
+    youtube: "https://youtube.com",
+  },
+  {
+    title: "Ran up With a Glock",
+    description: "Hi",
     img: null,
     youtube: "https://youtube.com",
   },
 ];
 
 export const RapsPage = () => {
-  const SongCard = () => (
-    <Grid item xs={12} sm={6} md={4}>
+  const SongCard = ({ title, description, img, youtube, mp3 }) => (
+    <Grid item xs={12} sm={4} md={3}>
       <Card>
         <CardActionArea>
+          <CardMedia
+            style={{
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            <Image src={rollie} alt="test" objectFit="contain" priority />
+          </CardMedia>
           <CardContent>
             <Typography gutterBottom variant="h5" component="h2">
-              Lizard
+              {title}
             </Typography>
             <Typography variant="body2" color="textSecondary" component="p">
-              Lizards are a widespread group of squamate reptiles, with over
-              6,000 species, ranging across all continents except Antarctica
+              {description}
             </Typography>
           </CardContent>
         </CardActionArea>
         <CardActions>
-          <Button color="primary">Share</Button>
           <Button size="small" color="primary">
-            Learn More
+            Watch on Youtube
           </Button>
         </CardActions>
       </Card>
@@ -63,8 +75,12 @@ export const RapsPage = () => {
       <br />
       <Container>
         <Grid container spacing={3}>
-          {tmp_projects.map((proj) => (
-            <SongCard key={proj.name} />
+          {tmp_raps.map((proj) => (
+            <SongCard
+              key={proj.name}
+              title={proj.title}
+              description={proj.description}
+            />
           ))}
         </Grid>
       </Container>

@@ -31,6 +31,8 @@ export const HashCheckProvider = ({ parallaxRef }) => {
   };
 
   useEffect(() => {
+    if (!router.isReady) return;
+
     const initialHashCheck = () => {
       if (!window.location.hash) return;
 
@@ -50,7 +52,7 @@ export const HashCheckProvider = ({ parallaxRef }) => {
     return () => {
       router.events.off("hashRouteChangeComplete", handleHashChangeComplete);
     };
-  }, []);
+  }, [router.isReady, parallaxRef, locations]);
 
   return null;
 };

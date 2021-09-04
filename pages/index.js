@@ -28,15 +28,25 @@ import profilePic from "../public/icons/me.jpg";
 export const Home = () => {
   const parallaxRef = useRef();
   const smallScreen = useMediaQuery("(max-width:1000px)");
+  const router = useRouter();
+
+  useEffect(() => {
+    const hash = window.location.hash.replace("#", "");
+    const locations = {
+      about: 1,
+      work: 2.5,
+      contact: 4,
+    };
+
+    if (!locations[hash]) return;
+    parallaxRef.current.scrollTo(locations[hash]);
+  }, []);
 
   if (smallScreen) return <div>Sorry, small screen not supported yet...</div>;
-
-  console.log(parallaxRef);
 
   return (
     <>
       {/*<Sidebar parallaxRef={parallaxRef} />*/}
-      <HashCheckProvider parallaxRef={parallaxRef} />
       <Parallax
         pages={5}
         style={{ top: "0", left: "0", zIndex: -1 }}

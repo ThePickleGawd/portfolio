@@ -67,7 +67,7 @@ const ProjectViewer = () => {
           {currentProject().image != undefined && (
             <Image
               src={currentProject().image}
-              alt="test"
+              alt="Current Project"
               layout="fill"
               objectFit="contain"
               priority

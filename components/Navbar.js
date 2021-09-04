@@ -14,9 +14,6 @@ export const Navbar = (props) => {
 
   const locations = [
     { to: "/", name: "Home" },
-    { to: "/#about", name: "About" },
-    { to: "/#work", name: "Work" },
-    { to: "/#contact", name: "Contact" },
     { to: "/raps", name: "Raps" },
   ];
 
