@@ -1,5 +1,6 @@
 // React
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 import { useRouter } from "next/router";
 
 export const useOnScreen = (ref) => {
@@ -56,3 +57,21 @@ export const HashCheckProvider = ({ parallaxRef }) => {
 
   return null;
 };
+
+export const YoutubeEmbed = ({ embedId }) => (
+  <div
+    styles={{
+      overflow: "hidden",
+      paddingBottom: "56.25%",
+      position: "relative",
+      height: "0",
+    }}
+  >
+    <iframe
+      src={`https://www.youtube.com/embed/${embedId}?modestbranding=1`}
+      frameBorder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      title="Embedded youtube"
+    />
+  </div>
+);

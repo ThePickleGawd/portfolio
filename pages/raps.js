@@ -11,6 +11,13 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Container from "@material-ui/core/Container";
 import Button from "@material-ui/core/Button";
+import IconButton from "@material-ui/core/IconButton";
+import GetAppIcon from "@material-ui/icons/GetApp";
+import PlayArrow from "@material-ui/icons/PlayArrow";
+import QueueMusic from "@material-ui/icons/QueueMusic";
+
+// Components
+import { YoutubeEmbed } from "../util/helper";
 
 // Image
 import rollie from "../public/rollie.jpeg";
@@ -22,10 +29,34 @@ const tmp_raps = [
     title: "Rollies for the Homies",
     description: "Hi",
     img: null,
-    youtube: "https://youtube.com",
+    embedId: "a5eDbFbrxN4",
   },
   {
     title: "Ran up With a Glock",
+    description: "Hi",
+    img: null,
+    embedId: "0-S5a0eXPoc",
+  },
+  {
+    title: "Black Ice on My Drip",
+    description: "Hi",
+    img: null,
+    youtube: "https://youtube.com",
+  },
+  {
+    title: "Saiyan Gawd Flow",
+    description: "Hi",
+    img: null,
+    youtube: "https://youtube.com",
+  },
+  {
+    title: "SAT's and the 223's",
+    description: "Hi",
+    img: null,
+    youtube: "https://youtube.com",
+  },
+  {
+    title: "Dropping an Opp",
     description: "Hi",
     img: null,
     youtube: "https://youtube.com",
@@ -33,31 +64,42 @@ const tmp_raps = [
 ];
 
 export const RapsPage = () => {
-  const SongCard = ({ title, description, img, youtube, mp3 }) => (
+  const SongCard = ({ title, description, img, embedId, mp3 }) => (
     <Grid item xs={12} sm={4} md={3}>
       <Card>
-        <CardActionArea>
-          <CardMedia
-            style={{
-              display: "flex",
-              justifyContent: "center",
-            }}
-          >
-            <Image src={rollie} alt="test" objectFit="contain" priority />
-          </CardMedia>
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="h2">
-              {title}
-            </Typography>
-            <Typography variant="body2" color="textSecondary" component="p">
-              {description}
-            </Typography>
-          </CardContent>
-        </CardActionArea>
+        <CardMedia
+          style={{
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          {embedId ? (
+            <YoutubeEmbed embedId={embedId} />
+          ) : img ? (
+            <Image src={img} alt={title} />
+          ) : null}
+        </CardMedia>
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="h2">
+            {title}
+          </Typography>
+          <Typography variant="body2" color="textSecondary" component="p">
+            {description}
+          </Typography>
+        </CardContent>
         <CardActions>
           <Button size="small" color="primary">
             Watch on Youtube
           </Button>
+          <IconButton size="small">
+            <GetAppIcon />
+          </IconButton>
+          <IconButton size="small">
+            <PlayArrow />
+          </IconButton>
+          <IconButton size="small">
+            <QueueMusic />
+          </IconButton>
         </CardActions>
       </Card>
     </Grid>
@@ -80,6 +122,7 @@ export const RapsPage = () => {
               key={proj.name}
               title={proj.title}
               description={proj.description}
+              embedId={proj.embedId}
             />
           ))}
         </Grid>
