@@ -34,9 +34,9 @@ const SongCard = ({ title, description, img, embedId, mp3 }) => (
         <Typography gutterBottom variant="h5" component="h2">
           {title}
         </Typography>
-        <Typography variant="body2" color="textSecondary" component="p">
+        {/* <Typography variant="body2" color="textSecondary" component="p">
           {description}
-        </Typography>
+        </Typography> */}
       </CardContent>
       <CardActions>
         <Button size="small" color="primary">

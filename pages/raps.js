@@ -30,6 +30,11 @@ import rollie from "../public/rollie.jpeg";
 import { raps } from "../info/rapsInfo";
 
 export const RapsPage = () => {
+  const [play] = useSound(raps[0].mp3);
+  const handleClick = () => {
+    play();
+  };
+
   return (
     <div
       style={{
@@ -38,7 +43,8 @@ export const RapsPage = () => {
         alignItems: "center",
       }}
     >
-      <Typography variant="h2">{"Dylan's Raps"}</Typography>
+      <Typography variant="h2">{"Dylan's Raps (Not working yet)"}</Typography>
+      <Button onClick={play}>TEST</Button>
       <br />
       <Container>
         <Grid container spacing={3}>
@@ -57,3 +63,10 @@ export const RapsPage = () => {
 };
 
 export default RapsPage;
+
+/*
+Notes
+- useSound is extension of Howler.js
+- Has seek(sec, id) function which goes to position on song id
+- 
+*/
