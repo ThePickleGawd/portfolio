@@ -1,6 +1,6 @@
 // React
 import Image from "next/image";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 // Material UI
 import Typography from "@material-ui/core/Typography";
@@ -21,7 +21,11 @@ import QueueMusic from "@material-ui/icons/QueueMusic";
 import ReactPlayer from "react-player";
 import { YoutubeEmbed } from "../util/helper";
 import SongCard from "../components/Raps/SongCard";
+import SongControls from "../components/Raps/SongControls";
 import useSound from "use-sound";
+
+// Redux
+import { useDispatch, useSelector } from "react-redux";
 
 // Image
 import rollie from "../public/rollie.jpeg";
@@ -30,10 +34,7 @@ import rollie from "../public/rollie.jpeg";
 import { raps } from "../info/rapsInfo";
 
 export const RapsPage = () => {
-  const [play] = useSound(raps[0].mp3);
-  const handleClick = () => {
-    play();
-  };
+  const rapId = useSelector((state) => state.music.currentRapId);
 
   return (
     <div
@@ -44,7 +45,6 @@ export const RapsPage = () => {
       }}
     >
       <Typography variant="h2">{"Dylan's Raps (Not working yet)"}</Typography>
-      <Button onClick={play}>TEST</Button>
       <br />
       <Container>
         <Grid container spacing={3}>
@@ -54,10 +54,12 @@ export const RapsPage = () => {
               title={proj.title}
               description={proj.description}
               embedId={proj.embedId}
+              img={proj.img}
             />
           ))}
         </Grid>
       </Container>
+      <SongControls />
     </div>
   );
 };
@@ -68,5 +70,5 @@ export default RapsPage;
 Notes
 - useSound is extension of Howler.js
 - Has seek(sec, id) function which goes to position on song id
-- 
+- Each card has a useSound in it? or global useSound with song switching
 */

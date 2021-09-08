@@ -2,6 +2,10 @@
 import React, { useRef } from "react";
 import PropTypes from "prop-types";
 
+// Redux
+import { Provider } from "react-redux";
+import store from "../redux/store";
+
 // Styiling
 import { ThemeProvider } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -24,12 +28,14 @@ export default function MyApp(props) {
   return (
     <>
       <HeadInfo />
-      <ThemeProvider theme={theme}>
-        {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-        <CssBaseline />
-        <Navbar />
-        <Component {...pageProps} />
-      </ThemeProvider>
+      <Provider store={store}>
+        <ThemeProvider theme={theme}>
+          {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+          <CssBaseline />
+          <Navbar />
+          <Component {...pageProps} />
+        </ThemeProvider>
+      </Provider>
     </>
   );
 }

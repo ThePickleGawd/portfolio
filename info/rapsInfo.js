@@ -6,11 +6,13 @@ import RolliesForTheHomies from "../public/audio/raps/RolliesForTheHomies.mp3";
 import SaiyanGawdFlow2 from "../public/audio/raps/SaiyanGawdFlow2.mp3";
 import SaiyanGawdFlow3 from "../public/audio/raps/SaiyanGawdFlow3.mp3";
 
+import Rollie from "../public/rollie.jpeg";
+
 export const raps = [
   {
     title: "Rollies for the Homies",
     description: "Hi",
-    img: null,
+    img: Rollie,
     embedId: "a5eDbFbrxN4",
     mp3: RolliesForTheHomies,
   },
