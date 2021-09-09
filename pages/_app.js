@@ -1,5 +1,6 @@
 // React
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
+import { useRouter } from "next/router";
 import PropTypes from "prop-types";
 
 // Redux
@@ -11,11 +12,26 @@ import { ThemeProvider } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import theme from "../util/theme";
 
-import Navbar from "../components/Navbar";
-import HeadInfo from "../components/HeadInfo";
+import Navbar from "../components/App/Navbar";
+import HeadInfo from "../components/App/HeadInfo";
 
 export default function MyApp(props) {
   const { Component, pageProps } = props;
+  const router = useRouter();
+  const [pageLoading, setPageLoading] = React.useState(false);
+
+  useEffect(() => {
+    const handleStart = () => {
+      setPageLoading(true);
+    };
+    const handleComplete = () => {
+      setPageLoading(false);
+    };
+
+    router.events.on("routeChangeStart", handleStart);
+    router.events.on("routeChangeComplete", handleComplete);
+    router.events.on("routeChangeError", handleComplete);
+  }, [router]);
 
   React.useEffect(() => {
     // Remove the server-side injected CSS.
@@ -33,6 +49,7 @@ export default function MyApp(props) {
           {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
           <CssBaseline />
           <Navbar />
+          {pageLoading && <div>WE ARE LOADING</div>}
           <Component {...pageProps} />
         </ThemeProvider>
       </Provider>
