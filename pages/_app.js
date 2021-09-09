@@ -12,8 +12,11 @@ import { ThemeProvider } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import theme from "../util/theme";
 
+// Components
 import Navbar from "../components/App/Navbar";
 import HeadInfo from "../components/App/HeadInfo";
+import NProgress from "nprogress"; // Loading bar
+import "nprogress/nprogress.css";
 
 export default function MyApp(props) {
   const { Component, pageProps } = props;
@@ -22,11 +25,15 @@ export default function MyApp(props) {
 
   useEffect(() => {
     const handleStart = () => {
+      NProgress.start();
       setPageLoading(true);
     };
     const handleComplete = () => {
+      NProgress.done();
       setPageLoading(false);
     };
+
+    NProgress.configure({ trickleSpeed: 100, showSpinner: false });
 
     router.events.on("routeChangeStart", handleStart);
     router.events.on("routeChangeComplete", handleComplete);
@@ -49,7 +56,6 @@ export default function MyApp(props) {
           {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
           <CssBaseline />
           <Navbar />
-          {pageLoading && <div>WE ARE LOADING</div>}
           <Component {...pageProps} />
         </ThemeProvider>
       </Provider>

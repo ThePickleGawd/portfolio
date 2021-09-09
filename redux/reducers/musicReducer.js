@@ -18,6 +18,11 @@ export const musicReducer = (state = initialState, action) => {
         ...state,
         pausedPosition: action.payload,
       };
+    case TYPES.SET_SOUND_REF:
+      return {
+        ...state,
+        sound: action.payload,
+      };
     default:
       return state;
   }

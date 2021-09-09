@@ -48,13 +48,14 @@ export const RapsPage = () => {
       <br />
       <Container>
         <Grid container spacing={3}>
-          {raps.map((proj) => (
+          {raps.map((song) => (
             <SongCard
-              key={proj.title}
-              title={proj.title}
-              description={proj.description}
-              embedId={proj.embedId}
-              img={proj.img}
+              key={song.title}
+              title={song.title}
+              description={song.description}
+              embedId={song.embedId}
+              img={song.img}
+              mp3={song.mp3}
             />
           ))}
         </Grid>
