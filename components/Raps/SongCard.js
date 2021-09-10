@@ -1,4 +1,5 @@
 // React
+import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import Image from "next/image";
 
@@ -21,18 +22,29 @@ import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 import GetAppIcon from "@material-ui/icons/GetApp";
 import PlayArrow from "@material-ui/icons/PlayArrow";
+import Pause from "@material-ui/icons/Pause";
 import QueueMusic from "@material-ui/icons/QueueMusic";
 
 const SongCard = ({ title, description, img, embedId, mp3 }) => {
-  const [play, exposedData] = useSound(mp3);
+  // State vars
+  const [playing, setPlaying] = useState(false);
+  const [play, exposedData] = useSound(mp3, {
+    onplay: () => setPlaying(true),
+    onend: () => setPlaying(false),
+    onpause: () => setPlaying(false),
+  });
+
+  // Reduxy stuff
   const dispatch = useDispatch();
   const currentSound = useSelector((state) => state.music.sound);
-
   const handlePlay = () => {
-    if (currentSound) currentSound.stop();
+    // If the redux sound is not this one, stop it (its a new song)
+    if (currentSound && currentSound != exposedData.sound) currentSound.stop();
     play();
     dispatch({ type: TYPES.SET_SOUND_REF, payload: exposedData.sound });
   };
+
+  const handlePause = () => exposedData.pause();
 
   return (
     <Grid item xs={12} sm={4} md={3}>
@@ -53,8 +65,12 @@ const SongCard = ({ title, description, img, embedId, mp3 }) => {
           <IconButton size="small">
             <GetAppIcon />
           </IconButton>
-          <IconButton size="small" onClick={handlePlay} disabled={!mp3}>
-            <PlayArrow />
+          <IconButton
+            size="small"
+            onClick={playing ? handlePause : handlePlay}
+            disabled={!mp3}
+          >
+            {playing ? <Pause /> : <PlayArrow />}
           </IconButton>
           <IconButton size="small">
             <QueueMusic />

@@ -15,10 +15,6 @@ import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 import CircularProgress from "@material-ui/core/CircularProgress";
 
-import GetAppIcon from "@material-ui/icons/GetApp";
-import PlayArrow from "@material-ui/icons/PlayArrow";
-import QueueMusic from "@material-ui/icons/QueueMusic";
-
 // Components
 import ReactPlayer from "react-player";
 import { YoutubeEmbed } from "../util/helper";
@@ -38,12 +34,11 @@ export const RapsPage = () => {
   const [raps, setRaps] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  // Code-splitting for large raps file
   useEffect(() => {
     import("../info/rapsInfo").then((mod) => {
       setRaps(mod.default);
       setLoading(false);
-
-      console.log(mod.default);
     });
   }, []);
 

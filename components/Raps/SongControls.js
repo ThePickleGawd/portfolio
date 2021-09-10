@@ -1,5 +1,5 @@
 // React
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 // Redux
 import { useSelector } from "react-redux";
@@ -29,8 +29,8 @@ const SongControls = () => {
     else setPosition(0);
   };
 
-  const updateInterval = setInterval(updatePosition, 1000);
-  clearInterval(updateInterval);
+  //const updateInterval = setInterval(updatePosition, 1000);
+  //clearInterval(updateInterval);
 
   return (
     <Card
