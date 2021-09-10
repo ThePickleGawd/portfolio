@@ -1,6 +1,6 @@
 // React
-import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 
 // Material UI
 import Typography from "@material-ui/core/Typography";
@@ -13,6 +13,8 @@ import CardMedia from "@material-ui/core/CardMedia";
 import Container from "@material-ui/core/Container";
 import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
+import CircularProgress from "@material-ui/core/CircularProgress";
+
 import GetAppIcon from "@material-ui/icons/GetApp";
 import PlayArrow from "@material-ui/icons/PlayArrow";
 import QueueMusic from "@material-ui/icons/QueueMusic";
@@ -30,11 +32,20 @@ import { useDispatch, useSelector } from "react-redux";
 // Image
 import rollie from "../public/rollie.jpeg";
 
-// Audio
-import { raps } from "../info/rapsInfo";
-
 export const RapsPage = () => {
   const rapId = useSelector((state) => state.music.currentRapId);
+  const sound = useSelector((state) => state.music.sound);
+  const [raps, setRaps] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    import("../info/rapsInfo").then((mod) => {
+      setRaps(mod.default);
+      setLoading(false);
+
+      console.log(mod.default);
+    });
+  }, []);
 
   return (
     <div
@@ -47,18 +58,24 @@ export const RapsPage = () => {
       <Typography variant="h2">{"Dylan's Raps (Not working yet)"}</Typography>
       <br />
       <Container>
-        <Grid container spacing={3}>
-          {raps.map((song) => (
-            <SongCard
-              key={song.title}
-              title={song.title}
-              description={song.description}
-              embedId={song.embedId}
-              img={song.img}
-              mp3={song.mp3}
-            />
-          ))}
-        </Grid>
+        {loading ? (
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            <CircularProgress />
+          </div>
+        ) : (
+          <Grid container spacing={3}>
+            {raps.map((song) => (
+              <SongCard
+                key={song.title}
+                title={song.title}
+                description={song.description}
+                embedId={song.embedId}
+                img={song.img}
+                mp3={song.mp3}
+              />
+            ))}
+          </Grid>
+        )}
       </Container>
       <SongControls />
     </div>

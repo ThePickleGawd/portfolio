@@ -44,7 +44,7 @@ export const Contact = () => {
           marginTop: 10,
         }}
       >
-        <Button>Send!</Button>
+        <Button>Send! (Not working)</Button>
       </div>
     </div>
   );

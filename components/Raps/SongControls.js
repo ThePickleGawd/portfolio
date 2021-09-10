@@ -1,3 +1,10 @@
+// React
+import { useState } from "react";
+
+// Redux
+import { useSelector } from "react-redux";
+import * as TYPES from "../../redux/types";
+
 // Material UI
 import Typography from "@material-ui/core/Typography";
 import Card from "@material-ui/core/Card";
@@ -8,6 +15,23 @@ import SkipPreviousIcon from "@material-ui/icons/SkipPrevious";
 import SkipNextIcon from "@material-ui/icons/SkipNext";
 
 const SongControls = () => {
+  const sound = useSelector((state) => state.music.sound);
+  const [position, setPosition] = useState(0);
+
+  /*
+  Position = current/total * 100
+  Current = newPos/total /100 #idk yet
+  */
+
+  const updatePosition = () => {
+    if (sound && sound.playing())
+      setPosition((sound.seek() / sound.duration()) * 100);
+    else setPosition(0);
+  };
+
+  const updateInterval = setInterval(updatePosition, 1000);
+  clearInterval(updateInterval);
+
   return (
     <Card
       style={{
@@ -21,7 +45,7 @@ const SongControls = () => {
       raised
     >
       <LinearProgress
-        value={50}
+        value={position}
         variant="determinate"
         style={{ position: "absolute", width: "100%" }}
       />

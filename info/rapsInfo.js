@@ -50,3 +50,5 @@ export const raps = [
     mp3: DroppingAnOpp,
   },
 ];
+
+export default raps;
