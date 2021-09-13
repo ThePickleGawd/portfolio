@@ -7,47 +7,72 @@ import SaiyanGawdFlow2 from "../public/audio/raps/SaiyanGawdFlow2.mp3";
 import SaiyanGawdFlow3 from "../public/audio/raps/SaiyanGawdFlow3.mp3";
 
 import Rollie from "../public/rollie.jpeg";
+import Rolex from "../public/rolex.jpg";
 
 export const raps = [
   {
     title: "Rollies for the Homies",
-    description: "Hi",
+    description: "Super Saiyan Gawd",
     img: Rollie,
     embedId: "a5eDbFbrxN4",
     mp3: RolliesForTheHomies,
   },
   {
-    title: "Ran up With a Glock",
-    description: "Hi",
+    title: "Ran Up With a Glock",
+    description: "Super Saiyan Gawd",
     img: null,
     embedId: "0-S5a0eXPoc",
     mp3: RanUpWithAGlock,
   },
   {
     title: "Black Ice on My Drip",
-    description: "Hi",
+    description: "Super Saiyan Gawd",
     img: null,
     youtube: "https://youtube.com",
     mp3: BlackIceOnMyDrip,
   },
   {
     title: "Saiyan Gawd Flow",
-    description: "Hi",
+    description: "Super Saiyan Gawd",
+    img: null,
+    youtube: "https://youtube.com",
+  },
+  {
+    title: "Saiyan Gawd Flow 2",
+    description: "The Pickle Gawd",
+    img: null,
+    youtube: "https://youtube.com",
+  },
+  {
+    title: "Saiyan Gawd Flow 3",
+    description: "The Pickle Gawd",
     img: null,
     youtube: "https://youtube.com",
   },
   {
     title: "SAT's and the 223's",
-    description: "Hi",
+    description: "The Pickle Gawd",
     img: null,
     youtube: "https://youtube.com",
   },
   {
     title: "Dropping an Opp",
-    description: "Hi",
+    description: "The Pickle Gawd",
     img: null,
     youtube: "https://youtube.com",
     mp3: DroppingAnOpp,
+  },
+  {
+    title: "HWBounty Rap???",
+    description: "Ad Raps",
+    img: null,
+    youtube: "https://youtube.com",
+  },
+  {
+    title: "Throw Gun",
+    description: "Ad Raps",
+    img: null,
+    youtube: "https://youtube.com",
   },
 ];
 

@@ -37,6 +37,7 @@ const SongCard = ({ title, description, img, embedId, mp3 }) => {
   // Reduxy stuff
   const dispatch = useDispatch();
   const currentSound = useSelector((state) => state.music.sound);
+
   const handlePlay = () => {
     // If the redux sound is not this one, stop it (its a new song)
     if (currentSound && currentSound != exposedData.sound) currentSound.stop();
@@ -47,35 +48,46 @@ const SongCard = ({ title, description, img, embedId, mp3 }) => {
   const handlePause = () => exposedData.pause();
 
   return (
-    <Grid item xs={12} sm={4} md={3}>
-      <Card>
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="h2" noWrap>
-            {title}
-          </Typography>
-          {/* <Typography variant="body2" color="textSecondary" component="p">
-          {description}
-        </Typography> */}
-          {/*img && <Image src={img} alt="img" />*/}
-        </CardContent>
-        <CardActions>
-          <Button size="small" color="primary">
-            {"Watch on Youtube"}
-          </Button>
-          <IconButton size="small">
-            <GetAppIcon />
-          </IconButton>
-          <IconButton
-            size="small"
-            onClick={playing ? handlePause : handlePlay}
-            disabled={!mp3}
-          >
-            {playing ? <Pause /> : <PlayArrow />}
-          </IconButton>
-          <IconButton size="small">
-            <QueueMusic />
-          </IconButton>
-        </CardActions>
+    <Grid item xs={12} sm={12} md={6}>
+      <Card style={{ display: "flex" }}>
+        <div style={{ flex: 1 }}>
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="h2" noWrap>
+              {title}
+            </Typography>
+            <Typography variant="body2" color="textSecondary" component="p">
+              {description}
+            </Typography>
+          </CardContent>
+          <CardActions>
+            <Button size="small" color="primary">
+              {"Watch on Youtube"}
+            </Button>
+            <IconButton size="small">
+              <GetAppIcon />
+            </IconButton>
+            <IconButton
+              size="small"
+              onClick={playing ? handlePause : handlePlay}
+              disabled={!mp3}
+            >
+              {playing ? <Pause /> : <PlayArrow />}
+            </IconButton>
+            <IconButton size="small">
+              <QueueMusic />
+            </IconButton>
+          </CardActions>
+        </div>
+        <div
+          style={{
+            position: "relative",
+            flex: 1,
+          }}
+        >
+          {img && (
+            <Image src={img} alt="img" layout="fill" objectFit="contain" />
+          )}
+        </div>
       </Card>
     </Grid>
   );
@@ -90,3 +102,12 @@ SongCard.propTypes = {
 };
 
 export default SongCard;
+
+/*
+Grid (spotify):
+xs = album, date gone
+md = date gone
+> = everything
+
+Each song is a grid
+*/

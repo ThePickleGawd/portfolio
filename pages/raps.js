@@ -54,7 +54,13 @@ export const RapsPage = () => {
       <br />
       <Container>
         {loading ? (
-          <div style={{ display: "flex", justifyContent: "center" }}>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignContent: "center",
+            }}
+          >
             <CircularProgress />
           </div>
         ) : (
@@ -72,7 +78,7 @@ export const RapsPage = () => {
           </Grid>
         )}
       </Container>
-      <SongControls />
+      {!loading && <SongControls />}
     </div>
   );
 };
