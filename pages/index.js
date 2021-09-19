@@ -14,6 +14,7 @@ import Fade from "@material-ui/core/Fade";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 
 // Components
+import Welcome from "../components/Home/Welcome";
 import About from "../components/Home/About";
 import Work from "../components/Home/Work";
 import Contact from "../components/Home/Contact";
@@ -62,17 +63,7 @@ export const Home = () => {
             alignItems: "center",
           }}
         >
-          <Fade in={true} timeout={3000}>
-            <Typography variant="h3">{"Hi, I'm Dylan"}</Typography>
-          </Fade>
-          <Fade in={true} timeout={10000}>
-            <Typography variant="h4">
-              {"React developer, Unity game developer"}
-            </Typography>
-          </Fade>
-          <Fade in={true} timeout={10000}>
-            <Typography variant="h5">{"(site still in-progress)"}</Typography>
-          </Fade>
+          <Welcome />
         </ParallaxLayer>
         <ParallaxLayer
           sticky={{ start: 1, end: 1.5 }}

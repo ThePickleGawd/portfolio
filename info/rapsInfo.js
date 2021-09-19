@@ -74,6 +74,12 @@ export const raps = [
     img: null,
     youtube: "https://youtube.com",
   },
+  {
+    title: "Throw Gun",
+    description: "Ad Raps",
+    img: null,
+    youtube: "https://youtube.com",
+  },
 ];
 
 export default raps;

@@ -11,11 +11,20 @@ import Fade from "@material-ui/core/Fade";
 import { useTrail, animated } from "@react-spring/web";
 
 const items = [
-  "- I enjoy ___",
-  "- I am really good at _____",
-  "- I placed ____ in _____",
-  "- Im just the best",
+  "- Active sports player and enthusiast",
+  "- I love playing and making videogames",
+  "- I love coding and web desgign",
+  "- Im just the best?",
 ];
+
+/*
+TODO:
+On hover, have a text pop animation,
+For sports, change the pfp to my football picture
+For videogames, show demo of some games I made,
+Coding and webdesign todo...
+Default: Regular pfp
+*/
 
 const config = { mass: 5, tension: 2000, friction: 200 };
 
@@ -48,6 +57,7 @@ export const About = (props) => {
           </Typography>
         </Fade>
       </div>
+      <br />
       <div style={{ display: "flex", flexDirection: "column", marginTop: 10 }}>
         {trail.map(({ x, height, ...rest }, index) => (
           <animated.div
