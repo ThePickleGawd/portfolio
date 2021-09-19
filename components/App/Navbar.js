@@ -3,9 +3,9 @@ import React from "react";
 import router, { useRouter } from "next/router";
 
 // Material UI
-import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
-import Button from "@material-ui/core/Button";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import Button from "@mui/material/Button";
 
 export const Navbar = (props) => {
   const handleClick = (to) => {

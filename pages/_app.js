@@ -8,8 +8,8 @@ import { Provider } from "react-redux";
 import store from "../redux/store";
 
 // Styiling
-import { ThemeProvider } from "@material-ui/core/styles";
-import CssBaseline from "@material-ui/core/CssBaseline";
+import { ThemeProvider, StyledEngineProvider } from "@mui/material/styles";
+import CssBaseline from "@mui/material/CssBaseline";
 import theme from "../util/theme";
 
 // Components
@@ -48,19 +48,19 @@ export default function MyApp(props) {
     }
   }, []);
 
-  return (
-    <>
-      <HeadInfo />
-      <Provider store={store}>
+  return <>
+    <HeadInfo />
+    <Provider store={store}>
+      <StyledEngineProvider injectFirst>
         <ThemeProvider theme={theme}>
           {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
           <CssBaseline />
           <Navbar />
           <Component {...pageProps} />
         </ThemeProvider>
-      </Provider>
-    </>
-  );
+      </StyledEngineProvider>
+    </Provider>
+  </>;
 }
 
 MyApp.propTypes = {

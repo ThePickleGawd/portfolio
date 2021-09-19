@@ -1,16 +1,16 @@
 // Material UI
-import Card from "@material-ui/core/Card";
-import Typography from "@material-ui/core/Typography";
-import TextField from "@material-ui/core/TextField";
-import IconButton from "@material-ui/core/IconButton";
-import Button from "@material-ui/core/Button";
+import Card from "@mui/material/Card";
+import Typography from "@mui/material/Typography";
+import TextField from "@mui/material/TextField";
+import IconButton from "@mui/material/IconButton";
+import Button from "@mui/material/Button";
 
 // Icons
-import GitHubIcon from "@material-ui/icons/GitHub";
-import InstagramIcon from "@material-ui/icons/Instagram";
-import FacebookIcon from "@material-ui/icons/Facebook";
-import LinkedInIcon from "@material-ui/icons/LinkedIn";
-import EmailIcon from "@material-ui/icons/Email";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import EmailIcon from "@mui/icons-material/Email";
 
 export const Contact = () => {
   return (
@@ -26,8 +26,8 @@ export const Contact = () => {
       <Typography variant="h2" align="center">
         Contact Me
       </Typography>
-      <TextField label="Name" fullWidth />
-      <TextField label="Email" fullWidth />
+      <TextField label="Name" fullWidth variant="standard" />
+      <TextField label="Email" fullWidth variant="standard" />
       <br />
       <TextField
         label="Message"

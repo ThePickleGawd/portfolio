@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useEffect } from "react";
 
 // Material UI
-import Typography from "@material-ui/core/Typography";
+import Typography from "@mui/material/Typography";
 
 // Info
 import { projects } from "../../info/projects";

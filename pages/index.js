@@ -4,11 +4,11 @@ import router, { useRouter } from "next/router";
 import Image from "next/image";
 
 // UI Design
-import Typography from "@material-ui/core/Typography";
-import Avatar from "@material-ui/core/Avatar";
-import Badge from "@material-ui/core/Badge";
-import Card from "@material-ui/core/Card";
-import Fade from "@material-ui/core/Fade";
+import Typography from "@mui/material/Typography";
+import Avatar from "@mui/material/Avatar";
+import Badge from "@mui/material/Badge";
+import Card from "@mui/material/Card";
+import Fade from "@mui/material/Fade";
 
 // Springy
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
@@ -21,7 +21,7 @@ import Contact from "../components/Home/Contact";
 import Sidebar from "../components/Home/Sidebar";
 import ParallaxBackground from "../components/Home/ParallaxBackground";
 import { HashCheckProvider } from "../util/helper";
-import useMediaQuery from "@material-ui/core/useMediaQuery";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 // Pictures
 import profilePic from "../public/icons/me.jpg";

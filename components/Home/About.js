@@ -3,16 +3,17 @@ import React, { useRef } from "react";
 import { useOnScreen } from "../../util/helper";
 
 // Material UI
-import Card from "@material-ui/core/Card";
-import Typography from "@material-ui/core/Typography";
-import Fade from "@material-ui/core/Fade";
+import Card from "@mui/material/Card";
+import Typography from "@mui/material/Typography";
+import Fade from "@mui/material/Fade";
 
 // React Spring
 import { useTrail, animated } from "@react-spring/web";
 
 const items = [
-  "- Active sports player and enthusiast",
-  "- I love playing and making videogames",
+  "- Sophmore at Gunn High School",
+  "- Three-seasoned athlete",
+  "- I enjoy playing and making videogames",
   "- I love coding and web desgign",
   "- Im just the best?",
 ];

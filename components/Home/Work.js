@@ -5,13 +5,13 @@ import { useRouter } from "next/router";
 import { useOnScreen } from "../../util/helper";
 
 // Material UI
-import Card from "@material-ui/core/Card";
-import Typography from "@material-ui/core/Typography";
-import Fade from "@material-ui/core/Fade";
-import Button from "@material-ui/core/Button";
-import NavigateNextIcon from "@material-ui/icons/NavigateNext";
-import NavigateBeforeIcon from "@material-ui/icons/NavigateBefore";
-import IconButton from "@material-ui/core/IconButton";
+import Card from "@mui/material/Card";
+import Typography from "@mui/material/Typography";
+import Fade from "@mui/material/Fade";
+import Button from "@mui/material/Button";
+import NavigateNextIcon from "@mui/icons-material/NavigateNext";
+import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
+import IconButton from "@mui/material/IconButton";
 
 import { projects } from "../../info/projects";
 
@@ -55,7 +55,7 @@ const ProjectViewer = () => {
             paddingRight: 10,
           }}
         >
-          <IconButton onClick={handlePreviousProject}>
+          <IconButton onClick={handlePreviousProject} size="large">
             <NavigateBeforeIcon />
           </IconButton>
         </div>
@@ -94,7 +94,7 @@ const ProjectViewer = () => {
             paddingLeft: 10,
           }}
         >
-          <IconButton onClick={handleNextProject}>
+          <IconButton onClick={handleNextProject} size="large">
             <NavigateNextIcon />
           </IconButton>
         </div>

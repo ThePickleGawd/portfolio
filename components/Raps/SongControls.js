@@ -6,14 +6,18 @@ import { useSelector } from "react-redux";
 import * as TYPES from "../../redux/types";
 
 // Material UI
-import Typography from "@material-ui/core/Typography";
-import Card from "@material-ui/core/Card";
-import IconButton from "@material-ui/core/IconButton";
-import Slider from "@material-ui/core/Slider";
-import PlayArrowIcon from "@material-ui/icons/PlayArrow";
-import Pause from "@material-ui/icons/Pause";
-import SkipPreviousIcon from "@material-ui/icons/SkipPrevious";
-import SkipNextIcon from "@material-ui/icons/SkipNext";
+import Typography from "@mui/material/Typography";
+import Card from "@mui/material/Card";
+import IconButton from "@mui/material/IconButton";
+import Slider from "@mui/material/Slider";
+import PlayArrowIcon from "@mui/icons-material/PlayArrow";
+import Pause from "@mui/icons-material/Pause";
+import SkipPreviousIcon from "@mui/icons-material/SkipPrevious";
+import SkipNextIcon from "@mui/icons-material/SkipNext";
+import Stack from "@mui/material/Stack";
+
+// Util
+import dayjs from "dayjs";
 
 const SongControls = () => {
   const sound = useSelector((state) => state.music.sound);
@@ -43,6 +47,7 @@ const SongControls = () => {
   const handleSliderCommitted = (e, val) => {
     console.log("committed", val);
     setSliding(false);
+    setPosition(val);
     if (!sound) return;
     sound.seek(val);
   };
@@ -65,24 +70,33 @@ const SongControls = () => {
       }}
       raised
     >
-      <Slider
-        value={position}
-        onChange={handleSliderChange}
-        onChangeCommitted={handleSliderCommitted}
-        min={0}
-        max={sound ? sound.duration() : 100}
-        disabled={!sound}
-        //valueLabelFormat=
-        style={{ width: "60%", cursor: "pointer", alignSelf: "center" }}
-      />
+      <Stack direction="row" alignItems="center" justifyContent="center">
+        <Typography variant="body2" style={{ marginBottom: -40 }}>
+          {dayjs.unix(position).format("m:ss")}
+        </Typography>
+        <Slider
+          value={position}
+          onChange={handleSliderChange}
+          onChangeCommitted={handleSliderCommitted}
+          min={0}
+          max={sound ? sound.duration() : 100}
+          disabled={!sound}
+          size="small"
+          //valueLabelFormat=
+          style={{ width: "60%", cursor: "pointer", alignSelf: "center" }}
+        />
+        <Typography variant="body2" style={{ marginBottom: -40 }}>
+          {sound ? dayjs.unix(sound.duration()).format("m:ss") : "0:00"}
+        </Typography>
+      </Stack>
       <div style={{ display: "flex", justifyContent: "center", width: "100%" }}>
-        <IconButton>
+        <IconButton size="large">
           <SkipPreviousIcon />
         </IconButton>
-        <IconButton onClick={togglePlay}>
+        <IconButton onClick={togglePlay} size="large">
           {sound && sound.playing() ? <Pause /> : <PlayArrowIcon />}
         </IconButton>
-        <IconButton>
+        <IconButton size="large">
           <SkipNextIcon />
         </IconButton>
       </div>
