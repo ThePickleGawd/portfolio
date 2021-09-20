@@ -75,7 +75,7 @@ export const raps = [
     youtube: "https://youtube.com",
   },
   {
-    title: "Throw Gun",
+    title: "Dylan Drip",
     description: "Ad Raps",
     img: null,
     youtube: "https://youtube.com",

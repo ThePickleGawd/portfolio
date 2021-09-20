@@ -1,5 +1,5 @@
 // React
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { useOnScreen } from "../../util/helper";
 
 // Material UI
@@ -11,11 +11,46 @@ import Fade from "@mui/material/Fade";
 import { useTrail, animated } from "@react-spring/web";
 
 const items = [
-  "- Sophmore at Gunn High School",
-  "- Three-seasoned athlete",
-  "- I enjoy playing and making videogames",
-  "- I love coding and web desgign",
-  "- Im just the best?",
+  {
+    id: 0,
+    render: (
+      <span>
+        {"- Sophmore at "}
+        <span style={{ color: "red" }}>{"Gunn"}</span> {" High School"}
+      </span>
+    ),
+    image: null,
+  },
+  {
+    id: 1,
+    render: (
+      <span>
+        {"- Three-seasoned"}{" "}
+        <span style={{ color: "#FCB131" }}>{"athlete"}</span>
+      </span>
+    ),
+  },
+  {
+    id: 2,
+    render: "- I enjoy playing and making videogames",
+  },
+  {
+    id: 3,
+    rendesr: "- I love coding and web desgign",
+    render: (
+      <span>
+        {"- I love "}
+        <span style={{ color: "#4BABEC" }}>{"coding"}</span>
+        {" and "}
+        <span style={{ color: "#BF78DE" }}>{"web design"}</span>
+      </span>
+    ),
+  },
+
+  {
+    id: 4,
+    render: "- Im just the best?",
+  },
 ];
 
 /*
@@ -42,6 +77,13 @@ export const About = (props) => {
     delay: 500,
   });
 
+  const setImage = (image) => {
+    console.log("hover");
+    // TODO: REDUX STUFF
+  };
+
+  // const [styles, api] = useSprint(() => )
+
   return (
     <div
       style={{
@@ -62,15 +104,17 @@ export const About = (props) => {
       <div style={{ display: "flex", flexDirection: "column", marginTop: 10 }}>
         {trail.map(({ x, height, ...rest }, index) => (
           <animated.div
-            key={items[index]}
-            className="trails-text"
+            key={items[index].id}
             style={{
               ...rest,
               transform: x.to((x) => `translate3d(0,${x}px,0)`),
             }}
           >
-            <animated.div style={{ height }}>
-              <Typography variant="h4">{items[index]}</Typography>
+            <animated.div
+              style={{ height }}
+              onMouseEnter={() => setImage(items[index].image)}
+            >
+              <Typography variant="h4">{items[index].render}</Typography>
             </animated.div>
           </animated.div>
         ))}
