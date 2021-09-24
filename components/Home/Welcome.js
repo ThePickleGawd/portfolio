@@ -7,6 +7,7 @@ import GitHub from "@mui/icons-material/GitHub";
 import Instagram from "@mui/icons-material/Instagram";
 import Facebook from "@mui/icons-material/Facebook";
 import LinkedIn from "@mui/icons-material/LinkedIn";
+import YouTube from "@mui/icons-material/YouTube";
 
 const SocialMedia = [
   {
@@ -28,6 +29,11 @@ const SocialMedia = [
     name: "LinkedIn",
     Icon: LinkedIn,
     link: "https://www.linkedin.com/in/dylanelu/",
+  },
+  {
+    name: "Youtube",
+    Icon: YouTube,
+    link: "https://www.youtube.com/channel/UCs7Vxot2pjK7N9O4ROaLdXw",
   },
 ];
 

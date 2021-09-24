@@ -45,7 +45,6 @@ const SongControls = () => {
   };
 
   const handleSliderCommitted = (e, val) => {
-    console.log("committed", val);
     setSliding(false);
     setPosition(val);
     if (!sound) return;

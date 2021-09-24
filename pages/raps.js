@@ -50,7 +50,9 @@ export const RapsPage = () => {
         alignItems: "center",
       }}
     >
-      <Typography variant="h2">{"Dylan's Raps (Not working yet)"}</Typography>
+      <Typography variant="h2">
+        {"Dylan's Raps (Not fully working yet)"}
+      </Typography>
       <br />
       <Container>
         {loading ? (
@@ -73,6 +75,7 @@ export const RapsPage = () => {
                 embedId={song.embedId}
                 img={song.img}
                 mp3={song.mp3}
+                fire={song.fire}
               />
             ))}
           </Grid>

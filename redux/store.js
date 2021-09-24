@@ -1,7 +1,7 @@
 import { createStore, combineReducers, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
 
-import uiReducer from "./reducers/musicReducer.js";
+import uiReducer from "./reducers/uiReducer.js";
 import musicReducer from "./reducers/musicReducer";
 
 const initialState = {};

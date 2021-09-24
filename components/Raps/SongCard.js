@@ -24,8 +24,9 @@ import GetAppIcon from "@mui/icons-material/GetApp";
 import PlayArrow from "@mui/icons-material/PlayArrow";
 import Pause from "@mui/icons-material/Pause";
 import QueueMusic from "@mui/icons-material/QueueMusic";
+import FireIcon from "@mui/icons-material/LocalFireDepartment";
 
-const SongCard = ({ title, description, img, embedId, mp3 }) => {
+const SongCard = ({ title, description, img, embedId, mp3, fire }) => {
   // State vars
   const [playing, setPlaying] = useState(false);
   const [play, exposedData] = useSound(mp3, {
@@ -61,7 +62,7 @@ const SongCard = ({ title, description, img, embedId, mp3 }) => {
           </CardContent>
           <CardActions>
             <Button size="small" color="primary">
-              {"Watch on Youtube"}
+              {"Youtube"}
             </Button>
             <IconButton size="small">
               <GetAppIcon />
@@ -73,8 +74,8 @@ const SongCard = ({ title, description, img, embedId, mp3 }) => {
             >
               {playing ? <Pause /> : <PlayArrow />}
             </IconButton>
-            <IconButton size="small">
-              <QueueMusic />
+            <IconButton size="small" disabled>
+              <FireGradient fire={fire} />
             </IconButton>
           </CardActions>
         </div>
@@ -93,12 +94,28 @@ const SongCard = ({ title, description, img, embedId, mp3 }) => {
   );
 };
 
+const FireGradient = ({ fire }) => {
+  return (
+    <>
+      <svg width={0} height={0}>
+        <linearGradient id="linearColors" x1={1} y1={0} x2={1} y2={1}>
+          <stop offset={0.5} stopColor="white" />
+          <stop offset={0.5} stopColor={"orange"} />
+          <stop offset={1} stopColor={"orange"} />
+        </linearGradient>
+      </svg>
+      <FireIcon sx={{ fill: fire < 5 ? "url(#linearColors)" : "red" }} />
+    </>
+  );
+};
+
 SongCard.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string,
   img: PropTypes.any,
   embedId: PropTypes.string,
   mp3: PropTypes.any,
+  fire: PropTypes.number.isRequired,
 };
 
 export default SongCard;

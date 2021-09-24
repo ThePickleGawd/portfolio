@@ -2,6 +2,7 @@ import * as TYPES from "../types";
 
 const initialState = {
   parallaxRef: null, // reference the parallax
+  image: null,
 };
 
 export const uiReducer = (state = initialState, action) => {
@@ -10,6 +11,11 @@ export const uiReducer = (state = initialState, action) => {
       return {
         ...state,
         parallaxRef: action.payload,
+      };
+    case TYPES.SET_IMAGE:
+      return {
+        ...state,
+        image: action.payload,
       };
     default:
       return state;

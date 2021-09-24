@@ -16,6 +16,7 @@ export const raps = [
     img: Rollie,
     embedId: "a5eDbFbrxN4",
     mp3: RolliesForTheHomies,
+    fire: 5,
   },
   {
     title: "Ran Up With a Glock",
@@ -23,6 +24,7 @@ export const raps = [
     img: null,
     embedId: "0-S5a0eXPoc",
     mp3: RanUpWithAGlock,
+    fire: 3,
   },
   {
     title: "Black Ice on My Drip",
@@ -30,30 +32,35 @@ export const raps = [
     img: null,
     youtube: "https://youtube.com",
     mp3: BlackIceOnMyDrip,
+    fire: 2,
   },
   {
     title: "Saiyan Gawd Flow",
     description: "Super Saiyan Gawd",
     img: null,
     youtube: "https://youtube.com",
+    fire: 2,
   },
   {
     title: "Saiyan Gawd Flow 2",
     description: "The Pickle Gawd",
     img: null,
     youtube: "https://youtube.com",
+    fire: 3,
   },
   {
     title: "Saiyan Gawd Flow 3",
     description: "The Pickle Gawd",
     img: null,
     youtube: "https://youtube.com",
+    fire: 3,
   },
   {
     title: "SAT's and the 223's",
     description: "The Pickle Gawd",
     img: null,
     youtube: "https://youtube.com",
+    fire: 3,
   },
   {
     title: "Dropping an Opp",
@@ -61,24 +68,28 @@ export const raps = [
     img: null,
     youtube: "https://youtube.com",
     mp3: DroppingAnOpp,
+    fire: 4,
   },
   {
     title: "HWBounty Rap???",
     description: "Ad Raps",
     img: null,
     youtube: "https://youtube.com",
+    fire: 0,
   },
   {
     title: "Throw Gun",
     description: "Ad Raps",
     img: null,
     youtube: "https://youtube.com",
+    fire: 999,
   },
   {
     title: "Dylan Drip",
     description: "Ad Raps",
     img: null,
     youtube: "https://youtube.com",
+    fire: 999,
   },
 ];
 

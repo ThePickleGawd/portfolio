@@ -16,15 +16,13 @@ import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 // Components
 import Welcome from "../components/Home/Welcome";
 import About from "../components/Home/About";
+import AboutImage from "../components/Home/AboutImage";
 import Work from "../components/Home/Work";
 import Contact from "../components/Home/Contact";
 import Sidebar from "../components/Home/Sidebar";
 import ParallaxBackground from "../components/Home/ParallaxBackground";
 import { HashCheckProvider } from "../util/helper";
 import useMediaQuery from "@mui/material/useMediaQuery";
-
-// Pictures
-import profilePic from "../public/icons/me.jpg";
 
 export const Home = () => {
   const parallaxRef = useRef();
@@ -73,18 +71,7 @@ export const Home = () => {
             justifyContent: "flex-end",
           }}
         >
-          <Avatar
-            alt="Dylan Lu"
-            style={{ width: 400, height: 400, marginRight: "15%" }}
-          >
-            <Image
-              src={profilePic}
-              alt="Dylan Lu"
-              width={400}
-              height={400}
-              priority
-            />
-          </Avatar>
+          <AboutImage />
         </ParallaxLayer>
         <ParallaxLayer
           sticky={{ start: 1, end: 1.5 }}
