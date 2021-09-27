@@ -42,7 +42,7 @@ const FireGradient = ({ fire }) => {
           <stop offset={1} stopColor="orange" />
         </linearGradient>
       </svg>
-      <FireIcon sx={{ fill: clamp(0, 5, Math.floor(fire)) }} />
+      <FireIcon sx={{ fill: fires[clamp(0, 5, Math.floor(fire))] }} />
     </>
   );
 };
