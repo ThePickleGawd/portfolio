@@ -5,6 +5,7 @@ import RanUpWithAGlock from "../public/audio/raps/RanUpWithAGlock.mp3";
 import RolliesForTheHomies from "../public/audio/raps/RolliesForTheHomies.mp3";
 import SaiyanGawdFlow2 from "../public/audio/raps/SaiyanGawdFlow2.mp3";
 import SaiyanGawdFlow3 from "../public/audio/raps/SaiyanGawdFlow3.mp3";
+import DylanDrip from "../public/audio/raps/DylanDrip.mp3";
 
 import Rollie from "../public/rollie.jpeg";
 import Rolex from "../public/rolex.jpg";
@@ -86,9 +87,10 @@ export const raps = [
   },
   {
     title: "Dylan Drip",
-    description: "Ad Raps",
+    description: "Autotune???",
     img: null,
     youtube: "https://youtube.com",
+    mp3: DylanDrip,
     fire: 999,
   },
 ];

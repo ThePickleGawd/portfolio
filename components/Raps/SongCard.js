@@ -26,6 +26,9 @@ import Pause from "@mui/icons-material/Pause";
 import QueueMusic from "@mui/icons-material/QueueMusic";
 import FireIcon from "@mui/icons-material/LocalFireDepartment";
 
+// Components
+import FireRating from "./FireRating";
+
 const SongCard = ({ title, description, img, embedId, mp3, fire }) => {
   // State vars
   const [playing, setPlaying] = useState(false);
@@ -75,7 +78,7 @@ const SongCard = ({ title, description, img, embedId, mp3, fire }) => {
               {playing ? <Pause /> : <PlayArrow />}
             </IconButton>
             <IconButton size="small" disabled>
-              <FireGradient fire={fire} />
+              <FireRating fire={fire} />
             </IconButton>
           </CardActions>
         </div>
@@ -91,21 +94,6 @@ const SongCard = ({ title, description, img, embedId, mp3, fire }) => {
         </div>
       </Card>
     </Grid>
-  );
-};
-
-const FireGradient = ({ fire }) => {
-  return (
-    <>
-      <svg width={0} height={0}>
-        <linearGradient id="linearColors" x1={1} y1={0} x2={1} y2={1}>
-          <stop offset={0.5} stopColor="white" />
-          <stop offset={0.5} stopColor={"orange"} />
-          <stop offset={1} stopColor={"orange"} />
-        </linearGradient>
-      </svg>
-      <FireIcon sx={{ fill: fire < 5 ? "url(#linearColors)" : "red" }} />
-    </>
   );
 };
 

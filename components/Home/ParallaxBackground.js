@@ -9,6 +9,8 @@ import nextLogo from "../../public/icons/next.png";
 import cppLogo from "../../public/icons/cpp.png";
 import pythonLogo from "../../public/icons/python.png";
 import javaLogo from "../../public/icons/java.png";
+import javascriptLogo from "../../public/icons/javascript.png";
+import typescriptLogo from "../../public/icons/typescript.png";
 const stars =
   "https://raw.githubusercontent.com/ThePickleGawd/portfolio/main/public/icons/stars.svg";
 
@@ -108,6 +110,36 @@ const ParallaxBackground = () => {
           style={{ opacity: 0.3, width: 250, height: 250, marginLeft: "17%" }}
         >
           <Image src={javaLogo} alt="Java Logo" priority />
+        </div>
+      </ParallaxLayer>
+      <ParallaxLayer
+        offset={2.5}
+        speed={0.4}
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignContent: "center",
+        }}
+      >
+        <div
+          style={{ opacity: 0.3, width: 175, height: 175, marginLeft: "50%" }}
+        >
+          <Image src={javascriptLogo} alt="Javascript" priority />
+        </div>
+      </ParallaxLayer>
+      <ParallaxLayer
+        offset={2.8}
+        speed={0.4}
+        style={{
+          display: "flex",
+          justifyContent: "flex-end",
+          alignContent: "center",
+        }}
+      >
+        <div
+          style={{ opacity: 0.3, width: 175, height: 175, marginRight: "7%" }}
+        >
+          <Image src={typescriptLogo} alt="Java Logo" priority />
         </div>
       </ParallaxLayer>
     </>
