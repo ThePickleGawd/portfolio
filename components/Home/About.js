@@ -4,6 +4,7 @@ import { useOnScreen } from "../../util/helper";
 
 // Material UI
 import Card from "@mui/material/Card";
+import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Fade from "@mui/material/Fade";
 
@@ -32,7 +33,7 @@ const items = [
   },
   {
     id: 2,
-    render: "- I enjoy playing and making videogames",
+    render: "- Game designer",
   },
   {
     id: 3,
@@ -87,7 +88,6 @@ export const About = (props) => {
   return (
     <div
       style={{
-        marginLeft: "10%",
         width: "35%",
         height: "70%",
       }}

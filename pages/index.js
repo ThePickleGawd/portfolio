@@ -16,6 +16,7 @@ import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 // Components
 import Welcome from "../components/Home/Welcome";
 import About from "../components/Home/About";
+import Skills from "../components/Home/Skills";
 import AboutImage from "../components/Home/AboutImage";
 import Work from "../components/Home/Work";
 import Contact from "../components/Home/Contact";
@@ -47,7 +48,7 @@ export const Home = () => {
     <>
       {/*<Sidebar parallaxRef={parallaxRef} />*/}
       <Parallax
-        pages={5}
+        pages={4}
         style={{ top: "0", left: "0", zIndex: -1 }}
         ref={parallaxRef}
       >
@@ -64,7 +65,7 @@ export const Home = () => {
           <Welcome />
         </ParallaxLayer>
         <ParallaxLayer
-          sticky={{ start: 1, end: 1.5 }}
+          sticky={{ start: 1, end: 2 }}
           style={{
             display: "flex",
             alignItems: "center",
@@ -74,17 +75,31 @@ export const Home = () => {
           <AboutImage />
         </ParallaxLayer>
         <ParallaxLayer
-          sticky={{ start: 1, end: 1.5 }}
+          offset={1}
+          speed={1}
           style={{
             display: "flex",
             justifyContent: "flex-start",
             alignItems: "center",
+            marginLeft: "10%",
           }}
         >
           <About />
         </ParallaxLayer>
         <ParallaxLayer
-          sticky={{ start: 2.5, end: 3 }}
+          offset={1.9}
+          speed={1}
+          style={{
+            display: "flex",
+            justifyContent: "flex-start",
+            alignItems: "center",
+            marginLeft: "10%",
+          }}
+        >
+          <Skills />
+        </ParallaxLayer>
+        {/* <ParallaxLayer
+          sticky={{ start: 3, end: 3.5 }}
           style={{
             display: "flex",
             justifyContent: "center",
@@ -92,9 +107,9 @@ export const Home = () => {
           }}
         >
           <Work />
-        </ParallaxLayer>
+        </ParallaxLayer> */}
         <ParallaxLayer
-          offset={4}
+          offset={3}
           speed={2.5}
           style={{
             display: "flex",

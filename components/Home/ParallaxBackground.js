@@ -18,7 +18,7 @@ const ParallaxBackground = () => {
       <ParallaxLayer
         offset={0}
         speed={0}
-        factor={5}
+        factor={4}
         style={{
           backgroundImage: `url(${stars})`,
           backgroundSize: "cover",
