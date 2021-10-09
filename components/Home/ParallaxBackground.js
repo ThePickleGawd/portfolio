@@ -34,6 +34,7 @@ const ParallaxBackground = () => {
           display: "flex",
           justifyContent: "flex-end",
           alignContent: "center",
+          zIndex: -2,
         }}
       >
         <div style={{ opacity: 0.3, marginRight: "15%" }}>
@@ -46,6 +47,7 @@ const ParallaxBackground = () => {
         style={{
           display: "flex",
           justifyContent: "flex-start",
+          zIndex: -2,
         }}
       >
         <div
@@ -61,6 +63,7 @@ const ParallaxBackground = () => {
           display: "flex",
           justifyContent: "flex-start",
           alignContent: "center",
+          zIndex: -2,
         }}
       >
         <div
@@ -76,6 +79,7 @@ const ParallaxBackground = () => {
           display: "flex",
           justifyContent: "center",
           alignContent: "center",
+          zIndex: -2,
         }}
       >
         <div style={{ opacity: 0.3 }}>
@@ -89,6 +93,7 @@ const ParallaxBackground = () => {
           display: "flex",
           justifyContent: "flex-start",
           alignContent: "center",
+          zIndex: -2,
         }}
       >
         <div
@@ -104,6 +109,7 @@ const ParallaxBackground = () => {
           display: "flex",
           justifyContent: "center",
           alignContent: "center",
+          zIndex: -2,
         }}
       >
         <div
@@ -119,6 +125,7 @@ const ParallaxBackground = () => {
           display: "flex",
           justifyContent: "center",
           alignContent: "center",
+          zIndex: -2,
         }}
       >
         <div
@@ -134,6 +141,7 @@ const ParallaxBackground = () => {
           display: "flex",
           justifyContent: "flex-end",
           alignContent: "center",
+          zIndex: -2,
         }}
       >
         <div

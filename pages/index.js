@@ -70,6 +70,7 @@ export const Home = () => {
             display: "flex",
             alignItems: "center",
             justifyContent: "flex-end",
+            zIndex: -1,
           }}
         >
           <AboutImage />

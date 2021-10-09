@@ -75,7 +75,7 @@ export const About = (props) => {
     x: visible ? 0 : 20,
     height: visible ? 80 : 0,
     from: { opacity: 0, x: 20, height: 0 },
-    delay: 500,
+    //delay: 500,
   });
 
   const setImage = (image) => {
