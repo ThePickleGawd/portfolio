@@ -82,7 +82,7 @@ const SongCard = ({ title, description, img, embedId, mp3, fire }) => {
             </IconButton>
           </CardActions>
         </div>
-        <div
+        {/* <div
           style={{
             position: "relative",
             flex: 1,
@@ -91,7 +91,7 @@ const SongCard = ({ title, description, img, embedId, mp3, fire }) => {
           {img && (
             <Image src={img} alt="img" layout="fill" objectFit="contain" />
           )}
-        </div>
+        </div> */}
       </Card>
     </Grid>
   );

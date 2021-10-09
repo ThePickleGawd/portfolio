@@ -1,14 +1,18 @@
 // Songs
-import BlackIceOnMyDrip from "../public/audio/raps/BlackIceOnMyDrip.mp3";
-import DroppingAnOpp from "../public/audio/raps/DroppingAnOpp.mp3";
-import RanUpWithAGlock from "../public/audio/raps/RanUpWithAGlock.mp3";
-import RolliesForTheHomies from "../public/audio/raps/RolliesForTheHomies.mp3";
-import SaiyanGawdFlow2 from "../public/audio/raps/SaiyanGawdFlow2.mp3";
-import SaiyanGawdFlow3 from "../public/audio/raps/SaiyanGawdFlow3.mp3";
-import DylanDrip from "../public/audio/raps/DylanDrip.mp3";
 
 import Rollie from "../public/rollie.jpeg";
 import Rolex from "../public/rolex.jpg";
+
+const getRap = (name) =>
+  `https://github.com/ThePickleGawd/portfolio/blob/main/public/audio/raps/${name}.mp3?raw=true`;
+
+const DylanDrip = getRap("DylanDrip");
+const BlackIceOnMyDrip = getRap("BlackIceOnMyDrip");
+const DroppingAnOpp = getRap("DroppingAnOpp");
+const RanUpWithAGlock = getRap("RanUpWithAGlock");
+const RolliesForTheHomies = getRap("RolliesForTheHomies");
+const SaiyanGawdFlow2 = getRap("SaiyanGawdFlow2");
+const SaiyanGawdFlow3 = getRap("SaiyanGawdFlow3");
 
 export const raps = [
   {
@@ -18,6 +22,7 @@ export const raps = [
     embedId: "a5eDbFbrxN4",
     mp3: RolliesForTheHomies,
     fire: 5,
+    date: new Date(2021, 1, 25), // year, month, day
   },
   {
     title: "Ran Up With a Glock",
@@ -26,6 +31,7 @@ export const raps = [
     embedId: "0-S5a0eXPoc",
     mp3: RanUpWithAGlock,
     fire: 3,
+    date: new Date(2021, 1, 25), // year, month, day
   },
   {
     title: "Black Ice on My Drip",
@@ -34,6 +40,7 @@ export const raps = [
     youtube: "https://youtube.com",
     mp3: BlackIceOnMyDrip,
     fire: 2,
+    date: new Date(2021, 1, 25), // year, month, day
   },
   {
     title: "Saiyan Gawd Flow",
@@ -41,20 +48,25 @@ export const raps = [
     img: null,
     youtube: "https://youtube.com",
     fire: 2,
+    date: new Date(2021, 1, 25), // year, month, day
   },
   {
     title: "Saiyan Gawd Flow 2",
     description: "The Pickle Gawd",
     img: null,
     youtube: "https://youtube.com",
+    mp3: SaiyanGawdFlow2,
     fire: 3,
+    date: new Date(2021, 2, 9), // year, month, day
   },
   {
     title: "Saiyan Gawd Flow 3",
     description: "The Pickle Gawd",
     img: null,
     youtube: "https://youtube.com",
+    mp3: SaiyanGawdFlow3,
     fire: 3,
+    date: new Date(2021, 2, 28), // year, month, day
   },
   {
     title: "SAT's and the 223's",
@@ -62,6 +74,7 @@ export const raps = [
     img: null,
     youtube: "https://youtube.com",
     fire: 3,
+    date: new Date(2021, 2, 22), // year, month, day
   },
   {
     title: "Dropping an Opp",
@@ -70,6 +83,7 @@ export const raps = [
     youtube: "https://youtube.com",
     mp3: DroppingAnOpp,
     fire: 4,
+    date: new Date(2021, 8, 22), // year, month, day
   },
   {
     title: "HWBounty Rap???",
@@ -77,6 +91,7 @@ export const raps = [
     img: null,
     youtube: "https://youtube.com",
     fire: 0,
+    date: new Date(2021, 3, 7), // year, month, day
   },
   {
     title: "Throw Gun",
@@ -84,6 +99,7 @@ export const raps = [
     img: null,
     youtube: "https://youtube.com",
     fire: 999,
+    date: new Date(2021, 1, 18), // year, month, day
   },
   {
     title: "Dylan Drip",
@@ -92,6 +108,7 @@ export const raps = [
     youtube: "https://youtube.com",
     mp3: DylanDrip,
     fire: 999,
+    date: new Date(2021, 9, 29), // year, month, day
   },
 ];
 

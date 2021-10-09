@@ -5,11 +5,6 @@ import Image from "next/image";
 // Material UI
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
-import Card from "@mui/material/Card";
-import CardActionArea from "@mui/material/CardActionArea";
-import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
@@ -20,24 +15,27 @@ import ReactPlayer from "react-player";
 import { YoutubeEmbed } from "../util/helper";
 import SongCard from "../components/Raps/SongCard";
 import SongControls from "../components/Raps/SongControls";
+import SortButton from "../components/Raps/SortButton";
+import RapsList from "../components/Raps/RapsList";
 import useSound from "use-sound";
 
 // Redux
 import { useDispatch, useSelector } from "react-redux";
+import * as TYPES from "../redux/types";
 
 // Image
 import rollie from "../public/rollie.jpeg";
 
 export const RapsPage = () => {
+  const dispatch = useDispatch();
   const rapId = useSelector((state) => state.music.currentRapId);
   const sound = useSelector((state) => state.music.sound);
-  const [raps, setRaps] = useState([]);
   const [loading, setLoading] = useState(true);
 
   // Code-splitting for large raps file
   useEffect(() => {
     import("../info/rapsInfo").then((mod) => {
-      setRaps(mod.default);
+      dispatch({ type: TYPES.SET_RAPS, payload: mod.default });
       setLoading(false);
     });
   }, []);
@@ -55,6 +53,9 @@ export const RapsPage = () => {
       </Typography>
       <br />
       <Container>
+        <div style={{}}>
+          <SortButton />
+        </div>
         {loading ? (
           <div
             style={{
@@ -66,19 +67,7 @@ export const RapsPage = () => {
             <CircularProgress />
           </div>
         ) : (
-          <Grid container spacing={3}>
-            {raps.map((song) => (
-              <SongCard
-                key={song.title}
-                title={song.title}
-                description={song.description}
-                embedId={song.embedId}
-                img={song.img}
-                mp3={song.mp3}
-                fire={song.fire}
-              />
-            ))}
-          </Grid>
+          <RapsList />
         )}
       </Container>
       {!loading && <SongControls />}

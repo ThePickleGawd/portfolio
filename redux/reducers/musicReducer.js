@@ -1,6 +1,7 @@
 import * as TYPES from "../types";
 
 const initialState = {
+  raps: [],
   currentRapId: -1, // index of song in array
   pausedPosition: 0.0, // seconds
   sound: null, // howler reference
@@ -8,6 +9,16 @@ const initialState = {
 
 export const musicReducer = (state = initialState, action) => {
   switch (action.type) {
+    case TYPES.SET_RAPS:
+      return {
+        ...state,
+        raps: action.payload,
+      };
+    case TYPES.SORT_BY_DATE:
+      return {
+        ...state,
+        raps: state.raps.sort((a, b) => a.date.getTime() < b.date.getTime()),
+      };
     case TYPES.SET_RAP_ID:
       return {
         ...state,
