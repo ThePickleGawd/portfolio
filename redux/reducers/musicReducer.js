@@ -14,11 +14,6 @@ export const musicReducer = (state = initialState, action) => {
         ...state,
         raps: action.payload,
       };
-    case TYPES.SORT_BY_DATE:
-      return {
-        ...state,
-        raps: state.raps.sort((a, b) => a.date.getTime() < b.date.getTime()),
-      };
     case TYPES.SET_RAP_ID:
       return {
         ...state,

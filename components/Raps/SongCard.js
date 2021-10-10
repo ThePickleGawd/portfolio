@@ -28,8 +28,11 @@ import FireIcon from "@mui/icons-material/LocalFireDepartment";
 
 // Components
 import FireRating from "./FireRating";
+import dayjs from "dayjs";
 
-const SongCard = ({ title, description, img, embedId, mp3, fire }) => {
+const SongCard = ({
+  song: { title, description, img, embedId, mp3, fire, date },
+}) => {
   // State vars
   const [playing, setPlaying] = useState(false);
   const [play, exposedData] = useSound(mp3, {
@@ -50,7 +53,7 @@ const SongCard = ({ title, description, img, embedId, mp3, fire }) => {
   };
 
   const handlePause = () => exposedData.pause();
-
+  // TODO: DATE
   return (
     <Grid item xs={12} sm={12} md={6}>
       <Card style={{ display: "flex" }}>
@@ -60,14 +63,14 @@ const SongCard = ({ title, description, img, embedId, mp3, fire }) => {
               {title}
             </Typography>
             <Typography variant="body2" color="textSecondary" component="p">
-              {description}
+              {`${description} (${dayjs(date).format("MMM D, YYYY")})`}
             </Typography>
           </CardContent>
           <CardActions>
-            <Button size="small" color="primary">
+            <Button size="small" color="primary" disabled>
               {"Youtube"}
             </Button>
-            <IconButton size="small">
+            <IconButton size="small" href={mp3}>
               <GetAppIcon />
             </IconButton>
             <IconButton

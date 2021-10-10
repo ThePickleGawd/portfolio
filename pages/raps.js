@@ -53,9 +53,10 @@ export const RapsPage = () => {
       </Typography>
       <br />
       <Container>
-        <div style={{}}>
+        <div style={{ display: "flex", justifyContent: "flex-end" }}>
           <SortButton />
         </div>
+        <br />
         {loading ? (
           <div
             style={{
