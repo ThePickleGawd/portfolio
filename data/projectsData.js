@@ -3,9 +3,7 @@ import test1 from "../public/projectImages/test1.png";
 import test2 from "../public/projectImages/test2.png";
 import hwbountyIMG from "../public/projectImages/hwbounty.png";
 
-export const tmp_projects = [hwbountyIMG, test, test1, test2];
-
-export const projects = {
+const projects = {
   hwbounty: {
     title: "HWBounty",
     description:
@@ -23,3 +21,5 @@ export const projects = {
     github: "",
   },
 };
+
+export default projects;
