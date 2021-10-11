@@ -1,6 +1,7 @@
 // Material UI
 import Typography from "@mui/material/Typography";
 import LinearProgress from "@mui/material/LinearProgress";
+import Fade from "@mui/material/Fade";
 
 import { useTrail, animated } from "@react-spring/web";
 import { useOnScreen } from "../../util/helper";
@@ -40,9 +41,11 @@ const Skills = () => {
       }}
       ref={ref}
     >
-      <Typography variant="h2" alignSelf="center">
-        {"Skills"}
-      </Typography>
+      <Fade in={visible} timeout={2000}>
+        <Typography variant="h2" alignSelf="center">
+          {"Skills"}
+        </Typography>
+      </Fade>
       {trail.map(({ x, height, ...rest }, index) => (
         <animated.div
           key={skills[index].name}

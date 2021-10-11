@@ -56,7 +56,7 @@ export const raps = [
     img: null,
     youtube: "https://youtube.com",
     mp3: SaiyanGawdFlow2,
-    fire: 3,
+    fire: 5,
     date: new Date(2021, 2, 9), // year, month, day
   },
   {
@@ -65,7 +65,7 @@ export const raps = [
     img: null,
     youtube: "https://youtube.com",
     mp3: SaiyanGawdFlow3,
-    fire: 3,
+    fire: 2,
     date: new Date(2021, 2, 28), // year, month, day
   },
   {
@@ -98,7 +98,7 @@ export const raps = [
     description: "Ad Raps",
     img: null,
     youtube: "https://youtube.com",
-    fire: 999,
+    fire: 0,
     date: new Date(2021, 1, 18), // year, month, day
   },
   {
@@ -107,7 +107,7 @@ export const raps = [
     img: null,
     youtube: "https://youtube.com",
     mp3: DylanDrip,
-    fire: 999,
+    fire: 4,
     date: new Date(2021, 9, 29), // year, month, day
   },
 ];

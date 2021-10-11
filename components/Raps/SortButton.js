@@ -16,15 +16,6 @@ const FilterButton = () => {
   const raps = useSelector((state) => state.music.raps);
   const [property, setSortProperty] = useState("recent");
 
-  useEffect(() => {
-    dispatch({
-      type: TYPES.SET_RAPS,
-      payload: raps
-        .sort((a, b) => b.date.getTime() - a.date.getTime())
-        .map((x) => x),
-    });
-  }, []);
-
   const handleChange = (event) => {
     setSortProperty(event.target.value);
     // .map is cuz mutating array doesn't cause rerender

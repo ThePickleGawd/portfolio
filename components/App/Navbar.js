@@ -15,6 +15,7 @@ export const Navbar = (props) => {
   const locations = [
     { to: "/", name: "Home" },
     { to: "/raps", name: "Raps" },
+    { to: "/sports", name: "Sports" },
   ];
 
   return (

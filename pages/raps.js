@@ -35,7 +35,12 @@ export const RapsPage = () => {
   // Code-splitting for large raps file
   useEffect(() => {
     import("../info/rapsInfo").then((mod) => {
-      dispatch({ type: TYPES.SET_RAPS, payload: mod.default });
+      dispatch({
+        type: TYPES.SET_RAPS,
+        payload: mod.default
+          .sort((a, b) => b.date.getTime() - a.date.getTime())
+          .map((x) => x),
+      });
       setLoading(false);
     });
   }, []);

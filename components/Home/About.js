@@ -94,7 +94,7 @@ export const About = (props) => {
       ref={ref}
     >
       <div style={{ display: "flex", justifyContent: "center" }}>
-        <Fade in={visible} timeout={3000}>
+        <Fade in={visible} timeout={2000}>
           <Typography variant="h2" style={{ marginTop: 15 }}>
             {"About Me"}
           </Typography>
