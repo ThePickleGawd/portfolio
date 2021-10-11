@@ -48,19 +48,21 @@ export default function MyApp(props) {
     }
   }, []);
 
-  return <>
-    <HeadInfo />
-    <Provider store={store}>
-      <StyledEngineProvider injectFirst>
-        <ThemeProvider theme={theme}>
-          {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-          <CssBaseline />
-          <Navbar />
-          <Component {...pageProps} />
-        </ThemeProvider>
-      </StyledEngineProvider>
-    </Provider>
-  </>;
+  return (
+    <>
+      <HeadInfo />
+      <Provider store={store}>
+        <StyledEngineProvider injectFirst>
+          <ThemeProvider theme={theme}>
+            {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+            <CssBaseline />
+            <Navbar />
+            <Component {...pageProps} />
+          </ThemeProvider>
+        </StyledEngineProvider>
+      </Provider>
+    </>
+  );
 }
 
 MyApp.propTypes = {

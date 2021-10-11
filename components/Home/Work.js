@@ -13,7 +13,7 @@ import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
 import IconButton from "@mui/material/IconButton";
 
-import { projects } from "../../info/projects";
+import { projects } from "../../data/projectsData";
 
 const ProjectViewer = () => {
   const [project, setProject] = useState(0);

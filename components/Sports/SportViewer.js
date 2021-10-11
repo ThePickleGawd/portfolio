@@ -15,6 +15,7 @@ import ListItemText from "@mui/material/ListItemText";
 import ListItemButton from "@mui/material/ListItemButton";
 import Collapse from "@mui/material/Collapse";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import FolderIcon from "@mui/icons-material/Folder";
 
 // Components
@@ -23,7 +24,7 @@ import SportsItem from "./SportsItem";
 import ReactPlayer from "react-player";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 
-const SportViewer = ({ title, scrollNext }) => {
+const SportViewer = ({ title, scrollNext, scrollPrev, data }) => {
   const [video, setVideo] = useState("");
 
   return (
@@ -34,7 +35,7 @@ const SportViewer = ({ title, scrollNext }) => {
         </Typography>
         <br />
         <Grid container>
-          <Grid item lg={7}>
+          <Grid item xs={12}>
             <ReactPlayer
               url={"/video/football/LosAltos-Kickoff.mp4"}
               controls
@@ -42,9 +43,26 @@ const SportViewer = ({ title, scrollNext }) => {
               width="100%"
             />
           </Grid>
-          <Grid item lg={4} xs={12}>
-            <List>
+          <Grid
+            item
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignContent: "center",
+            }}
+            xs={1}
+          >
+            <Button onClick={scrollPrev} style={{ height: "100%" }}>
+              <ArrowBackIosIcon />
+            </Button>
+          </Grid>
+          <Grid item xs={10}>
+            <List style={{ overflowY: "scroll" }}>
               <SportsFolder />
+              {data.map((obj) => {
+                return <SportsFolder data={obj.files} key={obj.name} />;
+              })}
             </List>
           </Grid>
           <Grid
@@ -55,9 +73,9 @@ const SportViewer = ({ title, scrollNext }) => {
               justifyContent: "center",
               alignContent: "center",
             }}
-            lg={1}
+            xs={1}
           >
-            <Button onClick={scrollNext}>
+            <Button onClick={scrollNext} style={{ height: "100%" }}>
               <ArrowForwardIosIcon />
             </Button>
           </Grid>

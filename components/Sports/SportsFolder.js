@@ -20,7 +20,7 @@ import FolderIcon from "@mui/icons-material/Folder";
 // Components
 import ReactPlayer from "react-player";
 
-const SportsFolder = () => {
+const SportsFolder = (data) => {
   const [opened, setOpened] = useState(false);
 
   const handleClick = () => {

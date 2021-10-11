@@ -26,7 +26,7 @@ import * as TYPES from "../redux/types";
 // Image
 import rollie from "../public/rollie.jpeg";
 
-export const RapsPage = () => {
+export const Raps = () => {
   const dispatch = useDispatch();
   const rapId = useSelector((state) => state.music.currentRapId);
   const sound = useSelector((state) => state.music.sound);
@@ -34,7 +34,7 @@ export const RapsPage = () => {
 
   // Code-splitting for large raps file
   useEffect(() => {
-    import("../info/rapsInfo").then((mod) => {
+    import("../data/rapsData").then((mod) => {
       dispatch({
         type: TYPES.SET_RAPS,
         payload: mod.default
@@ -81,7 +81,7 @@ export const RapsPage = () => {
   );
 };
 
-export default RapsPage;
+export default Raps;
 
 /*
 Notes
