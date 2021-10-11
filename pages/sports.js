@@ -16,7 +16,6 @@ import sportsData from "../data/sportsData";
 
 const Sports = () => {
   const parallax = useRef();
-  const scroll = (to) => parallax.current.scrollTo(to);
   const scrollNext = (index) =>
     parallax.current.scrollTo(index + 1 >= sportsData.length ? 0 : index + 1);
   const scrollPrev = (index) =>

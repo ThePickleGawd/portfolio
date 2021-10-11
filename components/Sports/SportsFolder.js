@@ -20,7 +20,7 @@ import FolderIcon from "@mui/icons-material/Folder";
 // Components
 import ReactPlayer from "react-player";
 
-const SportsFolder = (data) => {
+const SportsFolder = ({ name, files, setVideo }) => {
   const [opened, setOpened] = useState(false);
 
   const handleClick = () => {
@@ -33,9 +33,17 @@ const SportsFolder = (data) => {
         <ListItemIcon>
           <FolderIcon />
         </ListItemIcon>
-        <ListItemText primary="Single-line item" secondary="0 items" />
+        <ListItemText primary={name} secondary={`${files.length} items`} />
       </ListItemButton>
-      <Collapse in={opened}>{"children... props..."}</Collapse>
+      <Collapse in={opened}>
+        {files.map((file) => {
+          return (
+            <ListItemButton key={file} onClick={() => setVideo(file)}>
+              <ListItemText primary={file} />
+            </ListItemButton>
+          );
+        })}
+      </Collapse>
     </>
   );
 };

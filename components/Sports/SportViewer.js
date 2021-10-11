@@ -25,7 +25,9 @@ import ReactPlayer from "react-player";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 
 const SportViewer = ({ title, scrollNext, scrollPrev, data }) => {
-  const [video, setVideo] = useState("");
+  const [video, setVideo] = useState("/video/football/LosAltos-Kickoff.mp4");
+
+  const setVideoByName = (name) => setVideo(`/video/football/${name}`);
 
   return (
     <Container>
@@ -36,12 +38,7 @@ const SportViewer = ({ title, scrollNext, scrollPrev, data }) => {
         <br />
         <Grid container>
           <Grid item xs={12}>
-            <ReactPlayer
-              url={"/video/football/LosAltos-Kickoff.mp4"}
-              controls
-              height="100%"
-              width="100%"
-            />
+            <ReactPlayer url={video} controls height="100%" width="100%" />
           </Grid>
           <Grid
             item
@@ -59,9 +56,15 @@ const SportViewer = ({ title, scrollNext, scrollPrev, data }) => {
           </Grid>
           <Grid item xs={10}>
             <List style={{ overflowY: "scroll" }}>
-              <SportsFolder />
               {data.map((obj) => {
-                return <SportsFolder data={obj.files} key={obj.name} />;
+                return (
+                  <SportsFolder
+                    files={obj.files}
+                    name={obj.name}
+                    key={obj.name}
+                    setVideo={setVideoByName}
+                  />
+                );
               })}
             </List>
           </Grid>
