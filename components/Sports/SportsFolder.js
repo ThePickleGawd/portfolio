@@ -35,7 +35,7 @@ const SportsFolder = () => {
         </ListItemIcon>
         <ListItemText primary="Single-line item" secondary="0 items" />
       </ListItemButton>
-      <Collapse open={opened}>{"children... props..."}</Collapse>
+      <Collapse in={opened}>{"children... props..."}</Collapse>
     </>
   );
 };
