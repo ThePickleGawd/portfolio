@@ -34,7 +34,7 @@ export const Raps = () => {
 
   // Code-splitting for large raps file
   useEffect(() => {
-    import("../data/rapsData").then((mod) => {
+    import("../data/raps/rapsData").then((mod) => {
       dispatch({
         type: TYPES.SET_RAPS,
         payload: mod.default

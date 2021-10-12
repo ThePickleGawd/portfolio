@@ -28,13 +28,15 @@ import FireIcon from "@mui/icons-material/LocalFireDepartment";
 
 // Components
 import FireRating from "./FireRating";
+import LyricsViewer from "./LyricsViewer";
 import dayjs from "dayjs";
 
 const SongCard = ({
-  song: { title, description, img, embedId, mp3, fire, date },
+  song: { title, description, img, embedId, mp3, fire, date, lyrics },
 }) => {
   // State vars
   const [playing, setPlaying] = useState(false);
+  const [lyricsOpen, setLyricsOpen] = useState(false);
   const [play, exposedData] = useSound(mp3, {
     onplay: () => setPlaying(true),
     onend: () => setPlaying(false),
@@ -55,37 +57,54 @@ const SongCard = ({
   const handlePause = () => exposedData.pause();
   // TODO: DATE
   return (
-    <Grid item xs={12} sm={12} md={6}>
-      <Card style={{ display: "flex" }}>
-        <div style={{ flex: 1 }}>
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="h2" noWrap>
-              {title}
-            </Typography>
-            <Typography variant="body2" color="textSecondary" component="p">
-              {`${description} (${dayjs(date).format("MMM D, YYYY")})`}
-            </Typography>
-          </CardContent>
-          <CardActions>
-            <Button size="small" color="primary" disabled>
-              {"Youtube"}
-            </Button>
-            <IconButton size="small" href={mp3}>
-              <GetAppIcon />
-            </IconButton>
-            <IconButton
-              size="small"
-              onClick={playing ? handlePause : handlePlay}
-              disabled={!mp3}
-            >
-              {playing ? <Pause /> : <PlayArrow />}
-            </IconButton>
-            <IconButton size="small" disabled>
-              <FireRating fire={fire} />
-            </IconButton>
-          </CardActions>
-        </div>
-        {/* <div
+    <>
+      {lyrics && (
+        <LyricsViewer
+          opened={lyricsOpen}
+          lyrics={lyrics}
+          title={title}
+          onClose={() => setLyricsOpen(false)}
+        />
+      )}
+      <Grid item xs={12} sm={12} md={6}>
+        <Card style={{ display: "flex" }}>
+          <div style={{ flex: 1 }}>
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="h2" noWrap>
+                {title}
+              </Typography>
+              <Typography variant="body2" color="textSecondary" component="p">
+                {`${description} (${dayjs(date).format("MMM D, YYYY")})`}
+              </Typography>
+            </CardContent>
+            <CardActions>
+              <Button size="small" color="primary" disabled>
+                {"Youtube"}
+              </Button>
+              <IconButton size="small" href={mp3}>
+                <GetAppIcon />
+              </IconButton>
+              <IconButton
+                size="small"
+                onClick={playing ? handlePause : handlePlay}
+                disabled={!mp3}
+              >
+                {playing ? <Pause /> : <PlayArrow />}
+              </IconButton>
+              <IconButton size="small" disabled>
+                <FireRating fire={fire} />
+              </IconButton>
+              <Button
+                size="small"
+                color="primary"
+                onClick={() => setLyricsOpen(true)}
+                disabled={!lyrics}
+              >
+                {"Lyrics"}
+              </Button>
+            </CardActions>
+          </div>
+          {/* <div
           style={{
             position: "relative",
             flex: 1,
@@ -95,8 +114,9 @@ const SongCard = ({
             <Image src={img} alt="img" layout="fill" objectFit="contain" />
           )}
         </div> */}
-      </Card>
-    </Grid>
+        </Card>
+      </Grid>
+    </>
   );
 };
 

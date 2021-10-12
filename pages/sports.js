@@ -12,7 +12,7 @@ import ReactPlayer from "react-player";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 
 // Data
-import sportsData from "../data/sportsData";
+import sportsData from "../data/sports/sportsData";
 
 const Sports = () => {
   const parallax = useRef();

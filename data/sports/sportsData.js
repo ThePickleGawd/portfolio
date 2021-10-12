@@ -15,14 +15,6 @@ export const sports = [
         name: "YrbaBuena",
         files: ["YrbaBuena-KickoffTD.mp4", "YrbaBuena-Punt.mp4"],
       },
-      {
-        name: "YrbaBuena",
-        files: ["YrbaBuena-KickoffTD.mp4", "YrbaBuena-Punt.mp4"],
-      },
-      {
-        name: "YrbaBuena",
-        files: ["YrbaBuena-KickoffTD.mp4", "YrbaBuena-Punt.mp4"],
-      },
     ],
   },
   {

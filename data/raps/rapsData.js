@@ -1,7 +1,11 @@
-// Songs
+// Lyrics
+import BlackIceOnMyDripLyrics from "./rapLyrics/BlackIceOnMyDrip";
+import DylanDripLyrics from "./rapLyrics/DylanDrip";
+import RolliesForTheHomiesLyrics from "./rapLyrics/RolliesForTheHomies";
+import DroppingAnOppLyrics from "./rapLyrics/DroppingAnOpp";
 
-import Rollie from "../public/rollie.jpeg";
-import Rolex from "../public/rolex.jpg";
+import Rollie from "../../public/rollie.jpeg";
+import Rolex from "../../public/rolex.jpg";
 
 const getRap = (name) =>
   `https://github.com/ThePickleGawd/portfolio/blob/main/public/audio/raps/${name}.mp3?raw=true`;
@@ -21,6 +25,7 @@ export const raps = [
     img: Rollie,
     embedId: "a5eDbFbrxN4",
     mp3: RolliesForTheHomies,
+    lyrics: RolliesForTheHomiesLyrics,
     fire: 5,
     date: new Date(2021, 1, 25), // year, month, day
   },
@@ -39,7 +44,8 @@ export const raps = [
     img: null,
     youtube: "https://youtube.com",
     mp3: BlackIceOnMyDrip,
-    fire: 2,
+    lyrics: BlackIceOnMyDripLyrics,
+    fire: 1,
     date: new Date(2021, 1, 25), // year, month, day
   },
   {
@@ -47,7 +53,7 @@ export const raps = [
     description: "Super Saiyan Gawd",
     img: null,
     youtube: "https://youtube.com",
-    fire: 2,
+    fire: 1,
     date: new Date(2021, 1, 25), // year, month, day
   },
   {
@@ -82,6 +88,7 @@ export const raps = [
     img: null,
     youtube: "https://youtube.com",
     mp3: DroppingAnOpp,
+    lyrics: DroppingAnOppLyrics,
     fire: 4,
     date: new Date(2021, 8, 22), // year, month, day
   },
@@ -107,6 +114,7 @@ export const raps = [
     img: null,
     youtube: "https://youtube.com",
     mp3: DylanDrip,
+    lyrics: DylanDripLyrics,
     fire: 4,
     date: new Date(2021, 9, 29), // year, month, day
   },

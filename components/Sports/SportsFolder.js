@@ -18,6 +18,7 @@ import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import FolderIcon from "@mui/icons-material/Folder";
 
 // Components
+import SportsItem from "./SportsItem";
 import ReactPlayer from "react-player";
 
 const SportsFolder = ({ name, files, setVideo }) => {
@@ -38,9 +39,12 @@ const SportsFolder = ({ name, files, setVideo }) => {
       <Collapse in={opened}>
         {files.map((file) => {
           return (
-            <ListItemButton key={file} onClick={() => setVideo(file)}>
-              <ListItemText primary={file} />
-            </ListItemButton>
+            <SportsItem
+              key={file}
+              onClick={() => setVideo(file)}
+              file={file}
+              star={file === "YrbaBuena-KickoffTD.mp4"}
+            />
           );
         })}
       </Collapse>

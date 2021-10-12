@@ -16,18 +16,17 @@ import ListItemButton from "@mui/material/ListItemButton";
 import Collapse from "@mui/material/Collapse";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import FolderIcon from "@mui/icons-material/Folder";
+import StarIcon from "@mui/icons-material/Star";
 
 // Components
 import ReactPlayer from "react-player";
 
-const SportsItem = () => {
+const SportsItem = ({ star, onClick, file }) => {
   return (
-    <ListItem>
-      <ListItemIcon>
-        <FolderIcon />
-      </ListItemIcon>
-      <ListItemText primary="Single-line item" secondary="0 items" />
-    </ListItem>
+    <ListItemButton onClick={onClick}>
+      <ListItemIcon>{star ? <StarIcon /> : null}</ListItemIcon>
+      <ListItemText primary={file} />
+    </ListItemButton>
   );
 };
 
