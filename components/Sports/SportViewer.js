@@ -25,7 +25,7 @@ import ReactPlayer from "react-player";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 
 const SportViewer = ({ title, scrollNext, scrollPrev, data }) => {
-  const [video, setVideo] = useState("/video/football/LosAltos-Kickoff.mp4");
+  const [video, setVideo] = useState("/video/football/YrbaBuena-KickoffTD.mp4");
 
   const setVideoByName = (name) => setVideo(`/video/football/${name}`);
 

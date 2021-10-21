@@ -10,14 +10,17 @@ import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import CircularProgress from "@mui/material/CircularProgress";
 
-// Components
+// Util
 import ReactPlayer from "react-player";
 import { YoutubeEmbed } from "../util/helper";
+import useSound from "use-sound";
+
+// Components
 import SongCard from "../components/Raps/SongCard";
 import SongControls from "../components/Raps/SongControls";
 import SortButton from "../components/Raps/SortButton";
 import RapsList from "../components/Raps/RapsList";
-import useSound from "use-sound";
+import Disclamer from "../components/Raps/Disclaimer";
 
 // Redux
 import { useDispatch, useSelector } from "react-redux";
@@ -53,6 +56,7 @@ export const Raps = () => {
         alignItems: "center",
       }}
     >
+      <Disclamer />
       <Typography variant="h2">
         {"Dylan's Raps (Not fully working yet)"}
       </Typography>

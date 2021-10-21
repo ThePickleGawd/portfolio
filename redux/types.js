@@ -1,6 +1,7 @@
 // UI
 export const SET_PARALLAX_REF = "SET_PARALLAX_REF";
 export const SET_IMAGE = "SET_IMAGE";
+export const SET_RAPS_HIDDEN = "SET_RAPS_HIDDEN";
 
 // Music
 export const SET_RAP_ID = "SET_RAP_ID";
