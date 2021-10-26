@@ -15,6 +15,7 @@ import theme from "../util/theme";
 // Components
 import Navbar from "../components/App/Navbar";
 import HeadInfo from "../components/App/HeadInfo";
+import Messages from "../components/App/Messages";
 import NProgress from "nprogress"; // Loading bar
 import "nprogress/nprogress.css";
 
@@ -57,6 +58,7 @@ export default function MyApp(props) {
             {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
             <CssBaseline />
             <Navbar />
+            <Messages />
             <Component {...pageProps} />
           </ThemeProvider>
         </StyledEngineProvider>

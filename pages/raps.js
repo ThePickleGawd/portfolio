@@ -20,7 +20,7 @@ import SongCard from "../components/Raps/SongCard";
 import SongControls from "../components/Raps/SongControls";
 import SortButton from "../components/Raps/SortButton";
 import RapsList from "../components/Raps/RapsList";
-import Disclamer from "../components/Raps/Disclaimer";
+import HomieCheckpoint from "../components/Raps/HomieCheckpoint";
 
 // Redux
 import { useDispatch, useSelector } from "react-redux";
@@ -56,7 +56,7 @@ export const Raps = () => {
         alignItems: "center",
       }}
     >
-      <Disclamer />
+      <HomieCheckpoint />
       <Typography variant="h2">
         {"Dylan's Raps (Not fully working yet)"}
       </Typography>

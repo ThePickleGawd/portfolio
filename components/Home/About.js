@@ -41,9 +41,9 @@ const items = [
     render: (
       <span>
         {"- I love "}
-        <span style={{ color: "#4BABEC" }}>{"coding"}</span>
+        <span style={{ color: "#2a62c9" }}>{"coding"}</span>
         {" and "}
-        <span style={{ color: "#BF78DE" }}>{"web design"}</span>
+        <span style={{ color: "#2a62c9" }}>{"web design"}</span>
       </span>
     ),
   },

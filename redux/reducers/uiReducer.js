@@ -4,6 +4,8 @@ const initialState = {
   parallaxRef: null, // reference the parallax
   image: null,
   rapsHidden: false,
+  message: "",
+  messageOpened: false,
 };
 
 export const uiReducer = (state = initialState, action) => {
@@ -22,6 +24,17 @@ export const uiReducer = (state = initialState, action) => {
       return {
         ...state,
         rapsHidden: action.payload,
+      };
+    case TYPES.SET_MESSAGE:
+      return {
+        ...state,
+        message: action.payload,
+        messageOpened: true,
+      };
+    case TYPES.SET_MESSAGE_OPENED:
+      return {
+        ...state,
+        messageOpened: action.payload,
       };
     default:
       return state;

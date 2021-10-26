@@ -58,7 +58,7 @@ const Welcome = () => {
           >
             {"Unity "}
           </span>
-          {"game developer"}
+          {"developer"}
         </Typography>
       </Fade>
       <Fade in={true} timeout={10000}>
