@@ -14,45 +14,20 @@ import Fade from "@mui/material/Fade";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 
 // Components
-import Welcome from "../components/Home/Welcome";
-import About from "../components/Home/About";
-import Skills from "../components/Home/Skills";
-import AboutImage from "../components/Home/AboutImage";
-import Work from "../components/Home/Work";
-import Contact from "../components/Home/Contact";
-import Sidebar from "../components/Home/Sidebar";
-import ParallaxBackground from "../components/Home/ParallaxBackground";
-import { HashCheckProvider } from "../util/helper";
-import useMediaQuery from "@mui/material/useMediaQuery";
-import MobileHome from "../components/Home/MobileHome";
+import Welcome from "./Welcome";
+import About from "./About";
+import Skills from "./Skills";
+import AboutImage from "./AboutImage";
+import Work from "./Work";
+import Contact from "./Contact";
+import Sidebar from "./Sidebar";
+import ParallaxBackground from "./ParallaxBackground";
 
-export const Home = () => {
-  const parallaxRef = useRef();
-  const smallScreen = useMediaQuery("(max-width:1024px)");
-  const router = useRouter();
-
-  useEffect(() => {
-    const hash = window.location.hash.replace("#", "");
-    const locations = {
-      about: 1,
-      work: 2.5,
-      contact: 4,
-    };
-
-    if (!locations[hash]) return;
-    parallaxRef.current.scrollTo(locations[hash]);
-  }, []);
-
-  if (smallScreen) return <MobileHome />;
-
+const MobileHome = () => {
   return (
     <>
       {/*<Sidebar parallaxRef={parallaxRef} />*/}
-      <Parallax
-        pages={4}
-        style={{ top: "0", left: "0", zIndex: -1 }}
-        ref={parallaxRef}
-      >
+      <Parallax pages={4} style={{ top: "0", left: "0", zIndex: -1 }}>
         <ParallaxLayer
           offset={0}
           speed={2.5}
@@ -66,42 +41,31 @@ export const Home = () => {
           <Welcome />
         </ParallaxLayer>
         <ParallaxLayer
-          sticky={{ start: 1, end: 2 }}
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "flex-start",
-            marginLeft: "65%",
-            zIndex: -0.5,
-          }}
-        >
-          <AboutImage />
-        </ParallaxLayer>
-        <ParallaxLayer
           offset={1}
           speed={1}
           style={{
             display: "flex",
+            flexDirection: "column",
             justifyContent: "flex-start",
             alignItems: "center",
-            marginLeft: "10%",
           }}
         >
+          <AboutImage fadeIn={true} />
+          <br />
           <About />
         </ParallaxLayer>
         <ParallaxLayer
-          offset={1.9}
+          offset={2}
           speed={1}
           style={{
             display: "flex",
-            justifyContent: "flex-start",
-            alignItems: "center",
-            marginLeft: "10%",
+            justifyContent: "center",
+            alignItems: "flex-start",
           }}
         >
-          <div style={{ width: "35%" }}>
-            <Skills />
-          </div>
+          <div style={{ width: "50px" }} />
+          <Skills />
+          <div style={{ width: "50px" }} />
         </ParallaxLayer>
         {/* <ParallaxLayer
           sticky={{ start: 3, end: 3.5 }}
@@ -124,10 +88,9 @@ export const Home = () => {
         >
           <Contact />
         </ParallaxLayer>
-        <ParallaxBackground />
       </Parallax>
     </>
   );
 };
 
-export default Home;
+export default MobileHome;

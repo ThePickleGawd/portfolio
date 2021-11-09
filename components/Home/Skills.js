@@ -37,7 +37,7 @@ const Skills = () => {
         flexDirection: "column",
         justifyContent: "center",
         alignContent: "center",
-        width: "35%",
+        width: "100%",
       }}
       ref={ref}
     >

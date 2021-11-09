@@ -57,9 +57,7 @@ export const Raps = () => {
       }}
     >
       <HomieCheckpoint />
-      <Typography variant="h2">
-        {"Dylan's Raps (Not fully working yet)"}
-      </Typography>
+      <Typography variant="h2">{"Dylan's Very Bad Raps"}</Typography>
       <br />
       <Container>
         <div style={{ display: "flex", justifyContent: "flex-end" }}>

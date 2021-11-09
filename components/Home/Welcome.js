@@ -41,12 +41,12 @@ const Welcome = () => {
   return (
     <>
       <Fade in={true} timeout={3000}>
-        <Typography variant="h3">
+        <Typography variant="h3" textAlign="center">
           {"Hi, I'm "} <span style={{ color: "#f53b3b" }}>{"Dylan"}</span>
         </Typography>
       </Fade>
       <Fade in={true} timeout={10000}>
-        <Typography variant="h4">
+        <Typography variant="h4" textAlign="center">
           <span style={{ color: "#79D8F7" }}>{"React "}</span>
           {"developer, "}
           <span

@@ -86,13 +86,7 @@ export const About = (props) => {
   // const [styles, api] = useSprint(() => )
 
   return (
-    <div
-      style={{
-        width: "35%",
-        height: "70%",
-      }}
-      ref={ref}
-    >
+    <div ref={ref}>
       <div style={{ display: "flex", justifyContent: "center" }}>
         <Fade in={visible} timeout={2000}>
           <Typography variant="h2" style={{ marginTop: 15 }}>

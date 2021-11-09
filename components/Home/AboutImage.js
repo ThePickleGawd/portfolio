@@ -1,31 +1,41 @@
 // React, Redux
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import Image from "next/image";
 import { useDispatch, useSelector } from "react-redux";
 import * as TYPES from "../../redux/types";
 
 // MUI
 import Avatar from "@mui/material/Avatar";
+import Fade from "@mui/material/Fade";
+
+// Helper
+import { useOnScreen } from "../../util/helper";
 
 // Pictures
 import defaultPic from "../../public/aboutImages/default.jpg";
 
-const AboutImage = () => {
+const AboutImage = ({ fadeIn }) => {
   const image = useSelector((state) => state.UI.image);
   const dispatch = useDispatch();
+
+  const ref = useRef();
+
+  const visible = useOnScreen(ref);
+
   return (
-    <Avatar
-      alt="Dylan Lu"
-      style={{ width: 400, height: 400, marginRight: "15%" }}
-    >
-      <Image
-        src={defaultPic}
-        alt="Dylan Lu"
-        width={400}
-        height={400}
-        priority
-      />
-    </Avatar>
+    <div ref={ref}>
+      <Fade in={!fadeIn || visible} timeout={2000}>
+        <Avatar alt="Dylan Lu" style={{ width: 400, height: 400 }}>
+          <Image
+            src={defaultPic}
+            alt="Dylan Lu"
+            width={400}
+            height={400}
+            priority
+          />
+        </Avatar>
+      </Fade>
+    </div>
   );
 };
 
