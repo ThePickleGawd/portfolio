@@ -39,6 +39,7 @@ const MobileHome = () => {
           }}
         >
           <Welcome />
+          (mobile design very crappy at the moment)
         </ParallaxLayer>
         <ParallaxLayer
           offset={1}
@@ -52,7 +53,7 @@ const MobileHome = () => {
         >
           <AboutImage fadeIn={true} />
           <br />
-          <About />
+          <About fadeIn={false} />
         </ParallaxLayer>
         <ParallaxLayer
           offset={2}
@@ -64,7 +65,7 @@ const MobileHome = () => {
           }}
         >
           <div style={{ width: "50px" }} />
-          <Skills />
+          <Skills fadeIn={false} />
           <div style={{ width: "50px" }} />
         </ParallaxLayer>
         {/* <ParallaxLayer

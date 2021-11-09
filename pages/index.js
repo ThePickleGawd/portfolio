@@ -87,7 +87,7 @@ export const Home = () => {
             marginLeft: "10%",
           }}
         >
-          <About />
+          <About fadeIn={true} />
         </ParallaxLayer>
         <ParallaxLayer
           offset={1.9}
@@ -100,7 +100,7 @@ export const Home = () => {
           }}
         >
           <div style={{ width: "35%" }}>
-            <Skills />
+            <Skills fadeIn={true} />
           </div>
         </ParallaxLayer>
         {/* <ParallaxLayer

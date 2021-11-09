@@ -18,7 +18,7 @@ const skills = [
 
 const config = { mass: 5, tension: 2000, friction: 200 };
 
-const Skills = () => {
+const Skills = ({ fadeIn }) => {
   const ref = useRef();
   const visible = useOnScreen(ref);
 
@@ -41,7 +41,7 @@ const Skills = () => {
       }}
       ref={ref}
     >
-      <Fade in={visible} timeout={2000}>
+      <Fade in={!fadeIn || visible} timeout={2000}>
         <Typography variant="h2" alignSelf="center">
           {"Skills"}
         </Typography>

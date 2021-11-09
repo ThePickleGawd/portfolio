@@ -65,7 +65,7 @@ Default: Regular pfp
 
 const config = { mass: 5, tension: 2000, friction: 200 };
 
-export const About = (props) => {
+export const About = ({ fadeIn }) => {
   const ref = useRef();
   const visible = useOnScreen(ref);
 
@@ -88,7 +88,7 @@ export const About = (props) => {
   return (
     <div ref={ref}>
       <div style={{ display: "flex", justifyContent: "center" }}>
-        <Fade in={visible} timeout={2000}>
+        <Fade in={!fadeIn || visible} timeout={2000}>
           <Typography variant="h2" style={{ marginTop: 15 }}>
             {"About Me"}
           </Typography>
