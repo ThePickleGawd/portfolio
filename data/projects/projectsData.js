@@ -1,7 +1,7 @@
-import test from "../../public/projectImages/test.png";
-import test1 from "../../public/projectImages/test1.png";
-import test2 from "../../public/projectImages/test2.png";
-import hwbountyIMG from "../../public/projectImages/hwbounty.png";
+import test from "../../public/images/projects/test.png";
+import test1 from "../../public/images/projects/test1.png";
+import test2 from "../../public/images/projects/test2.png";
+import hwbountyIMG from "../../public/images/projects/hwbounty.png";
 
 const projects = {
   hwbounty: {
