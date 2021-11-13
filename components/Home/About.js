@@ -16,7 +16,7 @@ const items = [
     id: 0,
     render: (
       <span>
-        {"- Sophmore at "}
+        {"Sophmore at "}
         <span style={{ color: "red" }}>{"Gunn"}</span> {" High School"}
       </span>
     ),
@@ -26,21 +26,20 @@ const items = [
     id: 1,
     render: (
       <span>
-        {"- Three-seasoned"}{" "}
-        <span style={{ color: "#FCB131" }}>{"athlete"}</span>
+        {"Three-seasoned"} <span style={{ color: "#FCB131" }}>{"athlete"}</span>
       </span>
     ),
   },
   {
     id: 2,
-    render: "- Game designer",
+    render: "Game designer",
   },
   {
     id: 3,
-    rendesr: "- I love coding and web desgign",
+    rendesr: "I love coding and web desgign",
     render: (
       <span>
-        {"- I love "}
+        {"I love "}
         <span style={{ color: "#2a62c9" }}>{"coding"}</span>
         {" and "}
         <span style={{ color: "#2a62c9" }}>{"web design"}</span>
@@ -50,7 +49,7 @@ const items = [
 
   {
     id: 4,
-    render: "- Im just the best?",
+    render: "Im just the best?",
   },
 ];
 
@@ -95,7 +94,13 @@ export const About = ({ fadeIn }) => {
         </Fade>
       </div>
       <br />
-      <div style={{ display: "flex", flexDirection: "column", marginTop: 10 }}>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          marginTop: 10,
+        }}
+      >
         {trail.map(({ x, height, ...rest }, index) => (
           <animated.div
             key={items[index].id}
@@ -105,9 +110,10 @@ export const About = ({ fadeIn }) => {
             }}
           >
             <animated.div
-              style={{ height }}
+              style={{ height, display: "flex" }}
               onMouseEnter={() => setImage(items[index].image)}
             >
+              <Typography variant="h4">-&nbsp;</Typography>
               <Typography variant="h4">{items[index].render}</Typography>
             </animated.div>
           </animated.div>

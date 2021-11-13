@@ -70,12 +70,12 @@ export const Home = () => {
           style={{
             display: "flex",
             alignItems: "center",
-            justifyContent: "flex-start",
-            marginLeft: "65%",
+            justifyContent: "flex-end",
             zIndex: -0.5,
           }}
         >
           <AboutImage />
+          <div style={{ width: "10%" }} />
         </ParallaxLayer>
         <ParallaxLayer
           offset={1}

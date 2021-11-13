@@ -25,15 +25,16 @@ const AboutImage = ({ fadeIn }) => {
   return (
     <div ref={ref}>
       <Fade in={!fadeIn || visible} timeout={2000}>
-        <Avatar alt="Dylan Lu" style={{ width: 400, height: 400 }}>
-          <Image
-            src={defaultPic}
-            alt="Dylan Lu"
-            width={400}
-            height={400}
-            priority
-          />
-        </Avatar>
+        <div
+          style={{
+            maxWidth: 500,
+            maxHeight: 500,
+            borderRadius: "50%",
+            overflow: "hidden",
+          }}
+        >
+          <Image src={defaultPic} alt="Dylan Lu" layout="intrinsic" priority />
+        </div>
       </Fade>
     </div>
   );
