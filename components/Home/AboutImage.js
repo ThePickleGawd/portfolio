@@ -12,7 +12,7 @@ import Fade from "@mui/material/Fade";
 import { useOnScreen } from "../../util/helper";
 
 // Pictures
-import defaultPic from "../../public/aboutImages/default.jpg";
+import defaultPic from "../../public/images/me/default.jpg";
 
 const AboutImage = ({ fadeIn }) => {
   const image = useSelector((state) => state.UI.image);
