@@ -29,14 +29,16 @@ import FireIcon from "@mui/icons-material/LocalFireDepartment";
 // Components
 import FireRating from "./FireRating";
 import LyricsViewer from "./LyricsViewer";
+import MeaningViewer from "./MeaningViewer";
 import dayjs from "dayjs";
 
 const SongCard = ({
-  song: { title, description, img, embedId, mp3, fire, date, lyrics },
+  song: { title, description, img, embedId, mp3, fire, date, lyrics, meaning },
 }) => {
   // State vars
   const [playing, setPlaying] = useState(false);
   const [lyricsOpen, setLyricsOpen] = useState(false);
+  const [meaningOpen, setMeaningOpen] = useState(false);
   const [play, exposedData] = useSound(mp3, {
     onplay: () => setPlaying(true),
     onend: () => setPlaying(false),
@@ -62,8 +64,16 @@ const SongCard = ({
         <LyricsViewer
           opened={lyricsOpen}
           lyrics={lyrics}
+          meaningArray={meaning}
           title={title}
           onClose={() => setLyricsOpen(false)}
+        />
+      )}
+      {meaning && (
+        <MeaningViewer
+          opened={meaningOpen}
+          meaningArray={meaning}
+          onClose={() => setMeaningOpen(false)}
         />
       )}
       <Grid item xs={12} sm={12} md={6}>
@@ -78,12 +88,6 @@ const SongCard = ({
               </Typography>
             </CardContent>
             <CardActions>
-              <Button size="small" color="primary" disabled>
-                {"Youtube"}
-              </Button>
-              <IconButton size="small" href={mp3}>
-                <GetAppIcon />
-              </IconButton>
               <IconButton
                 size="small"
                 onClick={playing ? handlePause : handlePlay}
@@ -91,8 +95,8 @@ const SongCard = ({
               >
                 {playing ? <Pause /> : <PlayArrow />}
               </IconButton>
-              <IconButton size="small" disabled>
-                <FireRating fire={fire} />
+              <IconButton size="small" href={mp3}>
+                <GetAppIcon />
               </IconButton>
               <Button
                 size="small"
@@ -102,6 +106,20 @@ const SongCard = ({
               >
                 {"Lyrics"}
               </Button>
+              <Button
+                size="small"
+                color="primary"
+                onClick={() => setMeaningOpen(true)}
+                disabled={!lyrics}
+              >
+                {"Meaning"}
+              </Button>
+              <Button size="small" color="primary" disabled>
+                {"Youtube"}
+              </Button>
+              <IconButton size="small" disabled>
+                <FireRating fire={fire} />
+              </IconButton>
             </CardActions>
           </div>
           {/* <div

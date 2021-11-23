@@ -9,7 +9,7 @@ Listen up boy, we are not playin’
 I bring my knife and I do the slayin’
 
 I got...
-Black ice on my drip,
+Black ice on my drip
 40k around my wrist
 Pull up in a brand new whip,
 .223’s my aim don’t miss (gun fire)

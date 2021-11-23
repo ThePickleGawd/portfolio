@@ -4,6 +4,12 @@ import DylanDripLyrics from "./rapLyrics/DylanDrip";
 import RolliesForTheHomiesLyrics from "./rapLyrics/RolliesForTheHomies";
 import DroppingAnOppLyrics from "./rapLyrics/DroppingAnOpp";
 
+// Meaning
+import BlackIceOnMyDripMeaning from "./rapMeanings/BlackIceOnMyDrip";
+import DylanDripMeaning from "./rapMeanings/DylanDrip";
+import RolliesForTheHomiesMeaning from "./rapMeanings/RolliesForTheHomies";
+import DroppingAnOppMeaning from "./rapMeanings/DroppingAnOpp";
+
 import Rollie from "../../public/rollie.jpeg";
 import Rolex from "../../public/rolex.jpg";
 
@@ -26,6 +32,7 @@ export const raps = [
     embedId: "a5eDbFbrxN4",
     mp3: RolliesForTheHomies,
     lyrics: RolliesForTheHomiesLyrics,
+    meaning: RolliesForTheHomiesMeaning,
     fire: 5,
     date: new Date(2021, 1, 25), // year, month, day
   },
@@ -45,6 +52,7 @@ export const raps = [
     youtube: "https://youtube.com",
     //mp3: BlackIceOnMyDrip,
     lyrics: BlackIceOnMyDripLyrics,
+    meaning: BlackIceOnMyDripMeaning,
     fire: 1,
     date: new Date(2021, 1, 25), // year, month, day
   },
@@ -89,6 +97,7 @@ export const raps = [
     youtube: "https://youtube.com",
     mp3: DroppingAnOpp,
     lyrics: DroppingAnOppLyrics,
+    meaning: DroppingAnOppMeaning,
     fire: 4,
     date: new Date(2021, 8, 22), // year, month, day
   },
@@ -115,6 +124,7 @@ export const raps = [
     youtube: "https://youtube.com",
     mp3: DylanDrip,
     lyrics: DylanDripLyrics,
+    meaning: DylanDripMeaning,
     fire: 4,
     date: new Date(2021, 9, 29), // year, month, day
   },

@@ -68,7 +68,7 @@ const HomieCheckpoint = () => {
       </DialogTitle>
       <DialogContent>
         {!homieTest
-          ? "Only the homies can experience the absolute fire of these raps..."
+          ? "Only the homies (and non job/college recruiters) can experience the absolute fire of these raps..."
           : "Which is better, Gunn or Paly?"}
       </DialogContent>
       <DialogActions>
