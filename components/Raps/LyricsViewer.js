@@ -16,8 +16,6 @@ const LyricsViewer = ({ lyrics, title, opened, onClose, meaningArray }) => {
     // replace all instances of "lyric" with <LyricMeaning/>
     let replacedText = lyrics;
 
-    console.log(meaningArray);
-
     meaningArray.forEach((x) => {
       console.log(x.lyric, x.meaning);
 
@@ -25,10 +23,6 @@ const LyricsViewer = ({ lyrics, title, opened, onClose, meaningArray }) => {
         <LyricMeaning lyrics={x.lyric} meaning={x.meaning} />
       ));
     });
-    // replace string, x => meaning(x)
-    // update string and do again
-
-    console.log(replacedText);
 
     return replacedText;
   };

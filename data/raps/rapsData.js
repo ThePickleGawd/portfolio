@@ -125,7 +125,7 @@ export const raps = [
     mp3: DylanDrip,
     lyrics: DylanDripLyrics,
     meaning: DylanDripMeaning,
-    fire: 4,
+    fire: 3,
     date: new Date(2021, 9, 29), // year, month, day
   },
 ];

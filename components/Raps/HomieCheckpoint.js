@@ -1,5 +1,5 @@
 // React
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import router from "next/router";
 
 // Redux
@@ -27,12 +27,18 @@ const HomieCheckpoint = () => {
   const [homieTest, setHomieTest] = useState(false);
   const dispatch = useDispatch();
 
+  useEffect(() => {
+    if (localStorage.getItem("homie")) setOpen(false);
+  }, []);
+
   const passedTheHomieCheck = () => {
     dispatch({
       type: TYPES.SET_MESSAGE,
       payload: "WELCOME HOMIE!",
     });
     setOpen(false);
+
+    localStorage.setItem("homie", true);
   };
   const claimsToBeAHomie = () => setHomieTest(true);
 

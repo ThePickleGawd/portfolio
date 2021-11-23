@@ -31,6 +31,7 @@ import FireRating from "./FireRating";
 import LyricsViewer from "./LyricsViewer";
 import MeaningViewer from "./MeaningViewer";
 import dayjs from "dayjs";
+import { Tooltip } from "@mui/material";
 
 const SongCard = ({
   song: { title, description, img, embedId, mp3, fire, date, lyrics, meaning },
@@ -88,13 +89,19 @@ const SongCard = ({
               </Typography>
             </CardContent>
             <CardActions>
-              <IconButton
-                size="small"
-                onClick={playing ? handlePause : handlePlay}
-                disabled={!mp3}
+              <Tooltip
+                title={
+                  !mp3 ? "This songs so bad I can't let anyone hear it" : ""
+                }
               >
-                {playing ? <Pause /> : <PlayArrow />}
-              </IconButton>
+                <IconButton
+                  size="small"
+                  onClick={playing ? handlePause : handlePlay}
+                  disabled={!mp3}
+                >
+                  {playing ? <Pause /> : <PlayArrow />}
+                </IconButton>
+              </Tooltip>
               <IconButton size="small" href={mp3}>
                 <GetAppIcon />
               </IconButton>
