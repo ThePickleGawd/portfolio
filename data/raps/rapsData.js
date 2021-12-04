@@ -1,4 +1,5 @@
 // Lyrics
+import RanUpWithAGlockLyrics from "./rapLyrics/RanUpWithAGlock";
 import BlackIceOnMyDripLyrics from "./rapLyrics/BlackIceOnMyDrip";
 import DylanDripLyrics from "./rapLyrics/DylanDrip";
 import RolliesForTheHomiesLyrics from "./rapLyrics/RolliesForTheHomies";
@@ -6,6 +7,7 @@ import DroppingAnOppLyrics from "./rapLyrics/DroppingAnOpp";
 import StudyGangLyrics from "./rapLyrics/StudyGang";
 
 // Meaning
+import RanUpWithAGlockMeaning from "./rapMeanings/RanUpWithAGlock";
 import BlackIceOnMyDripMeaning from "./rapMeanings/BlackIceOnMyDrip";
 import DylanDripMeaning from "./rapMeanings/DylanDrip";
 import RolliesForTheHomiesMeaning from "./rapMeanings/RolliesForTheHomies";
@@ -42,6 +44,8 @@ export const raps = [
     img: null,
     embedId: "0-S5a0eXPoc",
     mp3: RanUpWithAGlock,
+    lyrics: RanUpWithAGlockLyrics,
+    meaning: RanUpWithAGlockMeaning,
     fire: 3,
     date: new Date(2021, 0, 25), // year, month (0-indexed), day
   },
