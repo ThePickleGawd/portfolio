@@ -18,6 +18,10 @@ const meaning = [
       "If you know Cheney, you know what I'm talking about...\njk he's actually pretty good",
   },
   {
+    lyric: "And you know I got like 3 plates on em (yuh)\n",
+    meaning: "Cuz like I can definetly bench 315 lb",
+  },
+  {
     lyric: "I just shot an opp with the op from very long range\n",
     meaning: "What can I say, I'm just cracked at Valorant",
   },

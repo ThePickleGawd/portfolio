@@ -47,7 +47,7 @@ export const raps = [
     lyrics: RanUpWithAGlockLyrics,
     meaning: RanUpWithAGlockMeaning,
     fire: 3,
-    date: new Date(2021, 0, 25), // year, month (0-indexed), day
+    date: new Date(2021, 0, 21), // year, month (0-indexed), day
   },
   {
     title: "Rollies for the Homies",
@@ -73,7 +73,7 @@ export const raps = [
   },
   {
     title: "Saiyan Gawd Flow",
-    description: "Super Saiyan Gawd",
+    description: "Saiyan Flow",
     img: null,
     youtube: "https://youtube.com",
     fire: 1,
@@ -81,7 +81,7 @@ export const raps = [
   },
   {
     title: "Saiyan Gawd Flow 2",
-    description: "The Pickle Gawd",
+    description: "Saiyan Flow",
     img: null,
     youtube: "https://youtube.com",
     mp3: SaiyanGawdFlow2,
@@ -98,11 +98,11 @@ export const raps = [
   },
   {
     title: "Saiyan Gawd Flow 3",
-    description: "The Pickle Gawd",
+    description: "Saiyan Flow",
     img: null,
     youtube: "https://youtube.com",
     mp3: SaiyanGawdFlow3,
-    fire: 2,
+    fire: 3,
     date: new Date(2021, 1, 28), // year, month (0-indexed), day
   },
   {
@@ -132,7 +132,7 @@ export const raps = [
     mp3: DylanDrip,
     lyrics: DylanDripLyrics,
     meaning: DylanDripMeaning,
-    fire: 3,
+    fire: 2,
     date: new Date(2021, 8, 29), // year, month (0-indexed), day
   },
   {
@@ -140,7 +140,7 @@ export const raps = [
     description: "study.dylanlu.com (Music video soon)",
     img: null,
     youtube: "https://youtube.com",
-    mp3: StudyGang,
+    //mp3: StudyGang,
     lyrics: StudyGangLyrics,
     meaning: StudyGangMeaning,
     fire: 5,
