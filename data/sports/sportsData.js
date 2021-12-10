@@ -18,7 +18,7 @@ export const sports = [
     ],
   },
   {
-    name: "Basketball",
+    name: "Basketball (Obviously not done)",
     data: [
       {
         name: "Sequoia",
