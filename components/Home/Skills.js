@@ -55,13 +55,14 @@ const Skills = ({ fadeIn }) => {
             transform: x.to((x) => `translate3d(0,${x}px,0)`),
           }}
         >
-          <animated.div style={{ height }}>
+          <animated.div style={{ /*height*/ height: "auto" }}>
             <Typography variant="h4">{skills[index].name}</Typography>
             <LinearProgress
               style={{ height: 15 }}
               variant="determinate"
               value={visible ? skills[index].val : 0}
             />
+            <br />
           </animated.div>
         </animated.div>
       ))}

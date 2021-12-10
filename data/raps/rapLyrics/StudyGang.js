@@ -89,7 +89,6 @@ Oops now my cash be coming in fast like a fast car speeding to the max (what?)
 So guys, the moral of the story is to play study game,
 I’m not sure what to name it yet but it’ll probably have a better name soon
 
-Also, smash subscribe, or I will smash you
-Just kidding, but not really...`;
+Also, smash subscribe, or I will smash you`;
 
 export default lyrics;

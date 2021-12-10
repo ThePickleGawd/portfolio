@@ -1,3 +1,6 @@
+// React
+import { useState } from "react";
+
 // Material UI
 import Card from "@mui/material/Card";
 import Typography from "@mui/material/Typography";
@@ -13,6 +16,23 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailIcon from "@mui/icons-material/Email";
 
 export const Contact = () => {
+  const [emailTo, setEmailTo] = useState("dylanelu2@gmail.com");
+  const [emailSubject, setEmailSubject] = useState("Wow you're so cool!");
+  const [emailBody, setEmailBody] = useState(
+    `Hi Dylan, you are so cool, can I hire you?`
+  );
+
+  const sendMessage = () => {
+    const url =
+      "https://mail.google.com/mail?view=cm&tf=0" +
+      (emailTo ? "&to=" + emailTo : "") +
+      (emailSubject ? "&su=" + emailSubject : "") +
+      (emailBody ? "&body=" + emailBody : "");
+
+    const newWindow = window.open(url, "_blank", "noopener,noreferrer");
+    if (newWindow) newWindow.opener = null;
+  };
+
   return (
     <div
       style={{
@@ -35,6 +55,8 @@ export const Contact = () => {
         fullWidth
         multiline
         rows={4}
+        onChange={(e) => setEmailBody(e.target.value)}
+        value={emailBody}
       />
       <div
         style={{
@@ -44,7 +66,7 @@ export const Contact = () => {
           marginTop: 10,
         }}
       >
-        <Button>Send! (Not working)</Button>
+        <Button onClick={sendMessage}>Send! (With gmail)</Button>
       </div>
     </div>
   );
