@@ -1,18 +1,16 @@
 const lyrics = `All the homies on the study game...
 
-Study Gang
-All of my homies be grinding the study game
-Study Gang
-Playing the game will help you with studying
-Study Gang
-So that you learn and that you can get better grades
-Study Gang
-And hop in the range so you won’t have cheney aim
+All of the homies on study game,
+Like how could you not fail in school if you aren’t studying?
+But how could you rank up to plat (for real)
+If you’re aim is so trash (that’s fax)
+That’s the point of the game 
+Study hard and improve your aim
 
-Violence in the street gotta stop
+Look, violence in the streets gotta stop
 Quizlet gang shooting in the streets nonstop (uh huh)
 Keeping the peace with my glock
-Gotta let the opps know we on top (uh)
+Gotta let the opps know that we on the top (uh)
 
 Handing out A’s to the people
 Money so good that there might be a sequel (for real)
@@ -20,17 +18,17 @@ Drum gun on me it's a lethal
 Study Gang erasing all of the evil (yuh)
 
 Write these facts in a set
-Play the study game so I don’t forget (uh huh)
+Play the study game so I don’t forget (uh huh) 
 Bet with me and you’re in debt
 I’m like Tom Brady and your like the Jets (trash)
 
 Shoot a three and it's wet?
 You can hear the sound of the swish on the net (splash)
-Don’t live your life with regret,
+Don’t live your life with regret
 Play my game or I will get upset
 
 Yeah it's lil lu, I’ve been wit da crew
-I stay with the gang, the gang keep me true.
+I stay with the gang, the gang keep me true
 The money come dirty, the money come blue
 I just made a milli, I spent it on shoes
 Checking my grades I got A’s
@@ -50,14 +48,12 @@ Its really cool and I spent a lot of time on it
 Its at study.dylanlu.com
 And it's free, and yeah
 
-Study Gang
-All of my homies be grinding the study game
-Study Gang
-Playing the game will help you with studying
-Study Gang
-So that you learn and that you can get better grades
-Study Gang
-And hop in the range so you won’t have cheney aim
+All of the homies on study game,
+Like how could you not fail in school if you aren’t studying?
+But how could you rank up to plat (for real)
+If you’re aim is so trash (that’s fax)
+That’s the point of the game 
+Study hard and improve your aim
 
 I’ve been playing the game with the gang
 Fixing my aim, man I’m insane
@@ -77,7 +73,7 @@ Kahoot don’t try to be what your not
 
 If they see you playing, Kahoot
 My hitters gon find you, and shoot
-Pull up in a mercedes,
+Pull up in a mercedes
 Shoot like they KD, and I ain’t talking bout no balls in a hoop
 Damn like how could you like Kahoot
 Damn like how could you be such a fool

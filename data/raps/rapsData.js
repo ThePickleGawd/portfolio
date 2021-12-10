@@ -140,7 +140,7 @@ export const raps = [
     description: "study.dylanlu.com (Music video soon)",
     img: null,
     youtube: "https://youtube.com",
-    //mp3: StudyGang,
+    mp3: StudyGang,
     lyrics: StudyGangLyrics,
     meaning: StudyGangMeaning,
     fire: 5,
