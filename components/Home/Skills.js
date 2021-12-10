@@ -9,11 +9,12 @@ import { useRef } from "react";
 
 // Skills from 0-5
 const skills = [
-  { name: "React", val: 80 },
-  { name: "JS/TS", val: 80 },
-  { name: "Unity", val: 95 },
+  { name: "React (JS or TS)", val: 80 },
+  { name: "Unity + C# + Game Design", val: 95 },
   { name: "C++ & Algorithms", val: 70 },
-  { name: "Java", val: 45 },
+  { name: "Other languages (Python, Java, etc)", val: 45 },
+  { name: "Scoring toudies!", val: 100 },
+  { name: "Making music videos about my amazing games/apps!", val: 100 },
 ];
 
 const config = { mass: 5, tension: 2000, friction: 200 };

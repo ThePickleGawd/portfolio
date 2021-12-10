@@ -102,7 +102,7 @@ export const raps = [
     img: null,
     youtube: "https://youtube.com",
     mp3: SaiyanGawdFlow3,
-    fire: 3,
+    fire: 4,
     date: new Date(2021, 1, 28), // year, month (0-indexed), day
   },
   {
@@ -132,7 +132,7 @@ export const raps = [
     mp3: DylanDrip,
     lyrics: DylanDripLyrics,
     meaning: DylanDripMeaning,
-    fire: 2,
+    fire: 1,
     date: new Date(2021, 8, 29), // year, month (0-indexed), day
   },
   {

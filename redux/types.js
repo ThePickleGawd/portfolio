@@ -1,6 +1,5 @@
 // UI
 export const SET_PARALLAX_REF = "SET_PARALLAX_REF";
-export const SET_IMAGE = "SET_IMAGE";
 export const SET_RAPS_HIDDEN = "SET_RAPS_HIDDEN";
 export const SET_MESSAGE_OPENED = "SET_MESSAGE_OPENED";
 export const SET_MESSAGE = "SET_MESSAGE";

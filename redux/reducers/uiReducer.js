@@ -2,7 +2,6 @@ import * as TYPES from "../types";
 
 const initialState = {
   parallaxRef: null, // reference the parallax
-  image: null,
   rapsHidden: false,
   message: "",
   messageOpened: false,
@@ -14,11 +13,6 @@ export const uiReducer = (state = initialState, action) => {
       return {
         ...state,
         parallaxRef: action.payload,
-      };
-    case TYPES.SET_IMAGE:
-      return {
-        ...state,
-        image: action.payload,
       };
     case TYPES.SET_RAPS_HIDDEN:
       return {

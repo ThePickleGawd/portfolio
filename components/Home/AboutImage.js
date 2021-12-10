@@ -1,5 +1,5 @@
 // React, Redux
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { useDispatch, useSelector } from "react-redux";
 import * as TYPES from "../../redux/types";
@@ -12,15 +12,20 @@ import Fade from "@mui/material/Fade";
 import { useOnScreen } from "../../util/helper";
 
 // Pictures
-import defaultPic from "../../public/images/me/default.jpg";
+import pictures from "../../data/pictures/picturesData";
 
 const AboutImage = ({ fadeIn }) => {
-  const image = useSelector((state) => state.UI.image);
+  //const image = useSelector((state) => state.UI.image);
   const dispatch = useDispatch();
 
   const ref = useRef();
-
   const visible = useOnScreen(ref);
+
+  const [image, setImage] = useState(pictures[0]);
+
+  useEffect(() => {
+    setImage(pictures[Math.floor(Math.random() * pictures.length)]);
+  }, []);
 
   return (
     <div ref={ref}>
@@ -33,7 +38,7 @@ const AboutImage = ({ fadeIn }) => {
             overflow: "hidden",
           }}
         >
-          <Image src={defaultPic} alt="Dylan Lu" layout="intrinsic" priority />
+          <Image src={image} alt="Dylan Lu" layout="intrinsic" priority />
         </div>
       </Fade>
     </div>
