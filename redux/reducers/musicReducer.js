@@ -1,10 +1,10 @@
 import * as TYPES from "../types";
 
 const initialState = {
-  raps: [],
+  raps: [], // sorted
   currentRapId: -1, // index of song in array
   pausedPosition: 0.0, // seconds
-  sound: null, // howler reference
+  sound: null, // current howler reference
 };
 
 export const musicReducer = (state = initialState, action) => {
@@ -28,6 +28,15 @@ export const musicReducer = (state = initialState, action) => {
       return {
         ...state,
         sound: action.payload,
+      };
+    case TYPES.ADD_SOUND_REF:
+      return {
+        ...state,
+        raps: state.raps.map((rap, index) =>
+          rap.title === action.payload.title
+            ? { ...rap, sound: action.payload.sound }
+            : rap
+        ),
       };
     default:
       return state;

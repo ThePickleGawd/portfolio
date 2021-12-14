@@ -17,8 +17,6 @@ const LyricsViewer = ({ lyrics, title, opened, onClose, meaningArray }) => {
     let replacedText = lyrics;
 
     meaningArray.forEach((x) => {
-      console.log(x.lyric, x.meaning);
-
       replacedText = reactStringReplace(replacedText, x.lyric, (match, i) => (
         <LyricMeaning lyrics={x.lyric} meaning={x.meaning} />
       ));

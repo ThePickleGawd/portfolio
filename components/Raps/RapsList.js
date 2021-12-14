@@ -13,7 +13,10 @@ const RapsList = () => {
 
   return (
     <Grid container spacing={3}>
-      {raps && raps.map((song) => <SongCard key={song.title} song={song} />)}
+      {raps &&
+        raps.map((song, index) => (
+          <SongCard key={song.title} song={song} index={index} />
+        ))}
     </Grid>
   );
 };

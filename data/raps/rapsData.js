@@ -37,6 +37,7 @@ export const raps = [
     youtube: "https://youtube.com",
     fire: 0,
     date: new Date(2021, 0, 18), // year, month (0-indexed), day
+    sound: null,
   },
   {
     title: "Ran Up With a Glock",
@@ -48,6 +49,7 @@ export const raps = [
     meaning: RanUpWithAGlockMeaning,
     fire: 3,
     date: new Date(2021, 0, 21), // year, month (0-indexed), day
+    sound: null,
   },
   {
     title: "Rollies for the Homies",
@@ -59,6 +61,7 @@ export const raps = [
     meaning: RolliesForTheHomiesMeaning,
     fire: 5,
     date: new Date(2021, 0, 25), // year, month (0-indexed), day
+    sound: null,
   },
   {
     title: "Black Ice on My Drip",
@@ -70,6 +73,7 @@ export const raps = [
     meaning: BlackIceOnMyDripMeaning,
     fire: 1,
     date: new Date(2021, 0, 25), // year, month (0-indexed), day
+    sound: null,
   },
   {
     title: "Saiyan Gawd Flow",
@@ -78,6 +82,7 @@ export const raps = [
     youtube: "https://youtube.com",
     fire: 1,
     date: new Date(2021, 0, 25), // year, month (0-indexed), day
+    sound: null,
   },
   {
     title: "Saiyan Gawd Flow 2",
@@ -87,6 +92,7 @@ export const raps = [
     mp3: SaiyanGawdFlow2,
     fire: 5,
     date: new Date(2021, 1, 9), // year, month (0-indexed), day
+    sound: null,
   },
   {
     title: "SAT's and the 223's",
@@ -95,6 +101,7 @@ export const raps = [
     youtube: "https://youtube.com",
     fire: 3,
     date: new Date(2021, 1, 22), // year, month (0-indexed), day
+    sound: null,
   },
   {
     title: "Saiyan Gawd Flow 3",
@@ -104,6 +111,7 @@ export const raps = [
     mp3: SaiyanGawdFlow3,
     fire: 4,
     date: new Date(2021, 1, 28), // year, month (0-indexed), day
+    sound: null,
   },
   {
     title: "HWBounty Rap???",
@@ -112,6 +120,7 @@ export const raps = [
     youtube: "https://youtube.com",
     fire: 0,
     date: new Date(2021, 2, 7), // year, month (0-indexed), day
+    sound: null,
   },
   {
     title: "Dropping an Opp",
@@ -123,6 +132,7 @@ export const raps = [
     meaning: DroppingAnOppMeaning,
     fire: 4,
     date: new Date(2021, 7, 22), // year, month (0-indexed), day
+    sound: null,
   },
   {
     title: "Dylan Drip",
@@ -134,6 +144,7 @@ export const raps = [
     meaning: DylanDripMeaning,
     fire: 1,
     date: new Date(2021, 8, 29), // year, month (0-indexed), day
+    sound: null,
   },
   {
     title: "Study (Toudie) Gang",
@@ -145,6 +156,7 @@ export const raps = [
     meaning: StudyGangMeaning,
     fire: 5,
     date: new Date(2021, 11, 3), // year, month (0-indexed), day
+    sound: null,
   },
 ];
 

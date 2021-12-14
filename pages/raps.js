@@ -21,6 +21,7 @@ import SongControls from "../components/Raps/SongControls";
 import SortButton from "../components/Raps/SortButton";
 import RapsList from "../components/Raps/RapsList";
 import HomieCheckpoint from "../components/Raps/HomieCheckpoint";
+import MusicPlayer from "../components/Raps/MusicPlayer";
 
 // Redux
 import { useDispatch, useSelector } from "react-redux";
@@ -33,6 +34,7 @@ export const Raps = () => {
   const dispatch = useDispatch();
   const rapId = useSelector((state) => state.music.currentRapId);
   const sound = useSelector((state) => state.music.sound);
+
   const [loading, setLoading] = useState(true);
 
   // Code-splitting for large raps file
@@ -57,6 +59,7 @@ export const Raps = () => {
       }}
     >
       <HomieCheckpoint />
+      {/*<MusicPlayer />*/}
       <Typography variant="h2">{"Dylan's Very Bad Raps"}</Typography>
       <br />
       <Container>

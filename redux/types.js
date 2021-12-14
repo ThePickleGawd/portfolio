@@ -9,3 +9,4 @@ export const SET_RAP_ID = "SET_RAP_ID";
 export const SET_PAUSED_POSITION = "SET_PAUSED_POSITION";
 export const SET_SOUND_REF = "SET_SOUND_REF";
 export const SET_RAPS = "SET_RAPS";
+export const ADD_SOUND_REF = "ADD_SOUND_REF";

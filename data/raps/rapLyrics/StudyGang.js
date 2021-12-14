@@ -3,7 +3,7 @@ const lyrics = `All the homies on the study game...
 All of the homies on study game,
 Like how could you not fail in school if you aren’t studying?
 But how could you rank up to plat (for real)
-If you’re aim is so trash (that’s fax)
+If your aim is so trash (that’s fax)
 That’s the point of the game 
 Study hard and improve your aim
 

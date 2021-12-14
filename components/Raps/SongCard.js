@@ -35,6 +35,7 @@ import { Tooltip } from "@mui/material";
 
 const SongCard = ({
   song: { title, description, img, embedId, mp3, fire, date, lyrics, meaning },
+  index,
 }) => {
   // State vars
   const [playing, setPlaying] = useState(false);
@@ -44,17 +45,29 @@ const SongCard = ({
     onplay: () => setPlaying(true),
     onend: () => setPlaying(false),
     onpause: () => setPlaying(false),
+    onstop: () => setPlaying(false),
+    onplayerror: () => setPlaying(false),
   });
 
   // Reduxy stuff
   const dispatch = useDispatch();
-  const currentSound = useSelector((state) => state.music.sound);
+  const sound = useSelector((state) => state.music.sound);
+
+  useEffect(() => {
+    if (!exposedData.sound) return;
+    dispatch({
+      type: TYPES.ADD_SOUND_REF,
+      payload: { title, sound: exposedData.sound },
+    });
+  }, [exposedData.sound]);
 
   const handlePlay = () => {
     // If the redux sound is not this one, stop it (its a new song)
-    if (currentSound && currentSound != exposedData.sound) currentSound.stop();
+    if (sound && sound != exposedData.sound) sound.stop();
     play();
     dispatch({ type: TYPES.SET_SOUND_REF, payload: exposedData.sound });
+    console.log("setting", index);
+    dispatch({ type: TYPES.SET_RAP_ID, payload: index });
   };
 
   const handlePause = () => exposedData.pause();
@@ -152,6 +165,7 @@ SongCard.propTypes = {
   embedId: PropTypes.string,
   mp3: PropTypes.any,
   fire: PropTypes.number.isRequired,
+  index: PropTypes.number.isRequired,
 };
 
 export default SongCard;
