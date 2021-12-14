@@ -51,7 +51,7 @@ export const HashCheckProvider = ({ parallaxRef }) => {
 
     router.events.on("hashChangeComplete", handleHashChangeComplete);
     return () => {
-      router.events.off("hashRouteChangeComplete", handleHashChangeComplete);
+      router.events.off("hashChangeComplete", handleHashChangeComplete);
     };
   }, [router.isReady, parallaxRef, locations]);
 
@@ -60,7 +60,7 @@ export const HashCheckProvider = ({ parallaxRef }) => {
 
 export const YoutubeEmbed = ({ embedId }) => (
   <div
-    styles={{
+    style={{
       overflow: "hidden",
       paddingBottom: "56.25%",
       position: "relative",

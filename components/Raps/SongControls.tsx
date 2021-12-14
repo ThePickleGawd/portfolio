@@ -2,8 +2,8 @@
 import { useEffect, useState, useRef } from "react";
 
 // Redux
-import { useSelector, useDispatch } from "react-redux";
-import * as TYPES from "../../redux/types";
+import { useAppSelector, useAppDispatch } from "redux/hooks";
+import * as TYPES from "redux/types";
 
 // Material UI
 import Typography from "@mui/material/Typography";
@@ -30,11 +30,11 @@ When we hit play:
 */
 
 const SongControls = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
-  const sound = useSelector((state) => state.music.sound);
-  const raps = useSelector((state) => state.music.raps);
-  const currentRapId = useSelector((state) => state.music.currentRapId);
+  const sound = useAppSelector((state) => state.music.sound);
+  const raps = useAppSelector((state) => state.music.raps);
+  const currentRapId = useAppSelector((state) => state.music.currentRapId);
 
   const [position, setPosition] = useState(0);
   const [sliding, setSliding] = useState(false);

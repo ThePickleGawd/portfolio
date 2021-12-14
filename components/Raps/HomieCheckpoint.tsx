@@ -4,7 +4,7 @@ import router from "next/router";
 
 // Redux
 import { useDispatch } from "react-redux";
-import * as TYPES from "../../redux/types";
+import * as TYPES from "redux/types";
 
 // Material UI
 import Dialog from "@mui/material/Dialog";
@@ -28,7 +28,7 @@ const HomieCheckpoint = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (localStorage.getItem("homie")) setOpen(false);
+    if (localStorage.getItem("homie") === "yes") setOpen(false);
   }, []);
 
   const passedTheHomieCheck = () => {
@@ -38,7 +38,7 @@ const HomieCheckpoint = () => {
     });
     setOpen(false);
 
-    localStorage.setItem("homie", true);
+    localStorage.setItem("homie", "yes");
   };
   const claimsToBeAHomie = () => setHomieTest(true);
 

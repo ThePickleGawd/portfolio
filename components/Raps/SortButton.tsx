@@ -8,12 +8,12 @@ import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 
 // Redux
-import { useSelector, useDispatch } from "react-redux";
-import * as TYPES from "../../redux/types";
+import { useAppSelector, useAppDispatch } from "redux/hooks";
+import * as TYPES from "redux/types";
 
 const FilterButton = () => {
-  const dispatch = useDispatch();
-  const raps = useSelector((state) => state.music.raps);
+  const dispatch = useAppDispatch();
+  const raps = useAppSelector((state) => state.music.raps);
   const [property, setSortProperty] = useState("recent");
 
   const handleChange = (event) => {

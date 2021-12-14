@@ -2,7 +2,7 @@
 import React, { useRef, useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { useOnScreen } from "../../util/helper";
+import { useOnScreen } from "util/helper";
 
 // Material UI
 import Card from "@mui/material/Card";
@@ -13,7 +13,7 @@ import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
 import IconButton from "@mui/material/IconButton";
 
-import { projects } from "../../data/projects/projectsData";
+import projects from "data/projects/projectsData";
 
 const ProjectViewer = () => {
   const [project, setProject] = useState(0);

@@ -3,7 +3,7 @@ import React from "react";
 import router, { useRouter } from "next/router";
 
 // Redux
-import { useSelector } from "react-redux";
+import { useAppSelector } from "redux/hooks";
 
 // Material UI
 import Toolbar from "@mui/material/Toolbar";
@@ -11,7 +11,7 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 
 export const Navbar = (props) => {
-  const rapsHidden = useSelector((state) => state.UI.rapsHidden);
+  const rapsHidden = useAppSelector((state) => state.UI.rapsHidden);
 
   const handleClick = (to) => {
     router.push(to);

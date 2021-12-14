@@ -12,34 +12,33 @@ import CircularProgress from "@mui/material/CircularProgress";
 
 // Util
 import ReactPlayer from "react-player";
-import { YoutubeEmbed } from "../util/helper";
+import { YoutubeEmbed } from "util/helper";
 import useSound from "use-sound";
 
 // Components
-import SongCard from "../components/Raps/SongCard";
-import SongControls from "../components/Raps/SongControls";
-import SortButton from "../components/Raps/SortButton";
-import RapsList from "../components/Raps/RapsList";
-import HomieCheckpoint from "../components/Raps/HomieCheckpoint";
-import MusicPlayer from "../components/Raps/MusicPlayer";
+import SongCard from "components/Raps/SongCard";
+import SongControls from "components/Raps/SongControls";
+import SortButton from "components/Raps/SortButton";
+import RapsList from "components/Raps/RapsList";
+import HomieCheckpoint from "components/Raps/HomieCheckpoint";
 
 // Redux
-import { useDispatch, useSelector } from "react-redux";
-import * as TYPES from "../redux/types";
+import { useAppDispatch, useAppSelector } from "redux/hooks";
+import * as TYPES from "redux/types";
 
 // Image
-import rollie from "../public/rollie.jpeg";
+import rollie from "public/rollie.jpeg";
 
 export const Raps = () => {
-  const dispatch = useDispatch();
-  const rapId = useSelector((state) => state.music.currentRapId);
-  const sound = useSelector((state) => state.music.sound);
+  const dispatch = useAppDispatch();
+  const rapId = useAppSelector((state) => state.music.currentRapId);
+  const sound = useAppSelector((state) => state.music.sound);
 
   const [loading, setLoading] = useState(true);
 
   // Code-splitting for large raps file
   useEffect(() => {
-    import("../data/raps/rapsData").then((mod) => {
+    import("data/raps/rapsData").then((mod) => {
       dispatch({
         type: TYPES.SET_RAPS,
         payload: mod.default

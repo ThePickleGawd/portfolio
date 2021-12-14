@@ -13,11 +13,11 @@ import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
 
 // Components
-import SportViewer from "../components/Sports/SportViewer";
+import SportViewer from "components/Sports/SportViewer";
 import ReactPlayer from "react-player";
 
 // Data
-import sportsData from "../data/sports/sportsData";
+import sportsData from "data/sports/sportsData";
 
 const Sports = () => {
   const [tab, setTab] = useState(0);

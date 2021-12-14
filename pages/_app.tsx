@@ -1,26 +1,26 @@
 // React
 import React, { useRef, useEffect } from "react";
 import { useRouter } from "next/router";
+import { AppProps } from "next/app";
 import PropTypes from "prop-types";
 
 // Redux
 import { Provider } from "react-redux";
-import store from "../redux/store";
+import store from "redux/store";
 
-// Styiling
+//Styiling
 import { ThemeProvider, StyledEngineProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
-import theme from "../util/theme";
+import theme from "util/theme";
 
 // Components
-import Navbar from "../components/App/Navbar";
-import HeadInfo from "../components/App/HeadInfo";
-import Messages from "../components/App/Messages";
+import Navbar from "components/App/Navbar";
+import HeadInfo from "components/App/HeadInfo";
+import Messages from "components/App/Messages";
 import NProgress from "nprogress"; // Loading bar
 import "nprogress/nprogress.css";
 
-export default function MyApp(props) {
-  const { Component, pageProps } = props;
+export default function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
   const [pageLoading, setPageLoading] = React.useState(false);
 

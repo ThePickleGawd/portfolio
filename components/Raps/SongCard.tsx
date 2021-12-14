@@ -4,8 +4,8 @@ import PropTypes from "prop-types";
 import Image from "next/image";
 
 // Redux
-import { useDispatch, useSelector } from "react-redux";
-import * as TYPES from "../../redux/types";
+import { useAppDispatch, useAppSelector } from "redux/hooks";
+import * as TYPES from "redux/types";
 
 // Music
 import useSound from "use-sound";
@@ -50,8 +50,8 @@ const SongCard = ({
   });
 
   // Reduxy stuff
-  const dispatch = useDispatch();
-  const sound = useSelector((state) => state.music.sound);
+  const dispatch = useAppDispatch();
+  const sound = useAppSelector((state) => state.music.sound);
 
   useEffect(() => {
     if (!exposedData.sound) return;

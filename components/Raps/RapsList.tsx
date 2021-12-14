@@ -6,10 +6,10 @@ import Grid from "@mui/material/Grid";
 import SongCard from "./SongCard";
 
 // Redux
-import { useSelector } from "react-redux";
+import { useAppSelector } from "redux/hooks";
 
 const RapsList = () => {
-  const raps = useSelector((state) => state.music.raps);
+  const raps = useAppSelector((state) => state.music.raps);
 
   return (
     <Grid container spacing={3}>

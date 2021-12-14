@@ -4,7 +4,7 @@ import LinearProgress from "@mui/material/LinearProgress";
 import Fade from "@mui/material/Fade";
 
 import { useTrail, animated } from "@react-spring/web";
-import { useOnScreen } from "../../util/helper";
+import { useOnScreen } from "util/helper";
 import { useRef } from "react";
 
 // Skills from 0-5
@@ -19,7 +19,9 @@ const skills = [
 
 const config = { mass: 5, tension: 2000, friction: 200 };
 
-const Skills = ({ fadeIn }) => {
+const Skills = (props: { fadeIn: Boolean }) => {
+  const { fadeIn } = props;
+
   const ref = useRef();
   const visible = useOnScreen(ref);
 

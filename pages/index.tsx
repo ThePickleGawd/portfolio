@@ -11,23 +11,23 @@ import Card from "@mui/material/Card";
 import Fade from "@mui/material/Fade";
 
 // Springy
-import { Parallax, ParallaxLayer } from "@react-spring/parallax";
+import { IParallax, Parallax, ParallaxLayer } from "@react-spring/parallax";
 
 // Components
-import Welcome from "../components/Home/Welcome";
-import About from "../components/Home/About";
-import Skills from "../components/Home/Skills";
-import AboutImage from "../components/Home/AboutImage";
-import Work from "../components/Home/Work";
-import Contact from "../components/Home/Contact";
-import Sidebar from "../components/Home/Sidebar";
-import ParallaxBackground from "../components/Home/ParallaxBackground";
-import { HashCheckProvider } from "../util/helper";
+import Welcome from "components/Home/Welcome";
+import About from "components/Home/About";
+import Skills from "components/Home/Skills";
+import AboutImage from "components/Home/AboutImage";
+import Work from "components/Home/Work";
+import Contact from "components/Home/Contact";
+import Sidebar from "components/Home/Sidebar";
+import ParallaxBackground from "components/Home/ParallaxBackground";
+import MobileHome from "components/Home/MobileHome";
+import { HashCheckProvider } from "util/helper";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import MobileHome from "../components/Home/MobileHome";
 
 export const Home = () => {
-  const parallaxRef = useRef();
+  const parallaxRef = useRef<IParallax>();
   const smallScreen = useMediaQuery("(max-width:1024px)");
   const router = useRouter();
 
@@ -40,7 +40,9 @@ export const Home = () => {
     };
 
     if (!locations[hash]) return;
-    parallaxRef.current.scrollTo(locations[hash]);
+
+    if (parallaxRef.current != null)
+      parallaxRef.current.scrollTo(locations[hash]);
   }, []);
 
   if (smallScreen) return <MobileHome />;
@@ -74,7 +76,7 @@ export const Home = () => {
             zIndex: -0.5,
           }}
         >
-          <AboutImage />
+          <AboutImage fadeIn={false} />
           <div style={{ width: "10%" }} />
         </ParallaxLayer>
         <ParallaxLayer

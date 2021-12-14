@@ -7,7 +7,7 @@ import { useEffect } from "react";
 import Typography from "@mui/material/Typography";
 
 // Info
-import projects from "../../data/projects/projectsData";
+import projects from "data/projects/projectsData";
 
 const Project = () => {
   const router = useRouter();

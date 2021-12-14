@@ -3,14 +3,14 @@ import Image from "next/image";
 import { ParallaxLayer } from "@react-spring/parallax";
 
 // Pictures
-import unityLogo from "../../public/icons/unity.png";
-import reactLogo from "../../public/icons/react.png";
-import nextLogo from "../../public/icons/next.png";
-import cppLogo from "../../public/icons/cpp.png";
-import pythonLogo from "../../public/icons/python.png";
-import javaLogo from "../../public/icons/java.png";
-import javascriptLogo from "../../public/icons/javascript.png";
-import typescriptLogo from "../../public/icons/typescript.png";
+import unityLogo from "public/icons/unity.png";
+import reactLogo from "public/icons/react.png";
+import nextLogo from "public/icons/next.png";
+import cppLogo from "public/icons/cpp.png";
+import pythonLogo from "public/icons/python.png";
+import javaLogo from "public/icons/java.png";
+import javascriptLogo from "public/icons/javascript.png";
+import typescriptLogo from "public/icons/typescript.png";
 const stars =
   "https://raw.githubusercontent.com/ThePickleGawd/portfolio/main/public/icons/stars.svg";
 

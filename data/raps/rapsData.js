@@ -14,8 +14,8 @@ import RolliesForTheHomiesMeaning from "./rapMeanings/RolliesForTheHomies";
 import DroppingAnOppMeaning from "./rapMeanings/DroppingAnOpp";
 import StudyGangMeaning from "./rapMeanings/StudyGang";
 
-import Rollie from "../../public/rollie.jpeg";
-import Rolex from "../../public/rolex.jpg";
+import Rollie from "public/rollie.jpeg";
+import Rolex from "public/rolex.jpg";
 
 const getRap = (name) =>
   `https://github.com/ThePickleGawd/portfolio/blob/main/public/audio/raps/${name}.mp3?raw=true`;

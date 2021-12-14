@@ -1,4 +1,4 @@
-import * as TYPES from "../types";
+import * as TYPES from "redux/types";
 
 const initialState = {
   parallaxRef: null, // reference the parallax

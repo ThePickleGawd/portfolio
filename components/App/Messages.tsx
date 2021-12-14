@@ -2,16 +2,16 @@
 import { useState } from "react";
 
 // Redux
-import { useSelector, useDispatch } from "react-redux";
-import * as TYPES from "../../redux/types";
+import { useAppSelector, useAppDispatch } from "redux/hooks";
+import * as TYPES from "redux/types";
 
 // Material UI
 import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
 
 const Messages = () => {
-  const dispatch = useDispatch();
-  const { messageOpened, message } = useSelector((state) => state.UI);
+  const dispatch = useAppDispatch();
+  const { messageOpened, message } = useAppSelector((state) => state.UI);
 
   const onClose = () => {
     dispatch({ type: TYPES.SET_MESSAGE_OPENED, payload: false });
