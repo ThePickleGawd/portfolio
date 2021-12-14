@@ -9,7 +9,7 @@ const initialState = {
 
 export const uiReducer = (state = initialState, action) => {
   switch (action.type) {
-    case TYPES.SET_THEME:
+    case TYPES.SET_PARALLAX_REF:
       return {
         ...state,
         parallaxRef: action.payload,

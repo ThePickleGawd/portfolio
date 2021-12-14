@@ -1,4 +1,4 @@
-const meaning = [
+const meaning: Array<import("../types").RapMeaning> = [
   {
     lyric: "Cool kid hacker, I speak 1337\n",
     meaning: "If you don't know what l337 is, you're not a cool kid hacker...",

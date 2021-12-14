@@ -10,16 +10,31 @@ import DialogContentText from "@mui/material/DialogContentText";
 
 // Components
 import LyricMeaning from "./LyricMeaning";
+import { RapMeaning } from "data/raps/types";
 
-const LyricsViewer = ({ lyrics, title, opened, onClose, meaningArray }) => {
+type LyricsViewerPropTypes = {
+  lyrics: string;
+  title: string;
+  opened: boolean;
+  onClose: any;
+  meaningArray: Array<RapMeaning>;
+};
+
+const LyricsViewer = ({
+  lyrics,
+  title,
+  opened,
+  onClose,
+  meaningArray,
+}: LyricsViewerPropTypes) => {
   const ParseLyrics = () => {
     // replace all instances of "lyric" with <LyricMeaning/>
-    let replacedText = lyrics;
+    let replacedText: string = lyrics;
 
     meaningArray.forEach((x) => {
       replacedText = reactStringReplace(replacedText, x.lyric, (match, i) => (
         <LyricMeaning lyrics={x.lyric} meaning={x.meaning} />
-      ));
+      )) as unknown as string;
     });
 
     return replacedText;
@@ -38,14 +53,6 @@ const LyricsViewer = ({ lyrics, title, opened, onClose, meaningArray }) => {
       </DialogContent>
     </Dialog>
   );
-};
-
-LyricsViewer.propTypes = {
-  lyrics: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  opened: PropTypes.bool.isRequired,
-  onClose: PropTypes.func.isRequired,
-  meaningArray: PropTypes.array.isRequired,
 };
 
 export default LyricsViewer;

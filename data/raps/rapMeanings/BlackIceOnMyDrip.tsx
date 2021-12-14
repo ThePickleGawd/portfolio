@@ -1,4 +1,4 @@
-const meaning = [
+const meaning: Array<import("../types").RapMeaning> = [
   {
     lyric: "Black Ice on My Drip\n",
     meaning: "Black Ice is a rare skin in Rainbow Six Siege, so yeah",
