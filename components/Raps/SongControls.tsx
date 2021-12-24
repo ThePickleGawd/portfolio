@@ -19,16 +19,6 @@ import Stack from "@mui/material/Stack";
 // Util
 import dayjs from "dayjs";
 
-/*
-
-We need someway to access each song cards individual howler instance
-
-When we hit play:
-  - If no song is playing, play raps[0]
-  - Otherwise, toggle
-
-*/
-
 const SongControls = () => {
   const dispatch = useAppDispatch();
 

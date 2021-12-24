@@ -6,7 +6,7 @@ import DialogContentText from "@mui/material/DialogContentText";
 
 const MeaningViewer = ({ opened, onClose, meaningArray }) => {
   return (
-    <Dialog open={opened} onClose={onClose}>
+    <Dialog open={opened} onClose={onClose} disableScrollLock>
       <DialogTitle>{"WTF does that mean???"}</DialogTitle>
       <DialogContent>
         <DialogContentText style={{ whiteSpace: "pre-wrap" }}>

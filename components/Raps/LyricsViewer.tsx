@@ -44,7 +44,7 @@ const LyricsViewer = ({
    */
 
   return (
-    <Dialog open={opened} onClose={onClose}>
+    <Dialog open={opened} onClose={onClose} disableScrollLock>
       <DialogTitle>{title}</DialogTitle>
       <DialogContent>
         <DialogContentText style={{ whiteSpace: "pre-wrap" }}>
