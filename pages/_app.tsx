@@ -4,6 +4,8 @@ import { useRouter } from "next/router";
 import { AppProps } from "next/app";
 import PropTypes from "prop-types";
 
+import "public/fonts/fonts.css";
+
 // Redux
 import { Provider } from "react-redux";
 import store from "redux/store";
