@@ -5,10 +5,11 @@ import { useState } from "react";
 import Lottie from "lottie-react";
 import animation from "public/lottie/splashscreen.json";
 
-const Splashscreen = () => {
+const Splashscreen = ({ onComplete }) => {
   const [hidden, setHidden] = useState(false);
 
-  const onComplete = () => {
+  const handleComplete = () => {
+    onComplete();
     setHidden(true);
   };
 
@@ -17,7 +18,7 @@ const Splashscreen = () => {
       animationData={animation}
       loop={false}
       hidden={hidden}
-      onComplete={onComplete}
+      onComplete={handleComplete}
       rendererSettings={{
         preserveAspectRatio: "xMidYMid slice",
       }}

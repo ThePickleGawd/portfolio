@@ -62,6 +62,12 @@ const theme = createTheme({
     body2: {
       wordSpacing: "-5px",
     },
+    caption: {
+      wordSpacing: "-5px",
+    },
+    button: {
+      wordSpacing: "-5px",
+    },
   },
   components: {
     MuiCssBaseline: {

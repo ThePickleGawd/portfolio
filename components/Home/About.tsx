@@ -77,13 +77,6 @@ export const About = ({ fadeIn }) => {
     //delay: 500,
   });
 
-  const setImage = (image) => {
-    console.log("hover");
-    // TODO: REDUX STUFF
-  };
-
-  // const [styles, api] = useSprint(() => )
-
   return (
     <div ref={ref}>
       <div style={{ display: "flex", justifyContent: "center" }}>
@@ -109,10 +102,7 @@ export const About = ({ fadeIn }) => {
               transform: x.to((x) => `translate3d(0,${x}px,0)`),
             }}
           >
-            <animated.div
-              style={{ height, display: "flex" }}
-              onMouseEnter={() => setImage(items[index].image)}
-            >
+            <animated.div style={{ height, display: "flex" }}>
               <Typography variant="h4">-&nbsp;</Typography>
               <Typography variant="h4">{items[index].render}</Typography>
             </animated.div>

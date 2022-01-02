@@ -15,6 +15,7 @@ import { IParallax, Parallax, ParallaxLayer } from "@react-spring/parallax";
 
 // Components
 import Splashscreen from "components/Home/Splashscreen";
+import NewHome from "components/New Home/NewHome";
 import Welcome from "components/Home/Welcome";
 import About from "components/Home/About";
 import Skills from "components/Home/Skills";
@@ -51,7 +52,6 @@ export const Home = () => {
   return (
     <>
       {/*<Sidebar parallaxRef={parallaxRef} />*/}
-      <Splashscreen />
       <Parallax
         pages={4}
         style={{ top: "0", left: "0", zIndex: -1 }}
