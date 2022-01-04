@@ -22,6 +22,7 @@ export const Navbar = (props) => {
     { to: "/raps", name: "Raps", disabled: rapsHidden },
     { to: "/sports", name: "Sports", disabled: false },
     { to: "https://study.dylanlu.com", name: "Study (beta)", disabled: false },
+    { to: "/beta", name: "V2 (beta)", disabled: false },
   ];
 
   return (

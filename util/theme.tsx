@@ -1,77 +1,78 @@
-import { createTheme } from "@mui/material/styles";
+import { createTheme, responsiveFontSizes } from "@mui/material/styles";
 import { red } from "@mui/material/colors";
 
 // Create a theme instance.
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: "#ffffff",
+const theme = responsiveFontSizes(
+  createTheme({
+    palette: {
+      primary: {
+        main: "#ffffff",
+      },
+      secondary: {
+        main: "##bdbdbd",
+      },
+      error: {
+        main: red.A400,
+      },
+      background: {
+        default: "#000000",
+      },
+      mode: "dark",
     },
-    secondary: {
-      main: "##bdbdbd",
+    typography: {
+      fontFamily: [
+        "Moderne Sans",
+        "-apple-system",
+        "BlinkMacSystemFont",
+        '"Segoe UI"',
+        "Roboto",
+        '"Helvetica Neue"',
+        "Arial",
+        "sans-serif",
+        '"Apple Color Emoji"',
+        '"Segoe UI Emoji"',
+        '"Segoe UI Symbol"',
+      ].join(","),
+      h1: {
+        wordSpacing: "-35px",
+      },
+      h2: {
+        wordSpacing: "-25px",
+      },
+      h3: {
+        wordSpacing: "-15px",
+      },
+      h4: {
+        wordSpacing: "-10px",
+      },
+      h5: {
+        wordSpacing: "-5px",
+      },
+      h6: {
+        wordSpacing: "-5px",
+      },
+      subtitle1: {
+        wordSpacing: "-5px",
+      },
+      subtitle2: {
+        wordSpacing: "-5px",
+      },
+      body1: {
+        wordSpacing: "-5px",
+      },
+      body2: {
+        wordSpacing: "-5px",
+      },
+      caption: {
+        wordSpacing: "-5px",
+      },
+      button: {
+        wordSpacing: "-5px",
+      },
     },
-    error: {
-      main: red.A400,
-    },
-    background: {
-      default: "#000000",
-    },
-    mode: "dark",
-  },
-  typography: {
-    fontFamily: [
-      "Moderne Sans",
-      "-apple-system",
-      "BlinkMacSystemFont",
-      '"Segoe UI"',
-      "Roboto",
-      '"Helvetica Neue"',
-      "Arial",
-      "sans-serif",
-      '"Apple Color Emoji"',
-      '"Segoe UI Emoji"',
-      '"Segoe UI Symbol"',
-    ].join(","),
-    h1: {
-      wordSpacing: "-35px",
-    },
-    h2: {
-      wordSpacing: "-25px",
-    },
-    h3: {
-      wordSpacing: "-15px",
-    },
-    h4: {
-      wordSpacing: "-10px",
-    },
-    h5: {
-      wordSpacing: "-5px",
-    },
-    h6: {
-      wordSpacing: "-5px",
-    },
-    subtitle1: {
-      wordSpacing: "-5px",
-    },
-    subtitle2: {
-      wordSpacing: "-5px",
-    },
-    body1: {
-      wordSpacing: "-5px",
-    },
-    body2: {
-      wordSpacing: "-5px",
-    },
-    caption: {
-      wordSpacing: "-5px",
-    },
-    button: {
-      wordSpacing: "-5px",
-    },
-  },
-  components: {
-    MuiCssBaseline: {
-      styleOverrides: `
+    components: {
+      MuiCssBaseline: {
+        styleOverrides: `
         ::-webkit-scrollbar {
           width: 10px;
         }
@@ -89,9 +90,10 @@ const theme = createTheme({
           background-color: #909090
         }
       `,
+      },
     },
-  },
-});
+  })
+);
 
 export default theme;
 

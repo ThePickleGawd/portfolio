@@ -15,7 +15,7 @@ import { IParallax, Parallax, ParallaxLayer } from "@react-spring/parallax";
 
 // Components
 import Splashscreen from "components/Home/Splashscreen";
-import NewHome from "components/New Home/NewHome";
+import NewHome from "components/New Home/Home";
 import Welcome from "components/Home/Welcome";
 import About from "components/Home/About";
 import Skills from "components/Home/Skills";
