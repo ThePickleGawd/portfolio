@@ -3,7 +3,7 @@ import { useState } from "react";
 
 // Lottie
 import Lottie from "lottie-react";
-import animation from "public/lottie/splashscreen.json";
+import animation from "public/lottie/data.json";
 
 const Splashscreen = ({ onComplete }) => {
   const [hidden, setHidden] = useState(false);
