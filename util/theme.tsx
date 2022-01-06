@@ -21,7 +21,7 @@ const theme = responsiveFontSizes(
     },
     typography: {
       fontFamily: [
-        "Moderne Sans",
+        //"Moderne Sans",
         "-apple-system",
         "BlinkMacSystemFont",
         '"Segoe UI"',
@@ -33,42 +33,45 @@ const theme = responsiveFontSizes(
         '"Segoe UI Emoji"',
         '"Segoe UI Symbol"',
       ].join(","),
-      h1: {
-        wordSpacing: "-35px",
-      },
-      h2: {
-        wordSpacing: "-25px",
-      },
-      h3: {
-        wordSpacing: "-15px",
-      },
-      h4: {
-        wordSpacing: "-10px",
-      },
-      h5: {
-        wordSpacing: "-5px",
-      },
-      h6: {
-        wordSpacing: "-5px",
-      },
-      subtitle1: {
-        wordSpacing: "-5px",
-      },
-      subtitle2: {
-        wordSpacing: "-5px",
-      },
-      body1: {
-        wordSpacing: "-5px",
-      },
-      body2: {
-        wordSpacing: "-5px",
-      },
-      caption: {
-        wordSpacing: "-5px",
-      },
-      button: {
-        wordSpacing: "-5px",
-      },
+      // h1: {
+      //   wordSpacing: "-35px",
+      // },
+      // h2: {
+      //   wordSpacing: "-25px",
+      // },
+      // h3: {
+      //   wordSpacing: "-15px",
+      // },
+      // h4: {
+      //   wordSpacing: "-10px",
+      // },
+      // h5: {
+      //   wordSpacing: "-5px",
+      // },
+      // h6: {
+      //   wordSpacing: "-5px",
+      // },
+      // subtitle1: {
+      //   wordSpacing: "-5px",
+      // },
+      // subtitle2: {
+      //   wordSpacing: "-5px",
+      // },
+      // body1: {
+      //   wordSpacing: "-5px",
+      // },
+      // body2: {
+      //   wordSpacing: "-5px",
+      // },
+      // caption: {
+      //   wordSpacing: "-3px",
+      // },
+      // button: {
+      //   wordSpacing: "-5px",
+      // },
+      // overline: {
+      //   wordSpacing: "-3px",
+      // },
     },
     components: {
       MuiCssBaseline: {

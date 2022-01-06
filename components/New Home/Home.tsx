@@ -48,7 +48,7 @@ export const Home = () => {
         <div
           style={{
             position: "fixed",
-            top: 0,
+            bottom: 0,
           }}
         >
           <Transitions container={containerRef.current} />
@@ -58,6 +58,8 @@ export const Home = () => {
             paddingTop: 50,
             paddingLeft: 50,
             position: "fixed",
+            height: "100vh",
+            width: "100wh",
             top: 0,
           }}
         >

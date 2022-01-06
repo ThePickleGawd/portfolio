@@ -21,7 +21,7 @@ const Transition: React.FC<{ container: HTMLDivElement }> = ({ container }) => {
         //   (bound.scrollHeight - window.innerHeight);
         // const percentScrolled = Math.min(Math.max(rawPercentScrolled, 0), 1);
 
-        const playbackConst = 2000;
+        const playbackConst = 3000;
         const frameNumber = window.scrollY / playbackConst;
 
         console.log(window.scrollY, frameNumber);
@@ -33,7 +33,7 @@ const Transition: React.FC<{ container: HTMLDivElement }> = ({ container }) => {
     requestAnimationFrame(scrollVideo);
   };
 
-  return <ReactPlayer url={video} ref={ref} height="100%" width="100%" />;
+  return <ReactPlayer url={video} ref={ref} width="100%" height="100%" />;
 };
 
 export default Transition;

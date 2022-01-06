@@ -47,7 +47,7 @@ const Trail: React.FC<{ open: boolean }> = ({ open, children }) => {
 const Trail2: React.FC<{ open: boolean }> = ({ open, children }) => {
   const items = React.Children.toArray(children);
   const trail = useTrail(items.length, {
-    config: { duration: 1000 },
+    config: { duration: 100 },
     opacity: open ? 1 : 0,
     from: { opacity: 0 },
     reverse: !open,
