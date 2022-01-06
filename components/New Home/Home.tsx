@@ -1,5 +1,5 @@
 // React
-import { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import router, { useRouter } from "next/router";
 import Image from "next/image";
 
@@ -23,36 +23,58 @@ import Splashscreen from "components/New Home/Splashscreen";
 import Welcome from "components/New Home/Welcome";
 import ParallaxBackground from "components/Home/ParallaxBackground";
 import ComputerSkills from "./ComputerSkills";
-export const Home = () => {
-  const parallaxRef = useRef<IParallax>();
-  const [splashed, setSplashed] = useState(false);
+import Transitions from "./Transitions";
+import { Container } from "@mui/material";
 
-  useEffect(() => {
-    setInterval(() => console.log(parallaxRef.current.current), 1000);
-  }, []);
+export const Home = () => {
+  const containerRef = useRef<HTMLDivElement>();
+  const [splashed, setSplashed] = useState(false);
 
   return (
     <>
       <Splashscreen onComplete={() => setSplashed(true)} />
-      <Parallax
-        pages={4}
-        style={{ top: "0", left: "0", zIndex: -1 }}
-        ref={parallaxRef}
-        hidden={!parallaxRef}
+      <div
+        style={{
+          position: "absolute",
+          width: "100%",
+          height: "5000vh",
+          top: "0",
+          left: "0",
+          zIndex: -1,
+        }}
+        ref={containerRef}
+        hidden={!containerRef}
       >
-        <ParallaxLayer
-          sticky={{ start: 0, end: 4 }}
-          style={{ paddingTop: 50, paddingLeft: 50 }}
+        <div
+          style={{
+            position: "fixed",
+            top: 0,
+          }}
         >
-          <Welcome splashed={splashed} parallax={parallaxRef.current} />
-        </ParallaxLayer>
-        <ParallaxLayer
-          sticky={{ start: 0, end: 4 }}
-          style={{ paddingTop: 50, paddingLeft: 50, paddingRight: 50 }}
+          <Transitions container={containerRef.current} />
+        </div>
+        <div
+          style={{
+            paddingTop: 50,
+            paddingLeft: 50,
+            position: "fixed",
+            top: 0,
+          }}
         >
-          <ComputerSkills parallax={parallaxRef.current} />
-        </ParallaxLayer>
-      </Parallax>
+          <Welcome splashed={splashed} container={containerRef.current} />
+        </div>
+        <div
+          style={{
+            paddingTop: 50,
+            paddingLeft: 50,
+            paddingRight: 50,
+            position: "fixed",
+            top: 0,
+          }}
+        >
+          <ComputerSkills container={containerRef.current} />
+        </div>
+      </div>
     </>
   );
 };

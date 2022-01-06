@@ -66,7 +66,6 @@ const SongCard = ({
     if (sound && sound != exposedData.sound) sound.stop();
     play();
     dispatch({ type: TYPES.SET_SOUND_REF, payload: exposedData.sound });
-    console.log("setting", index);
     dispatch({ type: TYPES.SET_RAP_ID, payload: index });
   };
 

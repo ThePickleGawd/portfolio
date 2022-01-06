@@ -76,9 +76,9 @@ const Trail2: React.FC<{ open: boolean }> = ({ open, children }) => {
 
 const Welcome: React.FC<{
   splashed: boolean;
-  parallax: IParallax;
-}> = ({ splashed, parallax }) => {
-  const open = useScrollCheck({ parallax: parallax, start: 0, end: 300 });
+  container: HTMLDivElement;
+}> = ({ splashed, container }) => {
+  const open = useScrollCheck(container, 0, 2000);
 
   return (
     <div style={{ height: "100%" }}>

@@ -14,7 +14,7 @@ import Fade from "@mui/material/Fade";
 import { IParallax, Parallax, ParallaxLayer } from "@react-spring/parallax";
 
 // Components
-import Splashscreen from "components/Home/Splashscreen";
+import Splashscreen from "components/New Home/Splashscreen";
 import NewHome from "components/New Home/Home";
 import Welcome from "components/Home/Welcome";
 import About from "components/Home/About";

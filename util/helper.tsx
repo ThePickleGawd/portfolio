@@ -77,18 +77,24 @@ export const YoutubeEmbed = ({ embedId }) => (
   </div>
 );
 
-export const useScrollCheck = ({ parallax, start = 0, end }) => {
+export const useScrollCheck = (
+  container: HTMLDivElement,
+  start: number,
+  end: number
+) => {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
     const checkForReverse = () => {
-      if (!parallax) return;
-      setOpen(parallax.current >= start && parallax.current <= end);
+      if (!container) return;
+
+      setOpen(window.scrollY >= start && window.scrollY <= end);
+
+      requestAnimationFrame(checkForReverse);
     };
 
-    const checkInterval = setInterval(checkForReverse, 200);
-    return () => clearInterval(checkInterval);
-  }, [parallax]);
+    requestAnimationFrame(checkForReverse);
+  }, [container]);
 
   return open;
 };

@@ -13,8 +13,10 @@ import { IParallax } from "@react-spring/parallax";
 // Components
 import { useScrollCheck } from "util/helper";
 
-const ComputerSkills: React.FC<{ parallax: IParallax }> = ({ parallax }) => {
-  const open = useScrollCheck({ parallax: parallax, start: 1800, end: 2400 });
+const ComputerSkills: React.FC<{ container: HTMLDivElement }> = ({
+  container,
+}) => {
+  const open = useScrollCheck(container, 2700, 3900);
 
   return (
     <Grid container spacing={10}>

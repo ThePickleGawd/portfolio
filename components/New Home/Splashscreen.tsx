@@ -1,12 +1,21 @@
 // React
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 // Lottie
 import Lottie from "lottie-react";
-import animation from "public/lottie/splashscreen.json";
+import desktopAnimation from "public/lottie/splashscreen.json";
+import mobileAnimation from "public/lottie/data.json";
+
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 const Splashscreen = ({ onComplete }) => {
   const [hidden, setHidden] = useState(false);
+
+  const smallScreen = useMediaQuery("(max-width:1024px");
+
+  useEffect(() => {
+    if (smallScreen) handleComplete();
+  }, [smallScreen]);
 
   const handleComplete = () => {
     onComplete();
@@ -15,7 +24,7 @@ const Splashscreen = ({ onComplete }) => {
 
   return (
     <Lottie
-      animationData={animation}
+      animationData={desktopAnimation}
       loop={false}
       hidden={hidden}
       onComplete={handleComplete}
@@ -24,7 +33,7 @@ const Splashscreen = ({ onComplete }) => {
       }}
       style={{
         position: "fixed",
-        width: "auto",
+        width: "100vw",
         height: "100vh",
         top: 0,
       }}
