@@ -16,9 +16,9 @@ import { useScrollCheck } from "util/helper";
 const Trail: React.FC<{ open: boolean }> = ({ open, children }) => {
   const items = React.Children.toArray(children);
   const trail = useTrail(items.length, {
-    config: { mass: 5, tension: 2000, friction: 500 },
+    config: { mass: 5, tension: 200, friction: 100 },
     opacity: open ? 1 : 0,
-    height: open ? 100 : 0,
+    height: open ? 150 : 0,
     reverse: !open,
     from: { opacity: 0, height: 0 },
   });
@@ -33,7 +33,7 @@ const Trail: React.FC<{ open: boolean }> = ({ open, children }) => {
             position: "relative",
             overflow: "hidden",
             width: "100%",
-            height: "100px",
+            height: "120px",
             lineHeight: 80,
           }}
         >
@@ -47,7 +47,7 @@ const Trail: React.FC<{ open: boolean }> = ({ open, children }) => {
 const Trail2: React.FC<{ open: boolean }> = ({ open, children }) => {
   const items = React.Children.toArray(children);
   const trail = useTrail(items.length, {
-    config: { duration: 100 },
+    config: { duration: 1000 },
     opacity: open ? 1 : 0,
     from: { opacity: 0 },
     reverse: !open,
@@ -67,7 +67,9 @@ const Trail2: React.FC<{ open: boolean }> = ({ open, children }) => {
             lineHeight: 50,
           }}
         >
-          <a.div style={{ overflow: "hidden" }}>{items[index]}</a.div>
+          <a.div style={{ height: 60, overflow: "hidden" }}>
+            {items[index]}
+          </a.div>
         </a.div>
       ))}
     </div>

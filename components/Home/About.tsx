@@ -26,7 +26,8 @@ const items = [
     id: 1,
     render: (
       <span>
-        {"Three-seasoned"} <span style={{ color: "#FCB131" }}>{"athlete"}</span>
+        {"All league (SCVAL)"}{" "}
+        <span style={{ color: "#FCB131" }}>{"athlete"}</span>
       </span>
     ),
   },

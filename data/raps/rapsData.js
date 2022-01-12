@@ -59,7 +59,7 @@ export const raps = [
     mp3: RolliesForTheHomies,
     lyrics: RolliesForTheHomiesLyrics,
     meaning: RolliesForTheHomiesMeaning,
-    fire: 5,
+    fire: 4,
     date: new Date(2021, 0, 25), // year, month (0-indexed), day
     sound: null,
   },
@@ -109,7 +109,7 @@ export const raps = [
     img: null,
     youtube: "https://youtube.com",
     mp3: SaiyanGawdFlow3,
-    fire: 4,
+    fire: 5,
     date: new Date(2021, 1, 28), // year, month (0-indexed), day
     sound: null,
   },

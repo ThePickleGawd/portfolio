@@ -102,7 +102,7 @@ const SongControls = () => {
       style={{
         display: "flex",
         flexDirection: "column",
-        position: "sticky",
+        position: "fixed",
         bottom: 0,
         width: "100%",
         minHeight: "8%",

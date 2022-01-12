@@ -47,14 +47,6 @@ export const Home = () => {
       >
         <div
           style={{
-            position: "fixed",
-            bottom: 0,
-          }}
-        >
-          <Transitions container={containerRef.current} />
-        </div>
-        <div
-          style={{
             paddingTop: 50,
             paddingLeft: 50,
             position: "fixed",

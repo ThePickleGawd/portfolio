@@ -61,7 +61,7 @@ export const Raps = () => {
       {/*<MusicPlayer />*/}
       <Typography variant="h2">{"Dylan's Very Bad Raps"}</Typography>
       <br />
-      <Container>
+      <Container style={{ paddingBottom: 150 }}>
         <div style={{ display: "flex", justifyContent: "flex-end" }}>
           <SortButton />
         </div>
