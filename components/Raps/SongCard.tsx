@@ -34,7 +34,18 @@ import dayjs from "dayjs";
 import { Tooltip } from "@mui/material";
 
 const SongCard = ({
-  song: { title, description, img, embedId, mp3, fire, date, lyrics, meaning },
+  song: {
+    title,
+    description,
+    img,
+    embedId,
+    mp3,
+    fire,
+    date,
+    lyrics,
+    meaning,
+    youtube,
+  },
   index,
 }) => {
   // State vars
@@ -114,7 +125,7 @@ const SongCard = ({
                   {playing ? <Pause /> : <PlayArrow />}
                 </IconButton>
               </Tooltip>
-              <IconButton size="small" href={mp3}>
+              <IconButton size="small" href={mp3} disabled={!mp3}>
                 <GetAppIcon />
               </IconButton>
               <Button
@@ -133,7 +144,13 @@ const SongCard = ({
               >
                 {"Meaning"}
               </Button>
-              <Button size="small" color="primary" disabled>
+              <Button
+                size="small"
+                color="primary"
+                disabled={!youtube}
+                href={youtube}
+                target="_blank"
+              >
                 {"Youtube"}
               </Button>
               <IconButton size="small" disabled>
